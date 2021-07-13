@@ -1,0 +1,10 @@
+@import '../variables.css';
+
+.q-theme-button {
+  padding: var(--gap-sm);
+  background-color: var(--background-color-primary);
+  border: 1px solid var(--background-color-secondary);
+  border-radius: var(--gap-xs);
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px 0px;
+}

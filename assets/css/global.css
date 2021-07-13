@@ -1,0 +1,64 @@
+@import 'variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&family=Merriweather&display=swap');
+
+* {
+  box-sizing: content-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merriweather', serif;
+  color: var(--text-color-primary);
+}
+
+p {
+  font-size: var(--text-size-md);
+  font-family: 'Lora', sans-serif;
+  color: var(--text-color-secondary);
+  line-height: var(--gap-xxl);
+}
+
+blockquote {
+  background: var(--background-color-secondary);
+  border-left: 3px solid var(--accent-color-primary);
+  padding: var(--gap-md) var(--gap-lg);
+  font-size: var(--text-size-md);
+  border-radius: var(--gap-xs);
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-color-secondary);
+}
+
+p,
+span,
+small {
+}
+
+a {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--accent-color-primary);
+  text-decoration: none;
+}
+
+path {
+  fill: var(--accent-color-primary);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global utility classes */
+.hidden {
+  display: none;
+}

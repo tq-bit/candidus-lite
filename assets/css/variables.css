@@ -1,0 +1,66 @@
+:root.dark-theme {
+  --background-color-primary: #323232;
+  --background-color-secondary: #424245;
+  --text-color-primary: #ddd;
+  --text-color-secondary: #eee;
+  --bright-color: #252526;
+  --dark-color: #fefefe;
+  --grey-color: #3f3f3f;
+}
+
+:root {
+  /* Primary color vars */
+  --background-color-primary: #fafafa;
+  --background-color-secondary: #e1e1e1;
+  --text-color-primary: #222;
+  --text-color-secondary: #333;
+  --bright-color: #fefefe;
+  --dark-color: #252526;
+  --grey-color: #cacaca;
+
+  /* Secondary color vars */
+  --accent-color-primary: #4693c8;
+  --accent-color-secondary: #9e4d90;
+  --success-color: #00a300;
+  --error-color: #b91d47;
+
+  /* Durations vars */
+  --duration-quickest: 0.25s;
+  --duration-quick: 0.5s;
+  --duration-semi: 0.75s;
+  --duration-slow: 1s;
+
+  /* Size vars */
+  --el-size-xxs: 1.25rem;
+  --el-size-xs: 2.5rem;
+  --el-size-sm: 3.5rem;
+  --el-size-md: 7.5rem;
+  --el-size-lg: 10rem;
+  --el-size-xl: 12.5rem;
+
+  /* Gap vars */
+  --gap-tiny: 0.1rem;
+  --gap-xxs: 0.125rem;
+  --gap-xs: 0.25rem;
+  --gap-sm: 0.5rem;
+  --gap-md: 0.75rem;
+  --gap-lg: 1rem;
+  --gap-xl: 1.25rem;
+  --gap-xxl: 1.5rem;
+  --gap-max: 1.75rem;
+
+  /* text size vars */
+  --text-size-xs: 0.65rem;
+  --text-size-sm: 0.75rem;
+  --text-size-md: 0.95rem;
+  --text-size-lg: 1.05rem;
+  --text-size-xl: 1.15rem;
+  --text-size-xxl: 1.35rem;
+
+  /* Media breakpoints */
+  --screen-sm: 800px;
+  --screen-md: 1000px;
+  --screen-lg: 1200px;
+  --screen-xl: 1400px;
+
+}
