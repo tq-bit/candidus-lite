@@ -64,11 +64,14 @@
 
     <footer class="q-footer">
         <div class="q-footer-inner">
-            <p>test</p>
-            <section class="q-copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <nav class="site-footer-nav">
+            <nav class="q-footer-nav">
                 {{navigation type="secondary"}}
             </nav>
+            <section class="q-footer-info">
+                <span>
+                    &copy; {{date format="YYYY"}} | <a href="{{@site.url}}">{{@site.title}}</a>
+                </span>
+            </section>
         </div>
     </footer>
     <script src="{{asset "built/main.js"}}"></script>
