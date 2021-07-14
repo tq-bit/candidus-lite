@@ -1,10 +1,14 @@
 @import 'variables.css';
 
 /* Outer element styles */
-.q-navbar,
 .q-body,
 .q-header,
 .q-footer {
+  background-color: var(--background-color-primary);
+}
+
+/* Outer navbar styles */
+.q-navbar {
   background-color: var(--background-color-primary);
 }
 
@@ -63,16 +67,10 @@
 }
 
 @media (min-width: 800px) {
-  .q-navbar-inner,
-  .q-header-inner,
-  .q-main-inner,
-  .q-footer-inner {
+  .q-navbar-inner {
     width: 80%;
   }
-}
 
-@media (min-width: 1000px) {
-  .q-navbar-inner,
   .q-header-inner,
   .q-main-inner,
   .q-footer-inner {
@@ -80,8 +78,10 @@
   }
 }
 
-@media (min-width: 1200px) {
-  .q-navbar-inner,
+@media (min-width: 1000px) {
+  .q-navbar-inner {
+    width: 70%;
+  }
   .q-header-inner,
   .q-main-inner,
   .q-footer-inner {
@@ -89,11 +89,25 @@
   }
 }
 
-@media (min-width: 1400px) {
-  .q-navbar-inner,
+@media (min-width: 1200px) {
+  .q-navbar-inner {
+    width: 70%;
+  }
   .q-header-inner,
   .q-main-inner,
   .q-footer-inner {
     width: 50%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .q-navbar-inner {
+    width: 50%;
+  }
+
+  .q-header-inner,
+  .q-main-inner,
+  .q-footer-inner {
+    width: 40%;
   }
 }
