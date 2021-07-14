@@ -16,7 +16,7 @@
 .q-header-inner,
 .q-main-inner,
 .q-footer-inner {
-  width: 100%;
+  width: 90%;
   display: block;
   margin: auto;
 }

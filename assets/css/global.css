@@ -30,6 +30,7 @@ blockquote {
   padding: var(--gap-md) var(--gap-lg);
   font-size: var(--text-size-md);
   border-radius: var(--gap-xs);
+  margin: 0;
   font-family: 'Open Sans', sans-serif;
   color: var(--text-color-secondary);
 }
