@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&family=Merriweather&display=swap');
+
+@import 'variables.css';
 @import 'global.css';
-@import 'default.css';
+@import 'sites/default.css';
+@import 'sites/index.css';
 @import 'modules/index.css';

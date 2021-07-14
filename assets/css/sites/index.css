@@ -1,0 +1,21 @@
+.q-index-header {
+  min-height: calc(var(--gap-xl) + var(--text-size-xl) + var(--gap-xl));
+  max-height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.q-index-header-image {
+  width: 100%;
+  height: 35vh;
+  background-position: center;
+}
+
+.q-index-header-title {
+  font-family: 'Open Sens', sans-serif;
+  font-size: var(--text-size-xl);
+  position: absolute;
+  color: var(--text-color-primary)
+}
