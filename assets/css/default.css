@@ -1,6 +1,7 @@
 @import 'variables.css';
 
 /* Outer element styles */
+.q-navbar,
 .q-body,
 .q-header,
 .q-footer {
@@ -16,15 +17,17 @@
   margin: auto;
 }
 
-/* Outer navbar styles */
-.q-navbar {
+/* Inner navbar styles */
+.q-navbar-inner {
+  width: 100%;
+  display: block;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Inner navbar styles */
-.q-navbar > * {
+.q-navbar-inner > * {
   font-weight: 600;
   padding: var(--gap-md) var(--gap-xl);
 }
@@ -60,6 +63,7 @@
 }
 
 @media (min-width: 800px) {
+  .q-navbar-inner,
   .q-header-inner,
   .q-main-inner,
   .q-footer-inner {
@@ -68,6 +72,7 @@
 }
 
 @media (min-width: 1000px) {
+  .q-navbar-inner,
   .q-header-inner,
   .q-main-inner,
   .q-footer-inner {
@@ -76,6 +81,7 @@
 }
 
 @media (min-width: 1200px) {
+  .q-navbar-inner,
   .q-header-inner,
   .q-main-inner,
   .q-footer-inner {
@@ -84,6 +90,7 @@
 }
 
 @media (min-width: 1400px) {
+  .q-navbar-inner,
   .q-header-inner,
   .q-main-inner,
   .q-footer-inner {

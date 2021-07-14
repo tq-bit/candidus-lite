@@ -20,36 +20,39 @@
 </head>
 
 <body class="q-body">
+    <nav class="q-navbar">
+        <!-- Brand Image -->
+        <div class="q-navbar-inner">
+            <div class="q-navbar-brand">
+                <a href="{{@site.url}}">
+                    {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                    {{else}}
+                    {{@site.title}}
+                    {{/if}}
+                </a>
+            </div>
+
+            <!-- Navigation links -->
+            <div class="q-navbar-navigation">
+                {{navigation}}
+            </div>
+
+            <!-- Social links -->
+            <div class="q-navbar-social">
+                {{#if @site.facebook}}
+                <a class="q-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                {{/if}}
+                {{#if @site.twitter}}
+                <a class="q-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                {{/if}}
+                {{> "theme-toggle"}}
+            </div>
+        </div>
+    </nav>
     <header class="q-header" id="q-header">
         <div class="q-header-inner">
-            <nav class="q-navbar">
-                <!-- Brand Image -->
-                <div class="q-navbar-brand">
-                    <a href="{{@site.url}}">
-                        {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                        {{else}}
-                        {{@site.title}}
-                        {{/if}}
-                    </a>
-                </div>
 
-                <!-- Navigation links -->
-                <div class="q-navbar-navigation">
-                    {{navigation}}
-                </div>
-
-                <!-- Social links -->
-                <div class="q-navbar-social">
-                    {{#if @site.facebook}}
-                    <a class="q-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                    {{/if}}
-                    {{#if @site.twitter}}
-                    <a class="q-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                    {{/if}}
-                    {{> "theme-toggle"}}
-                </div>
-            </nav>
         </div>
 
     </header>
