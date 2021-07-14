@@ -10,15 +10,12 @@ body {
   padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1 {
+  font-size: var(--text-size-xxl);
   font-family: 'Merriweather', serif;
   color: var(--text-color-primary);
 }
+
 
 p {
   font-size: var(--text-size-md);
@@ -37,9 +34,16 @@ blockquote {
   color: var(--text-color-secondary);
 }
 
-p,
+img {
+  max-width: 100% !important;
+  height: auto;
+}
+
 span,
-small {
+li {
+  font-size: var(--text-size-md);
+  font-family: 'Lora', sans-serif;
+  color: var(--text-color-secondary);
 }
 
 a {

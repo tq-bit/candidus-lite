@@ -1,13 +1,13 @@
 @import 'variables.css';
 
-.q-body {
+/* Outer element styles */
+.q-body,
+.q-header,
+.q-footer {
   background-color: var(--background-color-primary);
 }
 
-.q-header {
-  background-color: var(--background-color-primary);
-}
-
+/* Inner element styles */
 .q-header-inner,
 .q-main-inner,
 .q-footer-inner {
