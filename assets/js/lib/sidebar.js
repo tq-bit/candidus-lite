@@ -1,7 +1,5 @@
 const sidebar = document.querySelector('#q-sidebar');
 
-// Initially hide sidebar
-
 const hideSidebar = (duration) => {
   anime({
     targets: '#q-sidebar',

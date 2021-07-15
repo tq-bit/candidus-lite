@@ -1,5 +1,5 @@
-const moon = document.querySelector('#q-moon')
-const sun = document.querySelector('#q-sun')
+const moonIcons = document.querySelectorAll('.q-moon')
+const sunIcons = document.querySelectorAll('.q-sun')
 
 const toggleUserTheme = () => {
   const activeTheme = localStorage.getItem("user-theme");
@@ -13,12 +13,12 @@ const toggleUserTheme = () => {
 const setTheme = (theme) => {
   localStorage.setItem("user-theme", theme);
   document.documentElement.className = theme;
-  if(theme === "dark-theme") {
-    moon.classList.remove('hidden')
-    sun.classList.add('hidden');
+  if (theme === "dark-theme") {
+    moonIcons.forEach(moon => moon.classList.remove('hidden'));
+    sunIcons.forEach(sun => sun.classList.add('hidden'))
   } else {
-    sun.classList.remove('hidden');
-    moon.classList.add('hidden')
+    sunIcons.forEach(sun => sun.classList.remove('hidden'))
+    moonIcons.forEach(moon => moon.classList.add('hidden'));
   }
 }
 
