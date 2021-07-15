@@ -1,0 +1,56 @@
+/*
+ * Includes styles for post items, such as post lists of post cards.
+ */
+
+.q-post-list {
+  margin: var(--gap-max) 0;
+  border: 1.5px solid var(--grey-color);
+  border-radius: var(--gap-xs);
+  padding: var(--gap-sm) 0;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 16px;
+}
+.post-list-item-inner:hover {
+  transition: background-color var(--duration-quick);
+  background-color: var(--background-color-secondary);
+}
+
+.post-list-item-inner {
+  display: grid;
+  grid-template-columns: 70% 25%;
+  transition: background-color var(--duration-quick);
+  grid-gap: 5%;
+  padding: var(--gap-md);
+}
+
+.post-list-item-readingtime,
+.post-list-item-title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.post-list-item-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  color: var(--text-color-primary);
+  font-size: var(--text-size-md);
+}
+
+.post-list-item-readingtime {
+  color: var(--text-color-primary);
+  font-size: var(--text-size-sm);
+}
+
+.post-list-item-icon {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .post-list-item-icon {
+    margin: 0 var(--gap-md);
+    font-size: var(--text-size-lg);
+    display: block;
+  }
+}

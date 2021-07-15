@@ -3,11 +3,11 @@
  * 1) animateRotateLogo
  */
 const animateRotateLogo = () => {
-  const animationDuration = 750;
+  const animationDuration = 500;
   anime({
     targets: '.q-navbar-logo',
     rotate: {
-      value: 360,
+      value: 180,
       duration: animationDuration,
       easing: 'easeInOutQuad'
     }
