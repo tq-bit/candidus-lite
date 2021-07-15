@@ -20,7 +20,7 @@
 
 /* Inner navbar styles */
 .q-navbar-inner {
-  width: 100%;
+  width: var(--content-width-screen-xs);
   display: block;
   margin: auto;
   display: flex;
@@ -30,19 +30,20 @@
 
 .q-navbar-inner > * {
   font-weight: 600;
-  padding: var(--gap-md) var(--gap-xl);
+  padding: var(--gap-xl) 0;
 }
 
 .q-navbar-navigation > ul > li {
-  transition: opacity var(--duration-quick);
   display: inline;
   margin: var(--gap-xs) var(--gap-md);
-  opacity: 1;
 }
 
-.q-navbar-navigation > ul > li:hover {
-  transition: opacity var(--duration-quick);
-  opacity: 0.8;
+.q-navbar-navigation > ul > li > a {
+  color: var(--text-color-secondary);
+}
+
+.q-navbar-navigation > ul > li > a:hover {
+  color: var(--accent-color-primary);
 }
 
 /* Social navigation icons */

@@ -50,7 +50,11 @@ a {
 }
 
 path {
-  fill: var(--accent-color-primary);
+  fill: var(--text-color-secondary);
+}
+
+path:hover {
+  fill: var(--accent-color-secondary);
 }
 
 ul {
