@@ -1,5 +1,24 @@
-const sidebar = document.querySelector('#q-sidebar');
+/**
+ * Navbar animations
+ * 1) animateRotateLogo
+ */
+const animateRotateLogo = () => {
+  const animationDuration = 750;
+  anime({
+    targets: '.q-navbar-logo',
+    rotate: {
+      value: 360,
+      duration: animationDuration,
+      easing: 'easeInOutQuad'
+    }
+  })
+}
 
+/**
+ * Sidebar animations
+ * 1) hide sidebar
+ * 2) showSidebar
+ */
 const hideSidebar = (duration) => {
   anime({
     targets: '#q-sidebar',
@@ -21,17 +40,3 @@ const showSidebar = (duration) => {
     duration
   })
 }
-
-const toggleSidebar = () => {
-  const isHidden = sidebar.classList.contains('hidden');
-  const animationDuration = 750;
-
-  if (isHidden) {
-    showSidebar(animationDuration);
-  } else {
-    hideSidebar(animationDuration);
-  }
-}
-
-// Initially hide the sidebar
-hideSidebar(0);

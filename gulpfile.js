@@ -66,6 +66,7 @@ function js(done) {
             // pull in lib files first so our own code can depend on it
             'assets/js/modules/*.js',
             'assets/js/lib/*.js',
+            'assets/js/partials/*.js',
             'assets/js/*.js'
         ], {sourcemaps: true}),
         concat('main.js'),

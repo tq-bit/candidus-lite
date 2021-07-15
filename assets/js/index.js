@@ -1,4 +1,5 @@
 // DOM Elements
+const domSiteLogo = document.querySelector('img.q-navbar-logo');
 const domThemeButton = document.querySelectorAll('.q-theme-button');
 const domNavbarToggleButton = document.querySelector('#q-sidebar-toggle')
 const domNavbarCloseButton = document.querySelector('#q-navbar-button-close')
@@ -9,6 +10,7 @@ domThemeButton.forEach(themeButton => {
 })
 domNavbarToggleButton.addEventListener('click', () => toggleSidebar());
 domNavbarCloseButton.addEventListener('click', () => toggleSidebar());
+domSiteLogo.addEventListener('mouseover', () => animateRotateLogo())
 document.addEventListener('DOMContentLoaded', () => {
 });
 
