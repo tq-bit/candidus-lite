@@ -17,7 +17,14 @@
 
 .q-index-header-title {
   font-family: 'Open Sens', sans-serif;
-  font-size: var(--text-size-xl);
+  font-size: var(--text-size-lg);
   position: absolute;
-  color: var(--text-color-primary)
+  text-align: center;
+  color: var(--text-color-primary);
+}
+
+@media (min-width: 1000px) {
+  .q-index-header-title {
+    font-size: var(--text-size-xl);
+  }
 }

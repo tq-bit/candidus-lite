@@ -33,6 +33,18 @@
   padding: var(--gap-xl) 0;
 }
 
+/* Hide navbar content for small devices */
+.q-navbar-navigation,
+.q-navbar-social {
+  display: none;
+}
+
+/* Navbar element styles */
+.q-navbar-logo {
+  width: 40px;
+  height: auto;
+}
+
 .q-navbar-navigation > ul > li {
   display: inline;
   margin: var(--gap-xs) var(--gap-md);
@@ -46,11 +58,13 @@
   color: var(--accent-color-primary);
 }
 
-/* Social navigation icons */
-.q-navbar-social {
-  display: flex;
-  align-items: center;
-  color: var(--accent-color-primary);
+/* Styles for the sidebar toggle */
+.q-navbar-sidebar-toggle {
+  cursor: pointer;
+}
+
+.q-sidebar-toggle-rect {
+  fill: var(--text-color-primary);
 }
 
 .q-social-facebook,
@@ -97,6 +111,27 @@
   .q-footer-inner {
     grid-template-columns: 50% 50%;
     width: var(--content-width-screen-lg);
+  }
+
+  /* Show navbar for bigger devices */
+  .q-navbar-navigation {
+    display: block;
+  }
+
+  .q-navbar-logo {
+    width: 100%;
+  }
+
+  /* Show Social navigation icons for bigger devices */
+  .q-navbar-social {
+    display: flex;
+    align-items: center;
+    color: var(--accent-color-primary);
+  }
+
+  /* Hide burger for bigger devices */
+  .q-navbar-sidebar-toggle  {
+    display: none;
   }
 
   .q-footer-nav {

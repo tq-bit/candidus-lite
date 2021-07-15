@@ -26,7 +26,7 @@
             <div class="q-navbar-brand">
                 <a href="{{@site.url}}">
                     {{#if @site.logo}}
-                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                    <img class="q-navbar-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
                     {{else}}
                     {{@site.title}}
                     {{/if}}
@@ -34,6 +34,13 @@
             </div>
 
             <!-- Navigation links -->
+            <div class="q-navbar-sidebar-toggle">
+                <svg id="q-sidebar-toggle" viewBox="0 0 100 80" width="30" height="30">
+                    <rect class="q-sidebar-toggle-rect" width="80" height="8"></rect>
+                    <rect class="q-sidebar-toggle-rect" y="30" width="80" height="8"></rect>
+                    <rect class="q-sidebar-toggle-rect" y="60" width="80" height="8"></rect>
+                </svg>
+            </div>
             <div class="q-navbar-navigation">
                 {{navigation}}
             </div>

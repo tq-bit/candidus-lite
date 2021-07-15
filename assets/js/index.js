@@ -1,5 +1,5 @@
 // DOM Elements
-const domThemeButton = document.querySelector('#q-theme-button')
+const domThemeButton = document.querySelector('#q-theme-button');
 
 // Event binding
 domThemeButton.addEventListener('click', () => {
