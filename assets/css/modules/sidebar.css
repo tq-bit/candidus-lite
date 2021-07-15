@@ -27,8 +27,14 @@
   color: var(--text-color-primary);
 }
 
+.q-navbar-social-mobile {
+  margin: var(--gap-xl) 0 var(--gap-xxl);
+  display: flex;
+  align-items: center;
+  color: var(--accent-color-primary);
+}
+
 .q-navbar-button-close {
-  margin-top: var(--gap-max);
   padding: var(--gap-sm) var(--gap-lg);
   border-radius: var(--gap-sm);
   border: none;
