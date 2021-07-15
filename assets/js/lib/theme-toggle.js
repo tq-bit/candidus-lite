@@ -22,10 +22,15 @@ const setTheme = (theme) => {
   }
 }
 
+// Check for localstorage preference. If non-existant, uses media preference
 const getMediaPreference = () => {
+  const activeTheme = localStorage.getItem("user-theme");
   const hasDarkPreference = window.matchMedia(
     "(prefers-color-scheme: dark)"
   ).matches;
+  if (activeTheme) {
+    return activeTheme
+  }
   if (hasDarkPreference) {
     return "dark-theme";
   } else {
