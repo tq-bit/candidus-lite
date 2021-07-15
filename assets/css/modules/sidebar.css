@@ -1,0 +1,38 @@
+.q-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: var(--background-color-primary);
+  opacity: 0.95;
+  height: 100%;
+  z-index: 20;
+}
+
+.q-sidebar-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.q-navbar-navigation-mobile > ul > li {
+  margin: var(--gap-sm);
+
+}
+
+.q-navbar-navigation-mobile > ul > li > a{
+  color: var(--text-color-primary);
+}
+
+.q-navbar-button-close {
+  margin-top: var(--gap-max);
+  padding: var(--gap-sm) var(--gap-lg);
+  border-radius: var(--gap-sm);
+  border: none;
+  color: #fff;
+  background-color: var(--accent-color-primary);
+  font-size: var(--text-size-md);
+}
