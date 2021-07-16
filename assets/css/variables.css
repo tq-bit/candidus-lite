@@ -11,6 +11,9 @@
 }
 
 :root {
+  /* Static color vars. Same for dark & light theme */
+  --white-color: #fef;
+
   /* Primary color vars */
   --background-color-primary: #f5f5f5;
   --background-color-secondary: #f1f1f1;
@@ -52,6 +55,7 @@
   --gap-max: 3.5rem;
 
   /* text size vars */
+  --text-size-xxs: 0.65rem;
   --text-size-xs: 0.75rem;
   --text-size-sm: 0.90rem;
   --text-size-md: 1.05rem;

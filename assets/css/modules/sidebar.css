@@ -42,7 +42,7 @@
   padding: var(--gap-sm) var(--gap-lg);
   border-radius: var(--gap-sm);
   border: none;
-  color: #fff;
+  color: var(--white-color);
   background-color: var(--accent-color-primary);
   font-size: var(--text-size-md);
 }
