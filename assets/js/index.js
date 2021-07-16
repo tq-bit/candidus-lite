@@ -14,7 +14,9 @@ domSiteLogo.addEventListener('mouseover', () => animateRotateLogo())
 
 // Fire on DomContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
+  animateSlideInPosts();
 });
 
 // Everything that should be handled right away
 initUserTheme();
+animateHidePosts();

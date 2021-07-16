@@ -2,16 +2,17 @@
  * Includes styles for post items, such as post lists of post cards.
  */
 
-.q-post-list {
-  margin: var(--gap-max) 0;
+.q-post-list-item {
+  transition: background-color var(--duration-quickest), box-shadow var(--duration-quickest);
+  margin: var(--gap-lg) 0;
   border: 1.5px solid var(--grey-color);
   border-radius: var(--gap-xs);
-  padding: var(--gap-sm) 0;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 16px;
 }
-.q-post-list-item-inner:hover {
-  transition: background-color var(--duration-quick);
+
+.q-post-list-item:hover {
+  transition: background-color var(--duration-quickest), box-shadow var(--duration-quickest);
   background-color: var(--background-color-secondary);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 6px;
 }
 
 .q-post-list-item-inner {
@@ -71,7 +72,7 @@
   }
 
   .q-post-list-item-tag-inner {
-    padding:  var(--gap-sm);
+    padding: var(--gap-sm);
     border-radius: var(--gap-max);
     background-color: var(--accent-color-primary);
     color: var(--white-color);

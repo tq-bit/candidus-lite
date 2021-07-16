@@ -14,6 +14,32 @@ const animateRotateLogo = () => {
   })
 }
 
+
+/**
+ * Post animations
+ * 1) Hide posts on page load
+ * 1) Slide in posts on load
+ */
+const animateHidePosts = () => {
+  anime({
+    targets: '.q-post-list-item',
+    translateY: '25px',
+    opacity: 0,
+    duration: 0,
+  });
+}
+
+const animateSlideInPosts = () => {
+  anime({
+    targets: '.q-post-list-item',
+    translateY: 0,
+    delay: anime.stagger(50, { start: 550 }), // increase delay by 100ms for each elements.
+    opacity: 1,
+    duration: 1000,
+  });
+}
+
+
 /**
  * Sidebar animations
  * 1) hide sidebar
@@ -40,3 +66,4 @@ const showSidebar = (duration) => {
     duration
   })
 }
+
