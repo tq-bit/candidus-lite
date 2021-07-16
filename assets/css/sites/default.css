@@ -39,6 +39,10 @@
   display: none;
 }
 
+.q-navbar-social > * {
+  margin-left: var(--gap-sm)
+}
+
 /* Navbar element styles */
 .q-navbar-logo {
   width: 40px;

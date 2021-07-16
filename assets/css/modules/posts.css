@@ -9,48 +9,68 @@
   padding: var(--gap-sm) 0;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 16px;
 }
-.post-list-item-inner:hover {
+.q-post-list-item-inner:hover {
   transition: background-color var(--duration-quick);
   background-color: var(--background-color-secondary);
 }
 
-.post-list-item-inner {
+.q-post-list-item-inner {
   display: grid;
-  grid-template-columns: 70% 25%;
+  grid-template-columns: 80% 20%;
   transition: background-color var(--duration-quick);
   grid-gap: 5%;
-  padding: var(--gap-md);
+  padding: var(--gap-lg);
 }
 
-.post-list-item-readingtime,
-.post-list-item-title {
-  text-align: center;
+.q-post-list-item-readingtime,
+.q-post-list-item-title {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
-.post-list-item-title {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 500;
-  color: var(--text-color-primary);
-  font-size: var(--text-size-md);
-}
-
-.post-list-item-readingtime {
-  color: var(--text-color-primary);
-  font-size: var(--text-size-sm);
-}
-
-.post-list-item-icon {
+.q-post-list-item-date {
   display: none;
 }
 
+.q-post-list-item-title {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-color-secondary);
+  font-size: var(--text-size-md);
+  text-align: center;
+  justify-content: center;
+}
+
+.q-post-list-item-readingtime {
+  text-align: left;
+  color: var(--text-color-primary);
+  font-weight: 600;
+  font-size: var(--text-size-sm);
+}
+
+/*
+ * Adjust the grid format to desktop size
+ * Show the reading time
+ * Align the title to the left
+ */
 @media (min-width: 1000px) {
-  .post-list-item-icon {
-    margin: 0 var(--gap-md);
-    font-size: var(--text-size-lg);
-    display: block;
+  .q-post-list-item-inner {
+    display: grid;
+    grid-template-columns: 12.5% 67.5% 10%;
+    transition: background-color var(--duration-quick);
+    grid-gap: 5%;
+    padding: var(--gap-lg);
+  }
+  .q-post-list-item-date {
+    display: flex;
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color-secondary);
+    font-size: var(--text-size-sm);
+  }
+  .q-post-list-item-title {
+    justify-content: flex-start;
+    text-align: left;
   }
 }

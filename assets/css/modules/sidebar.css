@@ -34,6 +34,10 @@
   color: var(--accent-color-primary);
 }
 
+.q-navbar-social-mobile > * {
+  margin-left: var(--gap-md)
+}
+
 .q-navbar-button-close {
   padding: var(--gap-sm) var(--gap-lg);
   border-radius: var(--gap-sm);
