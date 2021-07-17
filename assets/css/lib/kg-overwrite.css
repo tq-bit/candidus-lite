@@ -68,7 +68,7 @@
 
 /* The image of the card */
 .kg-bookmark-thumbnail {
-  position: relative;
+  display: none;
   min-width: 33%;
   max-height: 100%;
 }
@@ -90,6 +90,7 @@
     width: 50%;
   }
   .kg-bookmark-thumbnail {
+    position: relative;
     width: 50%;
     display: flex;
   }
