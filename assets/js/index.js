@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
   animateSlideInPosts();
 });
 
+// Fire when a key event is registered
+window.addEventListener('keydown', (event) => {
+  focusPostListSearchButton(event, domPostSearchInput);
+})
+
 // Everything that should be handled right away
 initUserTheme();
 animateHidePosts();
