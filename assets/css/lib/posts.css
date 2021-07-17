@@ -76,7 +76,7 @@
   }
 
   .q-post-list-item-tag-inner {
-    padding: var(--gap-sm);
+    padding: var(--gap-xs) var(--gap-sm);
     border-radius: var(--gap-max);
     background-color: var(--accent-color-primary);
     color: var(--white-color);
@@ -142,6 +142,9 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 .q-post-article-header-image {
   width: 100%;
   height: auto;
+  max-height: var(--el-size-max);
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .q-post-article-meta {
