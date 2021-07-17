@@ -1,5 +1,4 @@
-@import '../variables.css';
-
+/* Styles for the user theme button */
 .q-theme-button {
   padding: var(--gap-sm);
   background-color: var(--background-color-primary);
