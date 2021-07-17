@@ -1,0 +1,71 @@
+/* Overwrite some of the templates that are provided by ghost
+ * 1) Card for images in posts and sites
+ * 2) Card for embedded items, links & bookmarks
+ */
+.kg-card.kg-bookmark-card,
+.kg-card.kg-image-card.kg-width-wide,
+.kg-card.kg-image-card.kg-width-full {
+  margin: 0;
+  padding: 0;
+}
+.kg-bookmark-container {
+  margin: var(--gap-xl) 0;
+  display: flex;
+  flex-direction: row;
+  border-radius: var(--gap-sm);
+  border: 2px solid var(--grey-color);
+}
+
+/* The metadata of the card  */
+.kg-bookmark-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.kg-bookmark-title {
+  font-weight: 600;
+}
+
+.kg-bookmark-description {
+  margin: var(--gap-md) 0;
+  color: var(--text-color-primary);
+}
+
+.kg-bookmark-metadata {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kg-bookmark-icon {
+  height: 30px;
+  width: 30px;
+}
+
+/* The image of the card */
+.kg-bookmark-thumbnail {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  background-color: var(--grey-color);
+  border-radius: var(--gap-xs);
+}
+
+/* Show the thumbnail only for larger screens */
+@media (min-width: 800px) {
+  .kg-bookmark-thumbnail {
+    width: 50%;
+    display: flex;
+  }
+}
+
+@media (min-width: 1200px) {
+  .kg-bookmark-thumbnail {
+    width: 40%;
+  }
+}
