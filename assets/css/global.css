@@ -72,6 +72,21 @@ ul {
   padding: 0;
 }
 
+code {
+  padding: var(--gap-xs);
+  border-radius: var(--gap-xs);
+  background-color: var(--background-color-secondary);
+  font-family: 'Inconsolata', monospace !important;
+}
+
+/* Overwrite global tags with properties from third party modules, e.g. for prism */
+code[class*='language-'],
+pre[class*='language-'],
+span.token {
+  font-size: var(--text-size-md) !important;
+  font-family: 'Inconsolata', monospace !important;
+}
+
 /* Global utility classes */
 .hidden {
   display: none;

@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&family=Merriweather&display=swap');
+/* Import third party css */
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&family=Merriweather&family=Inconsolata&display=swap');
+@import 'modules/index.css';
 
+/* Import theme css */
 @import 'variables.css';
 @import 'global.css';
 @import 'sites/default.css';
 @import 'sites/index.css';
-@import 'modules/index.css';
+@import 'lib/index.css';
