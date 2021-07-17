@@ -1,9 +1,9 @@
 /**
- * Functions specifially for post and post items
+ * Functions specifially for posts and post related items
  * 1) Filter post list on index page
  * 2) Focus the searchbar when pressing CTRL + K
  * 3) Monitor reading progress
- * 4) Toggle the post navbar
+ * 4) Toggle the post navbar when user scrolls down in the post content
  */
 
 // 1)
@@ -34,7 +34,6 @@ const focusPostListSearchButton = (event, searchfield) => {
 
 // 3)
 const monitorReadingProgress = function (contentArea, progressBar) {
-  // Grab content area and progress bar
 
   let frameListening = function () {
     let contentBox = contentArea.getBoundingClientRect();
