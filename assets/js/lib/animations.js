@@ -67,3 +67,26 @@ const showSidebar = (duration) => {
   })
 }
 
+/**
+ * Post navbar animations
+ * 1) hide post navbar
+ * 2) show post navbar
+ */
+
+const showPostNavbar = (duration) => {
+  anime({
+    targets: '#q-post-navbar',
+    translateY: '0',
+    easing: 'easeInOutSine',
+    duration
+  })
+}
+
+const hidePostNavbar = (duration) => {
+  anime({
+    targets: '#q-post-navbar',
+    translateY: '-60px',
+    easing: 'easeInOutSine',
+    duration
+  })
+}

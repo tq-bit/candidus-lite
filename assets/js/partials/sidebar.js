@@ -1,3 +1,4 @@
+// TODO: Refactor sidebar variable to domSidebar
 const sidebar = document.querySelector('#q-sidebar');
 
 const toggleSidebar = () => {

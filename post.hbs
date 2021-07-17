@@ -1,4 +1,11 @@
-{{!< default}} {{#post}} <article class="q-post-article">
+{{!< default}} {{#post}}
+<nav id="q-post-navbar" class="q-post-navbar">
+    <div class="q-post-navbar-inner">
+        <a href="#">{{title}}</a>
+    </div>
+    <progress id="q-reading-progress" class="q-post-reading-progress-bar"></progress>
+</nav>
+<article class="q-post-article">
     <header class="q-post-article-header">
         <img class="q-post-article-header-image" src="{{img_url feature_image}}" alt="">
         <section class="q-post-article-meta">

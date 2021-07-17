@@ -3,7 +3,6 @@
  */
 
 /* Post items on the index page [/partials/post-list-item.hbs] */
-
 .q-post-list-item {
   transition: background-color var(--duration-quickest),
     box-shadow var(--duration-quickest);
@@ -93,6 +92,44 @@
 }
 
 /* Styles for the post - site [/post.hbs] */
+
+/* Styles for the post navbar */
+.q-post-navbar {
+  z-index: 20;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.q-post-navbar-inner {
+  padding: var(--gap-md) var(--gap-lg);
+  background-color: var(--background-color-primary);
+  opacity: 0.98;
+}
+
+progress.q-post-reading-progress-bar {
+  appearance: none;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  z-index: 20;
+}
+
+progress.q-post-reading-progress-bar[value]::-webkit-progress-bar {
+  background-color: var(--background-color-secondary);
+}
+
+progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
+  background: linear-gradient(
+    to right bottom,
+    var(--accent-color-primary),
+    var(--accent-color-secondary)
+  );
+}
+
+/* Styles for the post content */
 .q-post-article {
   position: relative;
 }
