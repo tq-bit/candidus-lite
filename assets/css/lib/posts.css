@@ -93,6 +93,10 @@
 }
 
 /* Styles for the post - site [/post.hbs] */
+
+.q-post-article {
+  position: relative;
+}
 .q-post-article-meta {
   margin-top: var(--gap-xl);
   font-family: 'Open Sans', sans-serif;
@@ -120,4 +124,14 @@
 
 .q-post-article-excerpt {
   color: var(--text-color-primary);
+}
+
+.q-post-article-content > img {
+  width: 100% !important;
+}
+
+.kg-card.kg-image-card.kg-width-wide,
+.kg-card.kg-image-card.kg-width-full {
+  margin: 0;
+  padding: 0;
 }
