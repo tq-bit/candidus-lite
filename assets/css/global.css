@@ -5,6 +5,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Lora', sans-serif;
 }
 
 h1,
@@ -13,7 +14,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Merriweather', serif;
+  font-family: 'Open Sans', serif;
   color: var(--text-color-primary);
 }
 
@@ -23,7 +24,6 @@ h1 {
 
 p {
   font-size: var(--text-size-md);
-  font-family: 'Lora', sans-serif;
   color: var(--text-color-secondary);
   line-height: var(--gap-xxl);
 }
@@ -34,7 +34,7 @@ blockquote {
   padding: var(--gap-md) var(--gap-lg);
   font-size: var(--text-size-md);
   border-radius: var(--gap-xs);
-  margin: var(--gap-xxl) 0;
+  margin: var(--gap-xl) 0 var(--gap-xl) var(--gap-md);
   font-family: 'Open Sans', sans-serif;
   color: var(--text-color-secondary);
 }
