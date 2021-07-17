@@ -43,9 +43,9 @@ const animateSlideInPosts = () => {
 /**
  * Sidebar animations
  * 1) hide sidebar
- * 2) showSidebar
+ * 2) animateShowSidebar
  */
-const hideSidebar = (duration) => {
+const animateHideSidebar = (duration) => {
   anime({
     targets: '#q-sidebar',
     translateY: '-100%',
@@ -53,11 +53,11 @@ const hideSidebar = (duration) => {
     easing: 'easeInOutSine',
     duration
   })
-  setTimeout(() => sidebar.classList.add('hidden'), duration)
+  setTimeout(() => domSidebar.classList.add('hidden'), duration)
 }
 
-const showSidebar = (duration) => {
-  sidebar.classList.remove('hidden')
+const animateShowSidebar = (duration) => {
+  domSidebar.classList.remove('hidden')
   anime({
     targets: '#q-sidebar',
     translateY: '0',

@@ -171,6 +171,7 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 
 .q-post-article-excerpt {
   color: var(--text-color-primary);
+  text-align: center;
 }
 
 .q-post-article-content > img {

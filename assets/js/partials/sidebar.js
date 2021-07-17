@@ -1,16 +1,16 @@
 // TODO: Refactor sidebar variable to domSidebar
-const sidebar = document.querySelector('#q-sidebar');
+const domSidebar = document.querySelector('#q-sidebar');
 
 const toggleSidebar = () => {
-  const isHidden = sidebar.classList.contains('hidden');
+  const isHidden = domSidebar.classList.contains('hidden');
   const animationDuration = 750;
 
   if (isHidden) {
-    showSidebar(animationDuration);
+    animateShowSidebar(animationDuration);
   } else {
-    hideSidebar(animationDuration);
+    animateHideSidebar(animationDuration);
   }
 }
 
 // Initially hide the sidebar
-hideSidebar(0);
+animateHideSidebar(0);

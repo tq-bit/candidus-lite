@@ -6,6 +6,7 @@
  * 4) Toggle the post navbar
  */
 
+// 1)
 const filterPostList = (searchInput, searchList) => {
   const filter = searchInput.value.toUpperCase();
 
@@ -19,6 +20,7 @@ const filterPostList = (searchInput, searchList) => {
   })
 }
 
+// 2)
 const focusPostListSearchButton = (event, searchfield) => {
   if (event.key.toLowerCase() === 'escape') {
     event.preventDefault();
@@ -30,6 +32,7 @@ const focusPostListSearchButton = (event, searchfield) => {
   }
 }
 
+// 3)
 const monitorReadingProgress = function (contentArea, progressBar) {
   // Grab content area and progress bar
 
@@ -54,6 +57,7 @@ const monitorReadingProgress = function (contentArea, progressBar) {
   window.requestAnimationFrame(frameListening);
 };
 
+// 4)
 const monitorPostNavbar = (domPostReadingProgressBar, duration) => {
   const readingProgress = domPostReadingProgressBar.value
   if (readingProgress > 0.05) {
@@ -63,5 +67,6 @@ const monitorPostNavbar = (domPostReadingProgressBar, duration) => {
   if (readingProgress <= 0.05) {
     hidePostNavbar(duration);
   }
-
 }
+
+hidePostNavbar(0)
