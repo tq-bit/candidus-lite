@@ -2,15 +2,19 @@
  * Includes styles for post items, such as post lists of post cards.
  */
 
+/* Post items on the index page [/partials/post-list-item.hbs] */
+
 .q-post-list-item {
-  transition: background-color var(--duration-quickest), box-shadow var(--duration-quickest);
+  transition: background-color var(--duration-quickest),
+    box-shadow var(--duration-quickest);
   margin: var(--gap-lg) 0;
   border: 1.5px solid var(--grey-color);
   border-radius: var(--gap-xs);
 }
 
 .q-post-list-item:hover {
-  transition: background-color var(--duration-quickest), box-shadow var(--duration-quickest);
+  transition: background-color var(--duration-quickest),
+    box-shadow var(--duration-quickest);
   background-color: var(--background-color-secondary);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 6px;
 }
@@ -56,9 +60,10 @@
 }
 
 /*
- * Adjust the grid format to desktop size
- * Show the reading time
- * Align the title to the left
+ * Media queries for the post items on the index page
+ * 1) Adjust the grid format to desktop size
+ * 2) Show the reading time
+ * 3) Align the title to the left
  */
 @media (min-width: 1000px) {
   .q-post-list-item-inner {
@@ -85,4 +90,34 @@
     justify-content: flex-start;
     text-align: left;
   }
+}
+
+/* Styles for the post - site [/post.hbs] */
+.q-post-article-meta {
+  margin-top: var(--gap-xl);
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+.q-post-article-meta-publishdate,
+.q-post-article-meta-readingtime {
+  font-size: var(--text-size-sm);
+  color: var(--text-color-primary);
+}
+
+.q-post-article-tags {
+  margin-bottom: var(--gap-xxl);
+  color: var(--text-color-primary);
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--text-size-sm);
+  text-align: center;
+}
+
+.q-post-article-title {
+  text-align: center;
+  font-size: var(--text-size-xxl);
+}
+
+.q-post-article-excerpt {
+  color: var(--text-color-primary);
 }

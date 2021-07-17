@@ -7,7 +7,12 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Merriweather', serif;
   color: var(--text-color-primary);
 }
@@ -15,7 +20,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: var(--text-size-xxl);
 }
-
 
 p {
   font-size: var(--text-size-md);
@@ -41,7 +45,8 @@ img {
 }
 
 span,
-li {
+li,
+time {
   font-family: 'Lora', sans-serif;
   color: var(--text-color-secondary);
   font-size: var(--text-size-md);

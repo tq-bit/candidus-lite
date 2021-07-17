@@ -1,13 +1,25 @@
-{{!< default}}
+{{!< default}} {{!-- The tag above means: insert everything in this file into the {body} tag of the default.hbs template --}} {{#post}} {{!-- Everything inside the #post block pulls data from the post
+    --}} <article class="q-post-article">
+    <header class="q-post-article-header">
 
-{{!-- The tag above means: insert everything in this file
-into the {body} tag of the default.hbs template --}}
+        <section class="q-post-article-meta">
+            <time class="q-post-article-meta-publishdate" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+            <span class="q-post-article-meta-readingtime"><span class="bull">&bull;</span> {{reading_time}}</span>
+        </section>
+        <h1 class="q-post-article-title">{{title}}</h1>
+        <section class="q-post-article-tags">
+            Published under {{tags}}
+        </section>
 
+        {{#if custom_excerpt}}
+        <p class="q-post-article-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
 
-{{#post}}
-{{!-- Everything inside the #post block pulls data from the post --}}
+    </header>
 
-<article class="article {{post_class}}">
+    </article>
+
+    <!-- <article class="article {{post_class}}">
 
     <header class="article-header gh-canvas">
 
@@ -78,9 +90,9 @@ into the {body} tag of the default.hbs template --}}
     </section>
     --}}
 
-</article>
+</article> -->
 
-{{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
+    <!-- {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
 {{#unless @member}}
 <section class="footer-cta">
     <div class="inner">
@@ -93,28 +105,36 @@ into the {body} tag of the default.hbs template --}}
         making the form validation and submission much simpler. --}}
     </div>
 </section>
-{{/unless}}
+{{/unless}} -->
 
 
-{{!-- Read more links, just above the footer --}}
-<aside class="read-more-wrap">
-    <div class="read-more inner">
+    {{!-- Read more links, just above the footer --}}
+    <aside class="read-more-wrap">
+        <div class="read-more inner">
 
-        {{!-- The {#get} helper below fetches some of the latest posts here
-        so that people have something else to read when they finish this one.
+            {{!-- The {#get} helper below fetches some of the latest posts here
+            so that people have something else to read when they finish this one.
 
-        This query gets the latest 3 posts on the site, but adds a filter to
-        exclude the post we're currently on from being included. --}}
+            This query gets the latest 3 posts on the site, but adds a filter to
+            exclude the post we're currently on from being included. --}}
 
-        {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
+            {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
             {{#if more_posts}}
-                {{#foreach more_posts}}
-                    {{> "post-card"}}
-                {{/foreach}}
+            {{#foreach more_posts}}
+            {{> "post-card"}}
+            {{/foreach}}
             {{/if}}
-        {{/get}}
+            {{/get}}
 
-    </div>
-</aside>
+        </div>
+    </aside>
 
-{{/post}}
+    {{/post}}
+
+    <!-- Get rid of the commata -->
+    <script>
+        (function () {
+            const tags = document.querySelector('.q-post-article-tags');
+            console.log(tags.innerHTML);
+        })
+    </script>
