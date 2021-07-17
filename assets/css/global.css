@@ -22,6 +22,14 @@ h1 {
   font-size: var(--text-size-xxl);
 }
 
+h2 {
+  font-size: var(--text-size-xl)
+}
+
+h3 {
+  font-size: var(--text-size-lg)
+}
+
 p {
   font-size: var(--text-size-md);
   color: var(--text-color-secondary);
@@ -39,6 +47,12 @@ blockquote {
   color: var(--text-color-secondary);
 }
 
+figcaption {
+  color: var(--text-color-primary);
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
 img {
   max-width: 100% !important;
   height: auto;
@@ -50,6 +64,9 @@ time {
   font-family: 'Lora', sans-serif;
   color: var(--text-color-secondary);
   font-size: var(--text-size-md);
+  line-height: var(--gap-xl);
+  margin-top: var(--gap-sm);
+  margin-bottom: var(--gap-sm);
 }
 
 a {
@@ -75,7 +92,7 @@ ul {
 hr {
   border: 0.5px solid var(--grey-color);
   margin: auto;
-  margin-bottom: var(--gap-xxl);
+  margin: var(--gap-xxl) auto;
   width: 80%;
 }
 

@@ -11,7 +11,7 @@
 .kg-bookmark-container {
   transition: background-color var(--duration-quickest),
     box-shadow var(--duration-quickest);
-  margin: var(--gap-xl) 0;
+  margin: var(--gap-xl) 0 var(--gap-md);
   display: flex;
   flex-direction: row;
   border-radius: var(--gap-sm);
@@ -32,7 +32,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 15px;
+  padding: 10px;
   width: 100%;
   height: auto;
 }
@@ -42,7 +42,7 @@
 }
 
 .kg-bookmark-description {
-  margin: var(--gap-md) 0;
+  margin: var(--gap-sm) 0;
   color: var(--text-color-primary);
   max-height: var(--el-size-sm);
   overflow-y: auto;

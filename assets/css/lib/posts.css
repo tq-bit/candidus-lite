@@ -93,10 +93,20 @@
 }
 
 /* Styles for the post - site [/post.hbs] */
-
 .q-post-article {
   position: relative;
 }
+
+.q-post-article-content > ul {
+  list-style: circle;
+  padding-left: 20px;
+}
+
+.q-post-article-header-image {
+  width: 100%;
+  height: auto;
+}
+
 .q-post-article-meta {
   margin-top: var(--gap-xl);
   font-family: 'Open Sans', sans-serif;
@@ -110,7 +120,7 @@
 }
 
 .q-post-article-tags {
-  margin-bottom: var(--gap-xxl);
+  margin: var(--gap-lg) 0;
   color: var(--text-color-primary);
   font-family: 'Open Sans', sans-serif;
   font-size: var(--text-size-sm);
@@ -129,4 +139,3 @@
 .q-post-article-content > img {
   width: 100% !important;
 }
-

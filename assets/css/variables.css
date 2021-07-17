@@ -50,7 +50,7 @@
   --gap-sm: 0.5rem;
   --gap-md: 0.75rem;
   --gap-lg: 1rem;
-  --gap-xl: 1.25rem;
+  --gap-xl: 1.5rem;
   --gap-xxl: 2rem;
   --gap-max: 3.5rem;
 
@@ -59,8 +59,8 @@
   --text-size-xs: 0.75rem;
   --text-size-sm: 0.90rem;
   --text-size-md: 1.05rem;
-  --text-size-lg: 1.25rem;
-  --text-size-xl: 1.5rem;
+  --text-size-lg: 1.35rem;
+  --text-size-xl: 1.65rem;
   --text-size-xxl: 2.25rem;
 
 

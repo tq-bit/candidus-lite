@@ -1,11 +1,9 @@
-{{!< default}} {{!-- The tag above means: insert everything in this file into the {body} tag of the default.hbs template --}} {{#post}} {{!-- Everything inside the #post block pulls data from the post
-    --}}
-    <article class="q-post-article">
-    <header class="q-post-article-header">
-
+{{!< default}} {{!-- The tag above means: insert everything in this file into the {body} tag of the default.hbs template --}} {{#post}} <article class="q-post-article">
+    <header class="q-post-article-header" >
+        <img class="q-post-article-header-image" src="{{img_url feature_image}}" alt="">
         <section class="q-post-article-meta">
-            <time class="q-post-article-meta-publishdate" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-            <span class="q-post-article-meta-readingtime"><span class="bull">&bull;</span> {{reading_time}}</span>
+            <time class="q-post-article-meta-publishdate" datetime="{{date format=" YYYY-MM-DD"}}">{{date}}</time>
+            <span class="q-post-article-meta-readingtime"><span class="bull">⚛</span> {{reading_time}}</span>
         </section>
         <h1 class="q-post-article-title">{{title}}</h1>
 
@@ -18,7 +16,7 @@
         </section>
     </header>
 
-    <hr/>
+    <hr />
 
     <section class="q-post-article-content">
         {{content}}
@@ -45,7 +43,7 @@
     {{/if}} -->
 
     <!-- Article byline -->
-<!--         <div class="article-byline">
+    <!--         <div class="article-byline">
             <section class="article-byline-content">
                 <ul class="author-list">
                     {{#foreach authors}}
@@ -64,36 +62,13 @@
                     <h4 class="author-name">{{authors}}</h4>
                     <div class="byline-meta-content">
                         <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                        <span class="byline-reading-time"><span class="bull">⚛</span> {{reading_time}}</span>
                     </div>
                 </div>
             </section>
         </div> -->
 
     </article>
-
-    <article class="article {{post_class}}">
-
-    <header class="article-header gh-canvas">
-
-
-
-
-
-
-
-
-    </header>
-
-
-
-    {{!--
-    <section class="article-comments gh-canvas">
-        If you want to embed comments, this is a good place to paste your code!
-    </section>
-    --}}
-
-</article>
 
     <!-- {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
 {{#unless @member}}
@@ -110,6 +85,7 @@
 </section>
 {{/unless}} -->
 
+<hr />
 
     {{!-- Read more links, just above the footer --}}
     <aside class="read-more-wrap">
@@ -124,7 +100,7 @@
             {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
             {{#if more_posts}}
             {{#foreach more_posts}}
-            {{> "post-card"}}
+            {{> "post-list-item"}}
             {{/foreach}}
             {{/if}}
             {{/get}}
@@ -133,11 +109,3 @@
     </aside>
 
     {{/post}}
-
-    <!-- Get rid of the commata -->
-    <script>
-        (function () {
-            const tags = document.querySelector('.q-post-article-tags');
-            console.log(tags.innerHTML);
-        })
-    </script>
