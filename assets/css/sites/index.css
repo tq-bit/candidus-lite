@@ -30,11 +30,9 @@
   position: relative;
 }
 
-
-
 .q-index-content-search-icon {
   position: absolute;
-  padding: var(--gap-sm);
+  padding: 0 var(--gap-sm);
   font-size: var(--text-size-md);
 }
 
