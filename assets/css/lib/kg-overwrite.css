@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: row;
   border-radius: var(--gap-sm);
-  border: 2px solid var(--grey-color);
+  border: 1.95px solid var(--grey-color);
   min-height: var(--el-size-md);
 }
 

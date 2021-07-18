@@ -32,8 +32,9 @@
 
 .q-index-content-search-icon {
   position: absolute;
-  padding: 0 var(--gap-sm);
-  font-size: var(--text-size-md);
+  padding: var(--gap-xxs) var(--gap-sm);
+  height: var(--el-size-xxs);
+  width: var(--el-size-xxs);
 }
 
 .q-index-content-search-input {
@@ -43,7 +44,7 @@
   padding: var(--gap-sm) var(--gap-md);
   padding-left: var(--gap-xxl);
   font-size: var(--text-size-md);
-  border: 2px solid var(--grey-color);
+  border: 1.95px solid var(--grey-color);
   border-radius: var(--gap-xs);
   background-color: var(--background-color-secondary);
   transition: border-radius var(--duration-quick), width var(--duration-quick);
@@ -52,9 +53,8 @@
 .q-index-content-search-input:focus {
   outline: none;
   width: var(--el-size-xl);
-  border: 2px solid var(--accent-color-secondary);
-  border-radius: var(--gap-max);
-  transition: border-radius var(--duration-quick), width var(--duration-quick);
+  border: 1.95px solid var(--accent-color-secondary);
+  transition: width var(--duration-quick);
 }
 
 @media (min-width: 1000px) {
