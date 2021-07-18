@@ -2,39 +2,6 @@
  * Includes styles for post items, such as post lists of post cards.
  */
 
-/*
- * Media queries for the post items on the index page
- * 1) Adjust the grid format to desktop size
- * 2) Show the reading time
- * 3) Align the title to the left
- */
-@media (min-width: 1000px) {
-  .q-post-list-item-inner {
-    grid-template-columns: 15% 60% 15%;
-  }
-  .q-post-list-item-tag {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .q-post-list-item-tag-inner {
-    padding: var(--gap-xs) var(--gap-sm);
-    border-radius: var(--gap-max);
-    background-color: var(--accent-color-primary);
-    color: var(--white-color);
-    font-family: 'Open Sans', sans-serif;
-    font-size: var(--text-size-xxs);
-    text-align: center;
-  }
-
-  .q-post-list-item-title {
-    justify-content: flex-start;
-    text-align: left;
-  }
-}
-
 /* Post items on the index page [/partials/post-list-item.hbs] */
 .q-post-list-item {
   transition: background-color var(--duration-quickest),
@@ -82,13 +49,6 @@
   text-align: left;
   color: var(--accent-color-primary);
   font-size: var(--text-size-sm);
-}
-
-/* Media queries */
-@media (min-width: 800px) {
-  .q-post-list-item-inner {
-    grid-template-columns: 80% 20%;
-  }
 }
 
 /* Styles for the psot card [/partials/post-card-item] */
@@ -239,6 +199,53 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 .q-post-card-body-excerpt {
   font-size: var(--text-size-sm);
   line-height: var(--gap-xl);
+}
+
+/* Media queries */
+
+/* Queries for [/post.hbs]  */
+/* Queries for [/partials/post-list-item.hbs]  */
+/* Queries for [/partials/post-card-item]  */
+
+@media (min-width: 800px) {
+  /* Queries for [/partials/post-list-item.hbs]  */
+  .q-post-list-item-inner {
+    grid-template-columns: 80% 20%;
+  }
+}
+/*
+ * Media queries for the post items on the index page
+ * 1) Adjust the grid format to desktop size
+ * 2) Show the reading time
+ * 3) Align the title to the left
+ */
+
+@media (min-width: 1000px) {
+  /* Queries for [/partials/post-list-item.hbs]  */
+  .q-post-list-item-inner {
+    grid-template-columns: 15% 60% 15%;
+  }
+  .q-post-list-item-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .q-post-list-item-tag-inner {
+    padding: var(--gap-xs) var(--gap-sm);
+    border-radius: var(--gap-max);
+    background-color: var(--accent-color-primary);
+    color: var(--white-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--text-size-xxs);
+    text-align: center;
+  }
+
+  .q-post-list-item-title {
+    justify-content: flex-start;
+    text-align: left;
+  }
 }
 
 @media (min-width: 1200px) {
