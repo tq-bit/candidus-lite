@@ -15,7 +15,7 @@
   transition: background-color var(--duration-quickest),
     box-shadow var(--duration-quickest);
   background-color: var(--background-color-secondary);
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 6px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 6px;
 }
 
 .q-post-list-item-inner {
