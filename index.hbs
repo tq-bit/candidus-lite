@@ -14,9 +14,11 @@ into the {body} of the default.hbs template }}
 <main class='q-index-content'>
     <div class="q-index-content-inner">
         <div class="q-index-content-search">
-            <span class="q-index-content-search-icon">🔍</span>
+            <span class="q-index-content-search-icon">
+              {{> "icons/search"}}
+            </span>
             <label for="post-search-input" class="hidden">Search for an article</label>
-            <input placeholder="Press ctrl + k to focus" id="post-search-input" type="text" class="q-index-content-search-input" >
+            <input placeholder="Search [ctrl + k]" id="post-search-input" type="text" class="q-index-content-search-input" >
         </div>
         <div class="q-post-list">
             {{#foreach posts}}
