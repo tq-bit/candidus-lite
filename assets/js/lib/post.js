@@ -4,6 +4,7 @@
  * 2) Focus the searchbar when pressing CTRL + K
  * 3) Monitor reading progress
  * 4) Toggle the post navbar when user scrolls down in the post content
+ * 5) Hide a part of the excerpt in the post card
  */
 
 // 1)
@@ -66,6 +67,15 @@ const monitorPostNavbar = (domPostReadingProgressBar, duration) => {
   if (readingProgress <= 0.05) {
     hidePostNavbar(duration);
   }
+}
+
+// 5)
+const hidePostCardExcerpts = (domPostExcerptItems) => {
+  domPostExcerptItems.forEach(excerptItem => {
+    const newText = excerptItem.innerText.split(' ').splice(0, 20);
+    excerptItem.innerText = [...newText, '...'].join(' ')
+    console.log(newText)
+  })
 }
 
 hidePostNavbar(0)

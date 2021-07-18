@@ -2,6 +2,39 @@
  * Includes styles for post items, such as post lists of post cards.
  */
 
+/*
+ * Media queries for the post items on the index page
+ * 1) Adjust the grid format to desktop size
+ * 2) Show the reading time
+ * 3) Align the title to the left
+ */
+@media (min-width: 1000px) {
+  .q-post-list-item-inner {
+    grid-template-columns: 15% 60% 15%;
+  }
+  .q-post-list-item-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .q-post-list-item-tag-inner {
+    padding: var(--gap-xs) var(--gap-sm);
+    border-radius: var(--gap-max);
+    background-color: var(--accent-color-primary);
+    color: var(--white-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--text-size-xxs);
+    text-align: center;
+  }
+
+  .q-post-list-item-title {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
 /* Post items on the index page [/partials/post-list-item.hbs] */
 .q-post-list-item {
   transition: background-color var(--duration-quickest),
@@ -58,37 +91,9 @@
   }
 }
 
-/*
- * Media queries for the post items on the index page
- * 1) Adjust the grid format to desktop size
- * 2) Show the reading time
- * 3) Align the title to the left
- */
-@media (min-width: 1000px) {
-  .q-post-list-item-inner {
-    grid-template-columns: 15% 60% 15%;
-  }
-  .q-post-list-item-tag {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .q-post-list-item-tag-inner {
-    padding: var(--gap-xs) var(--gap-sm);
-    border-radius: var(--gap-max);
-    background-color: var(--accent-color-primary);
-    color: var(--white-color);
-    font-family: 'Open Sans', sans-serif;
-    font-size: var(--text-size-xxs);
-    text-align: center;
-  }
-
-  .q-post-list-item-title {
-    justify-content: flex-start;
-    text-align: left;
-  }
+/* Styles for the psot card [/partials/post-card-item] */
+.q-post-card-footer {
+  display: flex;
 }
 
 /* Styles for the post - site [/post.hbs] */
@@ -179,4 +184,55 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 
 .q-post-article-content > img {
   width: 100% !important;
+}
+
+/* Post read more section */
+.q-post-card {
+  margin: var(--gap-sm);
+}
+
+.q-post-card-inner {
+  background: var(--background-color-secondary);
+  height: fit-content;
+  border: 1.5px solid var(--grey-color);
+  border-radius: var(--gap-xs);
+}
+
+.q-post-card-title,
+.q-post-card-body {
+  padding: 0 var(--gap-lg);
+}
+
+.q-post-read-more, .q-post-read-more-inner {
+  height: fit-content;
+}
+
+.q-post-read-more-inner {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: var(--gap-md);
+}
+
+.q-post-card-title {
+  font-size: var(--text-size-md);
+}
+
+.q-post-card-body-excerpt {
+  font-size: var(--text-size-sm);
+}
+
+@media (min-width: 1200px) {
+  .q-post-read-more-inner {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .q-post-read-more-inner {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: var(--gap-md);
+  }
 }

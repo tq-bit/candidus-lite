@@ -14,6 +14,9 @@ const domPostContentArea = document.querySelector('.q-post-article-content') || 
 const domPostReadingProgressBar = document.querySelector('#q-reading-progress') || null;
 const domPostNavbar = document.querySelector('#q-post-navbar') || null;
 
+// DOM elements specifically in ./partials/post-card-item.hbs
+const domPostCardItemExcerpts = document.querySelectorAll('.q-post-card-body-excerpt')
+
 // Define global, dynamic variables
 let scrollerObserver = {
   isScrolling: false,
@@ -65,6 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Execute post related functions
   if (domPostContentArea) {
     monitorReadingProgress(domPostContentArea, domPostReadingProgressBar);
+  }
+
+  // ./partials/post-card-item.hbs
+  // Hide a part of the excerpt
+  if(domPostCardItemExcerpts) {
+    hidePostCardExcerpts(domPostCardItemExcerpts);
   }
 });
 

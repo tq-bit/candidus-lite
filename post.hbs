@@ -34,8 +34,8 @@
 
     <hr />
 
-    <aside class="read-more-wrap">
-        <div class="read-more inner">
+    <aside class="q-post-read-more">
+        <div class="q-post-read-more-inner">
 
             {{!-- The {#get} helper below fetches some of the latest posts here
             so that people have something else to read when they finish this one.
@@ -46,7 +46,7 @@
             {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
             {{#if more_posts}}
             {{#foreach more_posts}}
-            {{> "post-list-item"}}
+            {{> "post-card-item"}}
             {{/foreach}}
             {{/if}}
             {{/get}}
