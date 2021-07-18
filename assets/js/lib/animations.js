@@ -18,7 +18,9 @@ const animateRotateLogo = () => {
 /**
  * Post animations
  * 1) Hide posts on page load
- * 1) Slide in posts on load
+ * 2) Slide in posts on load
+ * 3) Hide post cards on page load
+ * 4) Slide in post cards when user reaches end of page
  */
 const animateHidePosts = () => {
   anime({
@@ -39,6 +41,24 @@ const animateSlideInPosts = () => {
   });
 }
 
+const animateHidePostCards = () => {
+  anime({
+    targets: '.q-post-card',
+    translateY: '25px',
+    opacity: 0,
+    duration: 0,
+  });
+}
+
+const animateSlideInPostCards = (duration) => {
+  anime({
+    targets: '.q-post-card',
+    translateY: 0,
+    delay: anime.stagger(150, { start: 450 }), // increase delay by 100ms for each elements.
+    opacity: 1,
+    duration: duration,
+  });
+}
 
 /**
  * Sidebar animations

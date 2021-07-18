@@ -44,6 +44,7 @@ setInterval(() => {
     // ./posts.hbs
     if(domPostContentArea) {
       monitorPostNavbar(domPostReadingProgressBar, scrollerObserver.checkInterval);
+      monitorShowReadMorePostCards(domPostReadingProgressBar, 1000)
     }
   }
 }, scrollerObserver.checkInterval)
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Execute post related functions
   if (domPostContentArea) {
     monitorReadingProgress(domPostContentArea, domPostReadingProgressBar);
+    animateHidePostCards()
   }
 
   // ./partials/post-card-item.hbs

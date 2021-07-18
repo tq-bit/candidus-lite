@@ -4,7 +4,8 @@
  * 2) Focus the searchbar when pressing CTRL + K
  * 3) Monitor reading progress
  * 4) Toggle the post navbar when user scrolls down in the post content
- * 5) Hide a part of the excerpt in the post card
+ * 5) Show the post cards once user scrolls below 95% of the post
+ * 6) Hide a part of the excerpt in the post card
  */
 
 // 1)
@@ -69,7 +70,15 @@ const monitorPostNavbar = (domPostReadingProgressBar, duration) => {
   }
 }
 
-// 5)
+const monitorShowReadMorePostCards = (domPostReadingProgressBar, duration) => {
+  const readingProgress = domPostReadingProgressBar.value
+
+  if (readingProgress >= 0.98) {
+    animateSlideInPostCards(duration);
+  }
+}
+
+// 6)
 const hidePostCardExcerpts = (domPostExcerptItems) => {
   domPostExcerptItems.forEach(excerptItem => {
     const newText = excerptItem.innerText.split(' ').splice(0, 20);
