@@ -4,6 +4,7 @@
  */
 const animateRotateLogo = () => {
   const animationDuration = 500;
+  // @ts-ignore
   anime({
     targets: '.q-navbar-logo',
     rotate: {
@@ -14,7 +15,6 @@ const animateRotateLogo = () => {
   })
 }
 
-
 /**
  * Post animations
  * 1) Hide posts on page load
@@ -23,6 +23,7 @@ const animateRotateLogo = () => {
  * 4) Slide in post cards when user reaches end of page
  */
 const animateHidePosts = () => {
+  // @ts-ignore
   anime({
     targets: '.q-post-list-item',
     translateY: '25px',
@@ -32,9 +33,11 @@ const animateHidePosts = () => {
 }
 
 const animateSlideInPosts = () => {
+  // @ts-ignore
   anime({
     targets: '.q-post-list-item',
     translateY: 0,
+    // @ts-ignore
     delay: anime.stagger(50, { start: 550 }), // increase delay by 100ms for each elements.
     opacity: 1,
     duration: 1000,
@@ -42,6 +45,7 @@ const animateSlideInPosts = () => {
 }
 
 const animateHidePostCards = () => {
+  // @ts-ignore
   anime({
     targets: '.q-post-card',
     translateY: '25px',
@@ -51,9 +55,11 @@ const animateHidePostCards = () => {
 }
 
 const animateSlideInPostCards = (duration) => {
+  // @ts-ignore
   anime({
     targets: '.q-post-card',
     translateY: 0,
+    // @ts-ignore
     delay: anime.stagger(150, { start: 450 }), // increase delay by 100ms for each elements.
     opacity: 1,
     duration: duration,
@@ -66,6 +72,7 @@ const animateSlideInPostCards = (duration) => {
  * 2) animateShowSidebar
  */
 const animateHideSidebar = (duration) => {
+  // @ts-ignore
   anime({
     targets: '#q-sidebar',
     translateY: '-100%',
@@ -73,11 +80,14 @@ const animateHideSidebar = (duration) => {
     easing: 'easeInOutSine',
     duration
   })
+  // @ts-ignore
   setTimeout(() => domSidebar.classList.add('hidden'), duration)
 }
 
 const animateShowSidebar = (duration) => {
+  // @ts-ignore
   domSidebar.classList.remove('hidden')
+  // @ts-ignore
   anime({
     targets: '#q-sidebar',
     translateY: '0',
@@ -94,6 +104,7 @@ const animateShowSidebar = (duration) => {
  */
 
 const showPostNavbar = (duration) => {
+  // @ts-ignore
   anime({
     targets: '#q-post-navbar',
     translateY: '0',
@@ -103,6 +114,7 @@ const showPostNavbar = (duration) => {
 }
 
 const hidePostNavbar = (duration) => {
+  // @ts-ignore
   anime({
     targets: '#q-post-navbar',
     translateY: '-60px',
