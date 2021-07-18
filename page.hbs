@@ -3,8 +3,25 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} tag of the default.hbs template --}}
 
-
 {{#post}}
+
+<img class="q-post-article-header-image" src="{{img_url feature_image}}" loading="lazy">
+<article class="q-post-article">
+    <header class="q-post-article-header">
+        <h1 class="q-post-article-title">{{title}}</h1>
+    </header>
+
+    <hr />
+
+    <section class="q-post-article-content">
+        {{content}}
+    </section>
+
+    </article>
+
+    {{/post}}
+
+<!-- {{#post}}
 {{!-- Everything inside the #post block pulls data from the page --}}
 
 <article class="article {{post_class}}">
@@ -40,4 +57,4 @@ into the {body} tag of the default.hbs template --}}
 
 </article>
 
-{{/post}}
+{{/post}} -->

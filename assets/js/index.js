@@ -42,7 +42,7 @@ setInterval(() => {
 
     // Attach the scroll events
     // ./posts.hbs
-    if(domPostContentArea) {
+    if(domPostContentArea && domPostReadingProgressBar) {
       monitorPostNavbar(domPostReadingProgressBar, scrollerObserver.checkInterval);
       monitorShowReadMorePostCards(domPostReadingProgressBar, 1000)
     }
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ./post.hbs
   // Execute post related functions
-  if (domPostContentArea) {
+  if (domPostContentArea && domPostReadingProgressBar) {
     monitorReadingProgress(domPostContentArea, domPostReadingProgressBar);
     animateHidePostCards()
   }
