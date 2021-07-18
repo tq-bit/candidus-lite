@@ -194,8 +194,26 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 .q-post-card-inner {
   background: var(--background-color-secondary);
   height: fit-content;
-  border: 1.5px solid var(--grey-color);
+  border: 1.5px solid transparent;
   border-radius: var(--gap-xs);
+}
+
+.q-post-card-header-image {
+  position: relative;
+  height: fit-content;
+  width: 100%;
+  height: var(--el-size-md);
+}
+
+.q-post-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .q-post-card-title,
@@ -203,7 +221,8 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   padding: 0 var(--gap-lg);
 }
 
-.q-post-read-more, .q-post-read-more-inner {
+.q-post-read-more,
+.q-post-read-more-inner {
   height: fit-content;
 }
 
@@ -219,6 +238,7 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 
 .q-post-card-body-excerpt {
   font-size: var(--text-size-sm);
+  line-height: var(--gap-xl);
 }
 
 @media (min-width: 1200px) {

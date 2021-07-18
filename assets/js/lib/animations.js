@@ -38,7 +38,7 @@ const animateSlideInPosts = () => {
     targets: '.q-post-list-item',
     translateY: 0,
     // @ts-ignore
-    delay: anime.stagger(50, { start: 550 }), // increase delay by 100ms for each elements.
+    delay: anime.stagger(50, { start: 250 }), // increase delay by 100ms for each elements.
     opacity: 1,
     duration: 1000,
   });
@@ -60,7 +60,7 @@ const animateSlideInPostCards = (duration) => {
     targets: '.q-post-card',
     translateY: 0,
     // @ts-ignore
-    delay: anime.stagger(150, { start: 450 }), // increase delay by 100ms for each elements.
+    delay: anime.stagger(50, { start: 250 }), // increase delay by 100ms for each elements.
     opacity: 1,
     duration: duration,
   });
