@@ -20,7 +20,7 @@
   font-size: var(--text-size-lg);
   position: absolute;
   text-align: center;
-  color: var(--text-color-primary);
+  color: var(--white-color);
 }
 
 /* Searchbar styles */

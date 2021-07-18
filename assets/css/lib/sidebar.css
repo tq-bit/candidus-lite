@@ -5,7 +5,7 @@
   left: 0;
   width: 100vw;
   background-color: var(--background-color-primary);
-  opacity: 0.95;
+  opacity: 0.98;
   height: 100%;
   z-index: 20;
 }

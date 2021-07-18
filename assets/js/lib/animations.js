@@ -91,7 +91,7 @@ const animateShowSidebar = (duration) => {
   anime({
     targets: '#q-sidebar',
     translateY: '0',
-    opacity: 0.95,
+    opacity: 0.98,
     easing: 'easeInOutSine',
     duration
   })
