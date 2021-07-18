@@ -3,23 +3,13 @@
 into the {body} of the default.hbs template }}
 
 <div class='q-index-header'>
-
   {{#if @site.cover_image}}
     <div class="q-index-header-image" style="background-image: url('{{img_url @site.cover_image}}')"></div>
   {{/if}}
 
   <h2 class="q-index-header-title">
     {{@site.description}}
-  </>
-  <!-- <img class="site-header-cover"
-            srcset="{{img_url @site.cover_image size="s"}} 300w,
-                    {{img_url @site.cover_image size="m"}} 600w,
-                    {{img_url @site.cover_image size="l"}} 1000w,
-                    {{img_url @site.cover_image size="xl"}} 2000w"
-            sizes="100vw"
-            src="{{img_url @site.cover_image size="xl"}}"
-            alt="the title image of the website {{@site.title}}"
-        /> -->
+  </h2>
 </div>
 <main class='q-index-content'>
     <div class="q-index-content-inner">
@@ -38,20 +28,3 @@ into the {body} of the default.hbs template }}
         </div>
     </div>
 </main>
-<!--
-
-{{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
-    <div class="inner posts">
-
-        <div class="post-feed">
-            {{#foreach posts}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
-            {{/foreach}}
-        </div>
-
-    </div>
-</main> -->
