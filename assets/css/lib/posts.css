@@ -250,7 +250,6 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 
 @media (min-width: 1200px) {
   .q-post-read-more-inner {
-    display: grid;
     grid-template-columns: auto auto;
     grid-gap: 5%;
   }
@@ -258,7 +257,6 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 
 @media (min-width: 1400px) {
   .q-post-read-more-inner {
-    display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: var(--gap-md);
   }
