@@ -151,6 +151,10 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   margin: var(--gap-sm);
 }
 
+.q-post-card-inner:hover h4 {
+  color: var(--accent-color-primary);
+}
+
 .q-post-card-inner {
   background: var(--background-color-secondary);
   height: fit-content;
@@ -196,17 +200,22 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   font-size: var(--text-size-md);
 }
 
+.q-post-card-item-tag-inner {
+  padding: var(--gap-xs) var(--gap-md);
+  border-radius: var(--gap-max);
+  border: 1px solid var(--accent-color-primary);
+  color: var(--accent-color-primary);
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--text-size-xs);
+  text-align: center;
+}
+
 .q-post-card-body-excerpt {
   font-size: var(--text-size-sm);
   line-height: var(--gap-xl);
 }
 
 /* Media queries */
-
-/* Queries for [/post.hbs]  */
-/* Queries for [/partials/post-list-item.hbs]  */
-/* Queries for [/partials/post-card-item]  */
-
 @media (min-width: 800px) {
   /* Queries for [/partials/post-list-item.hbs]  */
   .q-post-list-item-inner {
@@ -233,10 +242,10 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   }
 
   .q-post-list-item-tag-inner {
-    padding: var(--gap-xs) var(--gap-sm);
+    padding: var(--gap-xs) var(--gap-md);
     border-radius: var(--gap-max);
-    background-color: var(--accent-color-primary);
-    color: var(--white-color);
+    border: 1px solid var(--accent-color-primary);
+    color: var(--accent-color-primary);
     font-family: 'Open Sans', sans-serif;
     font-size: var(--text-size-xxs);
     text-align: center;

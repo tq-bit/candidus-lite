@@ -1,5 +1,6 @@
 * {
   box-sizing: content-box;
+  text-rendering: optimizeSpeed;
 }
 
 body {
