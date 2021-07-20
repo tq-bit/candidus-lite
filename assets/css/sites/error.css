@@ -1,0 +1,27 @@
+.q-error-content {
+  text-align: center;
+}
+
+.q-error-message-code {
+  font-family: 'Lora', sans-serif;;
+}
+
+.q-error-message-description {
+  font-size: var(--text-size-lg);
+  font-family: 'Open Sans', serif;
+}
+
+.q-error-message-link {
+  width: fit-content;
+  display: block;
+  margin: var(--gap-sm) auto;
+  color: var(--accent-color-secondary)
+}
+
+.q-error-button {
+  padding: var(--gap-sm) var(--gap-lg);
+  border-radius: var(--gap-sm);
+  border: none;
+  color: var(--white-color);
+  background-color: var(--accent-color-secondary);
+}

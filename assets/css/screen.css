@@ -7,6 +7,7 @@
 @import 'global.css';
 @import 'sites/default.css';
 @import 'sites/index.css';
+@import 'sites/error.css';
 @import 'sites/tag.css';
 @import 'lib/index.css';
 
@@ -18,7 +19,8 @@
 .q-post-article,
 .q-post-read-more,
 .q-tag-content,
-.q-tag-header-wrapper {
+.q-tag-header-wrapper,
+.q-error-content-inner {
   width: var(--content-width-screen-xs);
   display: block;
   margin: auto;
@@ -49,7 +51,8 @@
   .q-post-read-more,
   .q-tag-content,
   .q-footer-inner,
-  .q-tag-header-wrapper {
+  .q-tag-header-wrapper,
+  .q-error-content-inner {
     width: var(--content-width-screen-md);
   }
 }
@@ -62,7 +65,8 @@
   .q-post-read-more,
   .q-tag-content,
   .q-footer-inner,
-  .q-tag-header-wrapper {
+  .q-tag-header-wrapper,
+  .q-error-content-inner {
     grid-template-columns: 50% 50%;
     width: var(--content-width-screen-lg);
   }
@@ -108,7 +112,8 @@
   .q-index-content,
   .q-post-article,
   .q-footer-inner,
-  .q-tag-header-wrapper {
+  .q-tag-header-wrapper,
+  .q-error-content-inner {
     width: var(--content-width-screen-xl);
   }
 }
@@ -119,7 +124,8 @@
   .q-index-content,
   .q-post-article,
   .q-footer-inner,
-  .q-tag-header-wrapper {
+  .q-tag-header-wrapper,
+  .q-error-content-inner {
     width: var(--content-width-screen-xxl);
   }
 

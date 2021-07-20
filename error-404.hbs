@@ -12,12 +12,14 @@ Keep this template as lightweight as you can!
 
 --}}
 
-<section class="outer error-content">
-    <div class="inner">
-        <section class="error-message">
-            <h1 class="error-code">{{statusCode}}</h1>
-            <p class="error-description">{{message}}</p>
-            <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
+<section class="q-error-content">
+    <div class="q-error-content-inner">
+        <section class="q-error-message">
+            <h1 class="q-error-message-code">It appears you are lost</h1>
+            <img src="{{asset "/img/404-error-not-found.png"}}" alt="" srcset="">
+            <p class="q-error-message-description">Let's get you back on track</p>
+            <a class="q-error-message-link q-error-button" href="#" onclick="window.history.back()">To the previous page</a>
+            <a class="q-error-message-link" href="{{@site.url}}">To the front page</a>
         </section>
     </div>
 </section>
