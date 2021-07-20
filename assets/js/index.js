@@ -29,7 +29,6 @@ domThemeButton.forEach(themeButton => {
 })
 domNavbarToggleButton.addEventListener('click', () => toggleSidebar());
 domNavbarCloseButton.addEventListener('click', () => toggleSidebar());
-domSiteLogo.addEventListener('mouseover', () => animateRotateLogo());
 
 // Creates a custom scroll check event
 document.addEventListener('scroll', () => {

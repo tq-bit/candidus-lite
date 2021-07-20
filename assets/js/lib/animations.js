@@ -1,21 +1,4 @@
 /**
- * Navbar animations
- * 1) animateRotateLogo
- */
-const animateRotateLogo = () => {
-  const animationDuration = 500;
-  // @ts-ignore
-  anime({
-    targets: '.q-navbar-logo',
-    rotate: {
-      value: 180,
-      duration: animationDuration,
-      easing: 'easeInOutQuad'
-    }
-  })
-}
-
-/**
  * Post animations
  * 1) Hide posts on page load
  * 2) Slide in posts on load
