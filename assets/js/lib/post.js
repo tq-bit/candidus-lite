@@ -82,8 +82,7 @@ const monitorShowReadMorePostCards = (domPostReadingProgressBar, duration) => {
 const hidePostCardExcerpts = (domPostExcerptItems) => {
   domPostExcerptItems.forEach(excerptItem => {
     const newText = excerptItem.innerText.split(' ').splice(0, 20);
-    excerptItem.innerText = [...newText, '...'].join(' ')
-    console.log(newText)
+    excerptItem.innerText = [...newText, '...'].join(' ');
   })
 }
 

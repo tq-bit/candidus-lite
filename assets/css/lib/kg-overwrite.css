@@ -1,6 +1,7 @@
 /* Overwrite some of the templates that are provided by ghost
  * 1) Card for images in posts and sites
  * 2) Card for embedded items, links & bookmarks
+ * 3) Gallery styles
  */
 .kg-card.kg-bookmark-card,
 .kg-card.kg-image-card.kg-width-wide,
@@ -82,6 +83,12 @@
   border-radius: 0 3px 3px 0;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+/* 3) TODO: add styles here */
+.kg-gallery-container, .kg-gallery-row, .kg-gallery-image {
+  display: block;
+  margin: auto
 }
 
 /* Show the thumbnail only for larger screens */
