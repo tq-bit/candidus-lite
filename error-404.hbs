@@ -23,17 +23,3 @@ Keep this template as lightweight as you can!
         </section>
     </div>
 </section>
-
-{{!-- Given that people landing on this page didn't find what they
-were looking for, let's give them some alternative stuff to read. --}}
-<aside class="read-more-wrap">
-    <div class="read-more inner">
-        {{#get "posts" include="authors" limit="3" as |more_posts|}}
-            {{#if more_posts}}
-                {{#foreach more_posts}}
-                    {{> "post-card"}}
-                {{/foreach}}
-            {{/if}}
-        {{/get}}
-    </div>
-</aside>

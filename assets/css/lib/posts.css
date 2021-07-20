@@ -142,10 +142,6 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   text-align: center;
 }
 
-.q-post-article-content > img {
-  width: 100% !important;
-}
-
 /* Post read more section */
 .q-post-card {
   margin: var(--gap-sm);
