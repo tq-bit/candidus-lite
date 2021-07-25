@@ -4,15 +4,15 @@ which templates loop over to generate a list of posts. }}
 <article class='q-post-list-item {{post_class}}'>
   <a href='{{url}}'>
     <div class='q-post-list-item-inner'>
-      {{#if primary_tag}}
-        {{#primary_tag}}
-          <div class='q-post-list-item-tag'>
+      <div class='q-post-list-item-tag'>
+        {{#if primary_tag}}
+          {{#primary_tag}}
             <span class='q-post-list-item-tag-inner'>
               {{name}}
             </span>
-          </div>
-        {{/primary_tag}}
-      {{/if}}
+          {{/primary_tag}}
+        {{/if}}
+      </div>
       <div class='q-post-list-item-title'>{{title}}</div>
       <div class='q-post-list-item-readingtime'>
         {{reading_time}}
