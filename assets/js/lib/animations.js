@@ -100,7 +100,7 @@ const hidePostNavbar = (duration) => {
   // @ts-ignore
   anime({
     targets: '#q-post-navbar',
-    translateY: '-60px',
+    translateY: '-120px',
     easing: 'easeInOutSine',
     duration
   })
