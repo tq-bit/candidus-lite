@@ -10,6 +10,10 @@
   padding: 0;
 }
 
+.kg-width-full{
+  cursor: pointer;
+}
+
 .kg-bookmark-container {
   transition: background-color var(--duration-quickest),
     box-shadow var(--duration-quickest);
