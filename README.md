@@ -1,25 +1,17 @@
-# TODO List till beta
+# Candidus Lite Ghost Theme
 
-## Done
-- [x] Build the tags page
-- [x] Build the 404 error page
-- [x] Build the standard error page
-- [x] Implement the full-size images for posts -> Solution: Zoom for large images
+Candidus Lite is an Open-Source theme for the Ghost CMS. It is built to be simple and fast, without making any comprimise in terms of user - and dev experience.
 
-## Todo
+## The idea behind the project
 
-### Image and gallery features
-- [ ] Implement the gallery element
-- [ ] Implement copying code to the clipboard
+I wanted to create a Ghost theme which has little overhead and feels like you're reading your favorite book or magazine on your phone. The reader should easily move between different parts of the blog without actively searching for navigation elements.
 
-### Coloring
-[ ] Include ghost accent color into theme
+That is also how the theme's files are structured. Every module has its dedicated place, from where it is bundled into a single Javascript file with the others when building.
 
-### Additional UI elements
-- [ ] Implement 'read more' feature for the index.hbs
-- [ ] Build the signup user form
-- [ ] Build the login user form
-- [ ] Build the login profile form
+Candidus translates to *clean* or *bright*. Compared to Google's Material design, it does not use a variety of grids or lighting, but only a few chosen core colors and layout styles.
 
-## Ideas
-[ ] Add 'read more' cards to the 404 page (careful with not hiding them with animate)
+## Demo
+
+I did not create a dedicated demo page yet, but actively use it on my personal blog:
+
+https://blog.q-bit.me/

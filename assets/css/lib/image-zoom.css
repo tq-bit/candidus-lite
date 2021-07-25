@@ -6,7 +6,6 @@
   box-shadow: var(--shadow-layer-dark);
   height: 100%;
   z-index: 20;
-  overflow-y: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,6 +30,10 @@
 
 .q-image-zoom-close-icon {
   cursor: pointer;
+}
+
+.q-image-zoom-body {
+  overflow-y: auto;
 }
 
 .q-image-zoom-img {
