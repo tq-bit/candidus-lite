@@ -76,4 +76,5 @@
 
   /* Custom variables */
   --shadow-layer: inset 9999px 9999px rgba(0,0,0, 0.15);
+  --shadow-layer-dark: inset 9999px 9999px rgba(0,0,0, 0.85);
 }
