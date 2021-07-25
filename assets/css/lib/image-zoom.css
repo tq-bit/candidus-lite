@@ -18,6 +18,19 @@
   width: 80vw;
   height: fit-content;
   max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.q-image-zoom-header {
+  height: var(--el-size-xs);
+  width: var(--el-size-xs);
+  padding: var(--gap-xs);
+}
+
+.q-image-zoom-close-icon {
+  cursor: pointer;
 }
 
 .q-image-zoom-img {

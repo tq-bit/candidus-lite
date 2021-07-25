@@ -17,8 +17,6 @@ const toggleImageZoom = (domPostImage) => {
     domImageZoomBody.appendChild(imageElement);
   }
 
-  // Then, append the image element
-
   if (isHidden) {
     animateShowImageZoom(animationDuration);
   } else {
