@@ -4,6 +4,7 @@
  * 2) Slide in posts on load
  * 3) Hide post cards on page load
  * 4) Slide in post cards when user reaches end of page
+ * 5)
  */
 const animateHidePosts = () => {
   // @ts-ignore
@@ -101,6 +102,38 @@ const hidePostNavbar = (duration) => {
   anime({
     targets: '#q-post-navbar',
     translateY: '-120px',
+    easing: 'easeInOutSine',
+    duration
+  })
+}
+
+const animateHideImageZoom = (duration) => {
+  // @ts-ignore
+  anime({
+    targets: '#q-image-zoom-wrapper',
+    height: '0%',
+    width: '0%',
+    top: '50%',
+    left: '50%',
+    opacity: 0,
+    easing: 'easeInOutSine',
+    duration
+  })
+  // @ts-ignore
+  setTimeout(() => domImageZoom.classList.add('hidden'), duration)
+}
+
+const animateShowImageZoom = (duration) => {
+  // @ts-ignore
+  domImageZoom.classList.remove('hidden')
+  // @ts-ignore
+  anime({
+    targets: '#q-image-zoom-wrapper',
+    height: '100%',
+    width: '100%',
+    top: '0',
+    left: '0',
+    opacity: 1,
     easing: 'easeInOutSine',
     duration
   })

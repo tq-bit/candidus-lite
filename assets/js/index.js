@@ -13,9 +13,13 @@ const domPostListItems = document.querySelectorAll('.q-post-list-item') || null;
 const domPostContentArea = document.querySelector('.q-post-article-content') || null;
 const domPostReadingProgressBar = document.querySelector('#q-reading-progress') || null;
 const domPostNavbar = document.querySelector('#q-post-navbar') || null;
+const domPostImages = document.querySelectorAll('.kg-width-full');
 
 // DOM elements specifically in ./partials/post-card-item.hbs
 const domPostCardItemExcerpts = document.querySelectorAll('.q-post-card-body-excerpt')
+
+// DOM Elements specifically in ./partials/image-zoom.hbs
+const domImageZoomCloseButton = document.querySelector('#q-image-zoom-close');
 
 // Define global, dynamic variables
 let scrollerObserver = {
@@ -41,7 +45,7 @@ setInterval(() => {
 
     // Attach the scroll events
     // ./posts.hbs
-    if(domPostContentArea && domPostReadingProgressBar) {
+    if (domPostContentArea && domPostReadingProgressBar) {
       monitorPostNavbar(domPostReadingProgressBar, scrollerObserver.checkInterval);
       monitorShowReadMorePostCards(domPostReadingProgressBar, 1000)
     }
@@ -69,11 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (domPostContentArea && domPostReadingProgressBar) {
     monitorReadingProgress(domPostContentArea, domPostReadingProgressBar);
     animateHidePostCards()
+    // Add event listeners to fullscreen images
+    domPostImages.forEach(domPostImage => {
+      domPostImage.addEventListener('click', () => {
+        toggleImageZoom(domPostImage);
+      })
+    });
+
+    domImageZoomCloseButton.addEventListener('click', () => {
+      toggleImageZoom()
+    })
   }
+
 
   // ./partials/post-card-item.hbs
   // Hide a part of the excerpt
-  if(domPostCardItemExcerpts) {
+  if (domPostCardItemExcerpts) {
     hidePostCardExcerpts(domPostCardItemExcerpts);
   }
 });
