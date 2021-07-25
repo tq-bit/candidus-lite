@@ -24,11 +24,11 @@ const filterPostList = (searchInput, searchList) => {
 
 // 2)
 const focusPostListSearchButton = (event, searchfield) => {
-  if (event.key.toLowerCase() === 'escape') {
+  if (event.key.toLowerCase() === 'escape' && !!searchfield) {
     event.preventDefault();
     searchfield.blur();
   }
-  if (event.ctrlKey && event.key.toLowerCase() === 'k') {
+  if (event.ctrlKey && event.key.toLowerCase() === 'k' && !!searchfield) {
     event.preventDefault();
     searchfield.focus()
   }
@@ -70,6 +70,7 @@ const monitorPostNavbar = (domPostReadingProgressBar, duration) => {
   }
 }
 
+// 5)
 const monitorShowReadMorePostCards = (domPostReadingProgressBar, duration) => {
   const readingProgress = domPostReadingProgressBar.value
 
