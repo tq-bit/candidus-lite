@@ -2,6 +2,7 @@
  * 1) Card for images in posts and sites
  * 2) Card for embedded items, links & bookmarks
  * 3) Gallery styles
+ * 4) Card for all images
  */
 .kg-card.kg-bookmark-card,
 .kg-card.kg-image-card.kg-width-wide,
@@ -89,10 +90,18 @@
   object-fit: cover;
 }
 
-/* 3) TODO: add styles here */
+/* 3) TODO: add styles here for the gallery */
 .kg-gallery-container, .kg-gallery-row, .kg-gallery-image {
   display: block;
   margin: auto
+}
+
+/* 4) Add styles for the images */
+.kg-card.kg-image-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* Show the thumbnail only for larger screens */

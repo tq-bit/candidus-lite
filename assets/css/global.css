@@ -1,6 +1,7 @@
 * {
   box-sizing: content-box;
   text-rendering: optimizeSpeed;
+  scroll-behavior: smooth;
 }
 
 body {

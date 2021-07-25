@@ -1,15 +1,15 @@
 # TODO List till beta
 
 ## Done
-[x] Build the tags page
-[x] Build the 404 error page
-[x] Build the standard error page
+- [x] Build the tags page
+- [x] Build the 404 error page
+- [x] Build the standard error page
+- [x] Implement the full-size images for posts -> Solution: Zoom for large images
 
 ## Todo
 
 ### Image and gallery features
-- [ ] Implement the full-size images for posts
-- [ ] Implement the gallery
+- [ ] Implement the gallery element
 - [ ] Implement copying code to the clipboard
 
 ### Coloring
