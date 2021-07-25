@@ -1,9 +1,9 @@
-<div id='q-sidebar' class='q-sidebar'>
-  <div class='q-sidebar-inner'>
+<nav id='q-sidebar' class='q-sidebar'>
+  <section class='q-sidebar-inner'>
     <div class='q-navbar-navigation-mobile'>
       {{navigation}}
     </div>
-    <div class="q-navbar-social-mobile">
+    <main class="q-navbar-social-mobile">
       {{#if @site.facebook}}
       <a class="q-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
       {{/if}}
@@ -11,9 +11,9 @@
       <a class="q-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
       {{/if}}
       {{> "theme-toggle"}}
-    </div>
+    </main>
     <button id="q-navbar-button-close" class="q-navbar-button-close">
       Dismiss
     </button>
-  </div>
-</div>
+  </section>
+</nav>
