@@ -1,0 +1,15 @@
+<nav class='q-pagination-container' role='navigation'>
+  <div class='q-pagination-column q-text-left'>
+    {{#if prev}}
+      <a class='q-pagination-button' href='{{page_url prev}}'>⮜</a>
+    {{/if}}
+  </div>
+  <div class='q-pagination-column q-text-center'>
+    <span class='q-pagination-page-number'>Page {{page}} of {{pages}}</span>
+  </div>
+  <div class='q-pagination-column q-text-right'>
+    {{#if next}}
+      <a class='q-pagination-button' href='{{page_url next}}'>➤</a>
+    {{/if}}
+  </div>
+</nav>

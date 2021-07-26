@@ -118,3 +118,15 @@ span.token {
 .hidden {
   display: none;
 }
+
+.q-text-center {
+  text-align: center;
+}
+
+.q-text-right {
+  text-align: right;
+}
+
+.q-text-left {
+  text-align: left;
+}
