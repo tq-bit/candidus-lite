@@ -90,10 +90,43 @@
   object-fit: cover;
 }
 
-/* 3) TODO: add styles here for the gallery */
-.kg-gallery-container, .kg-gallery-row, .kg-gallery-image {
+/* 3) Styles here for the gallery */
+.kg-gallery-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5em auto;
+  width: 100%;
+}
+
+.kg-gallery-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.kg-gallery-image img {
   display: block;
-  margin: auto
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+  margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+  margin: 0 0 0 0.75em;
+}
+
+.kg-image-card,
+.kg-gallery-card {
+    margin: 0 0 1.5em;
+}
+
+.kg-image-card figcaption,
+.kg-gallery-card figcaption {
+    margin: -1.0em 0 1.5em;
 }
 
 /* 4) Add styles for the images */
