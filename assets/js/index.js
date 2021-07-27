@@ -6,8 +6,6 @@ const domNavbarToggleButton = document.querySelector('#q-sidebar-toggle')
 const domNavbarCloseButton = document.querySelector('#q-navbar-button-close');
 
 // DOM elements from ./index.hbs
-const domPostSearchInput = document.querySelector('#post-search-input') || null;
-const domPostListItems = document.querySelectorAll('.q-post-list-item') || null;
 
 // DOM elements specifically in ./posts.hbs
 const domPostContentArea = document.querySelector('.q-post-article-content') || null;
@@ -87,13 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ./index.hbs
   animateGliderAuto(domGlider, 5000)
   animateSlideInPosts();
-
-  // Focus the search bar on ctrl + k
-  if (domPostSearchInput) {
-    domPostSearchInput.addEventListener('keyup', () => {
-      filterPostList(domPostSearchInput, domPostListItems)
-    })
-  }
 
   // ./post.hbs
   // Execute post related functions

@@ -1,26 +1,12 @@
 /**
  * Functions specifially for posts and post related items
- * 1) Filter post list on index page
+ * 1) Filter post list on index page DEPRECATED
  * 2) Focus the searchbar when pressing CTRL + K
  * 3) Monitor reading progress
  * 4) Toggle the post navbar when user scrolls down in the post content
  * 5) Show the post cards once user scrolls below 95% of the post
  * 6) Hide a part of the excerpt in the post card
  */
-
-// 1)
-const filterPostList = (searchInput, searchList) => {
-  const filter = searchInput.value.toUpperCase();
-
-  searchList.forEach(searchItem => {
-    const text = searchItem.innerText.toUpperCase();
-    if (text.includes(filter)) {
-      searchItem.style.display = "";
-    } else {
-      searchItem.style.display = "none";
-    }
-  })
-}
 
 // 2)
 const focusPostListSearchButton = (event, searchfield) => {

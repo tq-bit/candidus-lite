@@ -14,43 +14,31 @@ into the {body} of the default.hbs template }}
 
 <!-- Secion only shown if there are featured posts -->
 {{#get "posts" filter="featured:true"}}
-{{#if posts}}
-  <h2 class="q-text-center">Featured posts</h2>
-{{/if}}
-<div class="q-post-read-more">
-  <div class="glider-contain">
-    <div id="q-glider" class="glider">
-        {{#foreach posts}}
-          {{> "post-card-item"}}
-        {{/foreach}}
+  {{#if posts}}
+    <h2 class="q-text-center">Featured posts</h2>
+  {{/if}}
+  <div class="q-post-read-more">
+    <div class="glider-contain">
+      <div id="q-glider" class="glider">
+          {{#foreach posts}}
+            {{> "post-card-item"}}
+          {{/foreach}}
+      </div>
     </div>
   </div>
-</div>
-{{#if posts}}
-  <hr>
-{{/if}}
+  {{#if posts}}
+    <hr>
+  {{/if}}
 {{/get}}
 
 <main class='q-index-content'>
     <div class="q-index-content-inner">
-        <div class="q-index-content-search">
-            <span class="q-index-content-search-icon">
-              {{> "icons/search"}}
-            </span>
-            <label for="post-search-input" class="hidden">Search for an article</label>
-            <input placeholder="Search [ctrl + k]" id="post-search-input" type="text" class="q-index-content-search-input" >
-        </div>
-
-
         <div class="q-post-list">
-            {{#foreach posts}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-list-item"}}
-
-            {{/foreach}}
+          {{#foreach posts}}
+            {{> "post-list-item"}}
+          {{/foreach}}
         </div>
-          <!-- Show pagination if pagination exceeds posts_per_page config  -->
-          {{ pagination }}
+        <!-- Show pagination if pagination exceeds posts_per_page config  -->
+        {{ pagination }}
     </div>
 </main>
