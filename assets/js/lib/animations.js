@@ -4,7 +4,7 @@
  * 2) Slide in posts on load
  * 3) Hide post cards on page load
  * 4) Slide in post cards when user reaches end of page
- * 5)
+ * 5) Slide featured posts on the main page
  */
 const animateHidePosts = () => {
   // @ts-ignore
@@ -138,3 +138,58 @@ const animateShowImageZoom = (duration) => {
     duration
   })
 }
+
+// Slide in posts when page loads
+// Create the Glider for the featured posts
+// @ts-ignore
+const glider = new Glider(document.querySelector('.glider'), {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  draggable: true,
+  dragVelocity: 0.2,
+  scrollLock: true,
+  scrollLockDelay: 100,
+  scrollPropagate: true,
+  responsive: [
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2,
+      }
+    }
+  ]
+})
+
+function sliderAuto(glider, miliseconds) {
+  const slidesCount = glider.track.childElementCount;
+  let slideTimeout = null;
+  let nextIndex = 1;
+
+  function slide() {
+    slideTimeout = setTimeout(
+      function () {
+        if (nextIndex >= slidesCount) {
+          nextIndex = 0;
+        }
+        glider.scrollItem(nextIndex++);
+      },
+      miliseconds
+    );
+  }
+
+  glider.ele.addEventListener('glider-animated', function () {
+    window.clearInterval(slideTimeout);
+    slide();
+  });
+
+  slide();
+}
+
+sliderAuto(glider, 5000)

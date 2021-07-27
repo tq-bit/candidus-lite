@@ -186,9 +186,10 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   height: fit-content;
 }
 
-.q-post-read-more-inner {
+.q-post-read-more-inner,
+.q-post-featured {
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr;
   grid-gap: var(--gap-md);
 }
 
@@ -254,15 +255,17 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 }
 
 @media (min-width: 1200px) {
-  .q-post-read-more-inner {
-    grid-template-columns: auto auto;
+  .q-post-read-more-inner,
+  .q-post-featured {
+    grid-template-columns: 1fr 1fr;
     grid-gap: 5%;
   }
 }
 
 @media (min-width: 1400px) {
-  .q-post-read-more-inner {
-    grid-template-columns: auto auto auto;
+  .q-post-read-more-inner,
+  .q-post-featured {
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: var(--gap-md);
   }
 }

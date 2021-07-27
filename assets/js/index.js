@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event binding for site specific dom elements
 
   // ./index.hbs
-  // Slide in posts when page loads
   animateSlideInPosts();
 
   // Focus the search bar on ctrl + k

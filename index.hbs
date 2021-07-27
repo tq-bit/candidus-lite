@@ -11,6 +11,21 @@ into the {body} of the default.hbs template }}
     {{@site.description}}
   </h2>
 </div>
+<div class="q-post-read-more">
+  <h2 class="q-text-center">Featured posts</h2>
+  <div class="glider-contain">
+    <div id="q-glider" class="glider">
+      {{#foreach posts}}
+        {{#if featured}}
+          {{> "post-card-item"}}
+        {{/if}}
+      {{/foreach}}
+    </div>
+  </div>
+</div>
+
+<hr>
+
 <main class='q-index-content'>
     <div class="q-index-content-inner">
         <div class="q-index-content-search">
@@ -20,6 +35,8 @@ into the {body} of the default.hbs template }}
             <label for="post-search-input" class="hidden">Search for an article</label>
             <input placeholder="Search [ctrl + k]" id="post-search-input" type="text" class="q-index-content-search-input" >
         </div>
+
+
         <div class="q-post-list">
             {{#foreach posts}}
 
