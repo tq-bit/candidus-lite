@@ -21,6 +21,33 @@ const domPostCardItemExcerpts = document.querySelectorAll('.q-post-card-body-exc
 // DOM Elements specifically in ./partials/image-zoom.hbs
 const domImageZoomCloseButton = document.querySelector('#q-image-zoom-close');
 
+// DOM element for the glider
+// @ts-ignore
+const domGlider = new Glider(document.querySelector('.glider'), {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  draggable: true,
+  dragVelocity: 0.2,
+  scrollLock: true,
+  scrollLockDelay: 100,
+  scrollPropagate: true,
+  responsive: [
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2,
+      }
+    }
+  ]
+})
+
 // Define global, dynamic variables
 let scrollerObserver = {
   isScrolling: false,
@@ -58,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event binding for site specific dom elements
 
   // ./index.hbs
+  animateGliderAuto(domGlider, 5000)
   animateSlideInPosts();
 
   // Focus the search bar on ctrl + k

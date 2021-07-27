@@ -11,20 +11,25 @@ into the {body} of the default.hbs template }}
     {{@site.description}}
   </h2>
 </div>
-<div class="q-post-read-more">
+
+<!-- Secion only shown if there are featured posts -->
+{{#get "posts" filter="featured:true"}}
+{{#if posts}}
   <h2 class="q-text-center">Featured posts</h2>
+{{/if}}
+<div class="q-post-read-more">
   <div class="glider-contain">
     <div id="q-glider" class="glider">
-      {{#foreach posts}}
-        {{#if featured}}
+        {{#foreach posts}}
           {{> "post-card-item"}}
-        {{/if}}
-      {{/foreach}}
+        {{/foreach}}
     </div>
   </div>
 </div>
-
-<hr>
+{{#if posts}}
+  <hr>
+{{/if}}
+{{/get}}
 
 <main class='q-index-content'>
     <div class="q-index-content-inner">

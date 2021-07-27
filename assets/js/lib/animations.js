@@ -141,33 +141,7 @@ const animateShowImageZoom = (duration) => {
 
 // Slide in posts when page loads
 // Create the Glider for the featured posts
-// @ts-ignore
-const glider = new Glider(document.querySelector('.glider'), {
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  draggable: true,
-  dragVelocity: 0.2,
-  scrollLock: true,
-  scrollLockDelay: 100,
-  scrollPropagate: true,
-  responsive: [
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 2,
-      }
-    },
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 2,
-      }
-    }
-  ]
-})
-
-function sliderAuto(glider, miliseconds) {
+function animateGliderAuto(glider, miliseconds) {
   const slidesCount = glider.track.childElementCount;
   let slideTimeout = null;
   let nextIndex = 1;
@@ -191,5 +165,3 @@ function sliderAuto(glider, miliseconds) {
 
   slide();
 }
-
-sliderAuto(glider, 5000)
