@@ -144,12 +144,33 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 
 /* Post read more section */
 .q-post-card {
+  position: relative;
   margin: var(--gap-sm);
 }
 
-.q-post-card-inner:hover h4 {
-  color: var(--accent-color-primary);
+.q-post-card::before {
+  transition: all var(--duration-quickest);
+  position: absolute;
+  background: linear-gradient(
+    to bottom right,
+    var(--accent-color-primary),
+    var(--accent-color-secondary)
+  );
+  content: "";
+  height: var(--gap-xxs);
+  width: 0;
+  top: 0;
+  left: 50%;
+  border-top-left-radius: var(--gap-xs);
+  border-top-right-radius: var(--gap-xs);
 }
+
+.q-post-card:hover::before {
+  transition: all var(--duration-quickest);
+  width: 100%;
+  left: 0;
+}
+
 
 .q-post-card-inner {
   background: var(--background-color-secondary);
