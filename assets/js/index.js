@@ -6,6 +6,9 @@ const domNavbarToggleButton = document.querySelector('#q-sidebar-toggle')
 const domNavbarCloseButton = document.querySelector('#q-navbar-button-close');
 
 // DOM elements from ./index.hbs
+// DOM element for the glider
+// @ts-ignore
+const domGliderElement = document.querySelector('.glider')
 
 // DOM elements specifically in ./posts.hbs
 const domPostContentArea = document.querySelector('.q-post-article-content') || null;
@@ -19,9 +22,8 @@ const domPostCardItemExcerpts = document.querySelectorAll('.q-post-card-body-exc
 // DOM Elements specifically in ./partials/image-zoom.hbs
 const domImageZoomCloseButton = document.querySelector('#q-image-zoom-close');
 
-// DOM element for the glider
-// @ts-ignore
-const domGlider = new Glider(document.querySelector('.glider'), {
+// Define global variables
+const gliderConfig = {
   slidesToShow: 1,
   slidesToScroll: 1,
   draggable: true,
@@ -44,9 +46,7 @@ const domGlider = new Glider(document.querySelector('.glider'), {
       }
     }
   ]
-})
-
-// Define global, dynamic variables
+}
 let scrollerObserver = {
   isScrolling: false,
   checkInterval: 250,
@@ -83,7 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event binding for site specific dom elements
 
   // ./index.hbs
-  animateGliderAuto(domGlider, 5000)
+  if (domGliderElement) {
+    const glider = new Glider(domGliderElement, gliderConfig)
+    animateGliderAuto(glider, 5000)
+  }
   animateSlideInPosts();
 
   // ./post.hbs
