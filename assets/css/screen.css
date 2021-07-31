@@ -1,3 +1,10 @@
+/*
+ * This file is responsible to handle the width of
+ * all responsive elements in the theme. Display and
+ * margin may be overwritten, the width must remain
+ * the same across all files that come after screen.css.
+ */
+
 /* Inner element styles */
 .q-index-content,
 .q-post-article,
@@ -11,21 +18,7 @@
 }
 
 /* Inner navbar styles */
-.q-navbar-inner {
-  width: var(--content-width-screen-xs);
-  display: block;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-.q-footer-inner {
-  width: var(--content-width-screen-xs);
-  margin: var(--gap-xxl) auto var(--gap-md) auto;
-  display: grid;
-  grid-template-columns: 100%;
-}
 
 /* Media queries */
 @media (min-width: 800px) {
@@ -55,35 +48,6 @@
 
   .q-tag-content {
     width: var(--content-width-screen-md);
-  }
-
-  /* Show navbar for bigger devices */
-  .q-navbar-navigation {
-    display: block;
-  }
-
-  .q-navbar-logo {
-    width: 100%;
-  }
-
-  /* Show Social navigation icons for bigger devices */
-  .q-navbar-social {
-    display: flex;
-    align-items: center;
-    color: var(--accent-color-primary);
-  }
-
-  /* Hide burger for bigger devices */
-  .q-navbar-sidebar-toggle {
-    display: none;
-  }
-
-  .q-footer-nav {
-    text-align: left;
-  }
-
-  .q-footer-info {
-    text-align: right;
   }
 }
 

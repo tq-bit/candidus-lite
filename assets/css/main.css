@@ -6,8 +6,8 @@
 @import 'variables.css';
 @import 'global.css';
 @import 'util.css';
-@import 'sites/default.css';
 @import 'screen.css';
+@import 'sites/default.css';
 @import 'sites/index.css';
 @import 'sites/error.css';
 @import 'sites/tag.css';
