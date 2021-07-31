@@ -1,8 +1,12 @@
 /* Import third party css */
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&family=Inconsolata&display=swap');
-@import 'modules/index.css';
+@import 'lib/index.css';
 
-/* Import css modules */
+/* Import css modules in the following row:
+ * 1. Import core files. Used globally or by other declarations
+ * 2. Import site specific files
+ * 3. Import modules, more granular css files
+*/
 @import 'core/variables.css';
 @import 'core/global.css';
 @import 'core/util.css';
@@ -11,4 +15,4 @@
 @import 'sites/index.css';
 @import 'sites/error.css';
 @import 'sites/tag.css';
-@import 'lib/index.css';
+@import 'modules/index.css';
