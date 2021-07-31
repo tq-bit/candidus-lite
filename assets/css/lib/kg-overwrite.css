@@ -3,6 +3,7 @@
  * 2) Card for embedded items, links & bookmarks
  * 3) Gallery styles
  * 4) Card for all images
+ * 5) Add margin to cards inside the glider
  */
 .kg-card.kg-bookmark-card,
 .kg-card.kg-image-card.kg-width-wide,
@@ -156,4 +157,8 @@
   .kg-bookmark-thumbnail {
     width: 40%;
   }
+}
+
+.glider-track > .q-post-card-wrapper {
+  margin: var(--gap-sm);
 }
