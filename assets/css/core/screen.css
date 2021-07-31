@@ -7,6 +7,7 @@
 
 /* Inner element styles */
 .q-index-content,
+.q-navbar-inner,
 .q-post-article,
 .q-post-cardlist-wrapper,
 .q-tag-content,
@@ -22,6 +23,7 @@
 
 /* Media queries */
 @media (min-width: 800px) {
+  .q-index-content,
   .q-navbar-inner,
   .q-post-article,
   .q-post-cardlist-wrapper,
@@ -42,7 +44,6 @@
   .q-footer-inner,
   .q-tag-header-wrapper,
   .q-error-content-inner {
-    grid-template-columns: 50% 50%;
     width: var(--content-width-screen-lg);
   }
 
