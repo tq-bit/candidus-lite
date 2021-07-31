@@ -11,8 +11,6 @@
 }
 
 .q-navbar-inner {
-  display: block;
-  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
