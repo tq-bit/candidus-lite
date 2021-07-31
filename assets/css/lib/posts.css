@@ -3,7 +3,7 @@
  */
 
 /* Post items on the index page [/partials/post-list-item.hbs] */
-.q-post-list-item {
+.q-post-list-item-wrapper {
   transition: background-color var(--duration-quickest),
     box-shadow var(--duration-quickest);
   margin: var(--gap-lg) 0;
@@ -11,7 +11,7 @@
   border-radius: var(--gap-xs);
 }
 
-.q-post-list-item:hover {
+.q-post-list-item-wrapper:hover {
   transition: background-color var(--duration-quickest),
     box-shadow var(--duration-quickest);
   background-color: var(--background-color-secondary);
@@ -248,7 +248,7 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 @media (min-width: 1000px) {
   /* Queries for [/partials/post-list-item.hbs]  */
   .q-post-list-item-inner {
-    grid-template-columns: 15% 60% 15%;
+    grid-template-columns: 15% 70% 15%;
   }
   .q-post-list-item-tag {
     display: flex;

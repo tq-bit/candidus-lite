@@ -9,7 +9,7 @@
 const animateHidePosts = () => {
   // @ts-ignore
   anime({
-    targets: '.q-post-list-item',
+    targets: '.q-post-list-item-wrapper',
     translateY: '25px',
     opacity: 0,
     duration: 0,
@@ -19,7 +19,7 @@ const animateHidePosts = () => {
 const animateSlideInPosts = () => {
   // @ts-ignore
   anime({
-    targets: '.q-post-list-item',
+    targets: '.q-post-list-item-wrapper',
     translateY: 0,
     // @ts-ignore
     delay: anime.stagger(50, { start: 250 }), // increase delay by 100ms for each elements.
