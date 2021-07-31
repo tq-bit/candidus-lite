@@ -39,7 +39,7 @@ const gliderConfig = {
       }
     },
     {
-      breakpoint: 1200,
+      breakpoint: 1400,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 2,
