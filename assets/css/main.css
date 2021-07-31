@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&family=Inconsolata&display=swap');
 @import 'modules/index.css';
 
-/* Import theme css */
-@import 'variables.css';
-@import 'global.css';
-@import 'util.css';
-@import 'screen.css';
+/* Import css modules */
+@import 'core/variables.css';
+@import 'core/global.css';
+@import 'core/util.css';
+@import 'core/screen.css';
 @import 'sites/default.css';
 @import 'sites/index.css';
 @import 'sites/error.css';
