@@ -15,7 +15,6 @@ into the {body} of the default.hbs template }}
 <!-- Secion only shown if there are featured posts -->
 {{#get "posts" filter="featured:true"}}
   {{#if posts}}
-    <h2 class="q-text-center">Featured posts</h2>
   {{/if}}
   <div class="q-post-read-more">
     <div class="glider-contain">
