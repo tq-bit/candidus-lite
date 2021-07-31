@@ -246,6 +246,10 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
  */
 
 @media (min-width: 1000px) {
+  .q-post-cardlist-inner {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--gap-md);
+  }
   /* Queries for [/partials/post-list-item.hbs]  */
   .q-post-list-item-inner {
     grid-template-columns: 15% 70% 15%;
@@ -270,13 +274,6 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   .q-post-list-item-title {
     justify-content: flex-start;
     text-align: left;
-  }
-}
-
-@media (min-width: 1200px) {
-  .q-post-cardlist-inner {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: var(--gap-md);
   }
 }
 
