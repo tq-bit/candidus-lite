@@ -5,6 +5,7 @@
 /* Import theme css */
 @import 'variables.css';
 @import 'global.css';
+@import 'util.css';
 @import 'sites/default.css';
 @import 'sites/index.css';
 @import 'sites/error.css';

@@ -1,0 +1,90 @@
+/* Globally valid utility classes */
+
+/* Display rules */
+.hidden {
+  display: none;
+}
+
+/* Text rules */
+.q-text-center {
+  text-align: center;
+}
+
+.q-text-right {
+  text-align: right;
+}
+
+.q-text-left {
+  text-align: left;
+}
+
+/* Margin rules
+ * Includes:
+ * - sm
+ * - lg
+ * - xxl
+ * - max
+ */
+.q-mt-sm {
+  margin-top: var(--gap-sm);
+}
+
+.q-mb-sm {
+  margin-bottom: var(--gap-sm);
+}
+
+.q-ml-sm {
+  margin-left: var(--gap-sm);
+}
+
+.q-mr-sm {
+  margin-right: var(--gap-sm);
+}
+
+.q-mt-lg {
+  margin-top: var(--gap-lg);
+}
+
+.q-mb-lg {
+  margin-bottom: var(--gap-lg);
+}
+
+.q-ml-lg {
+  margin-left: var(--gap-lg);
+}
+
+.q-mr-lg {
+  margin-right: var(--gap-lg);
+}
+
+.q-mt-xxl {
+  margin-top: var(--gap-xxl);
+}
+
+.q-mb-xxl {
+  margin-bottom: var(--gap-xxl);
+}
+
+.q-ml-xxl {
+  margin-left: var(--gap-xxl);
+}
+
+.q-mr-xxl {
+  margin-right: var(--gap-xxl);
+}
+
+.q-mt-max {
+  margin-top: var(--gap-max);
+}
+
+.q-mb-max {
+  margin-bottom: var(--gap-max);
+}
+
+.q-ml-max {
+  margin-left: var(--gap-max);
+}
+
+.q-mr-max {
+  margin-right: var(--gap-max);
+}

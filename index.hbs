@@ -16,8 +16,8 @@ into the {body} of the default.hbs template }}
 {{#get "posts" filter="featured:true"}}
   {{#if posts}}
   {{/if}}
-  <div class="q-post-cardlist-wrapper q-mt-5">
-    <div class="glider-contain">
+  <div class="q-post-cardlist-wrapper ">
+    <div class="glider-contain q-mt-lg">
       <div id="q-glider" class="glider">
           {{#foreach posts}}
             {{> "post-card-item"}}
