@@ -1,6 +1,2 @@
-@import 'theme-toggle.css';
-@import 'sidebar.css';
-@import 'posts.css';
-@import 'image-zoom.css';
-@import 'pagination.css';
-@import 'kg-overwrite.css';
+@import 'prism.css';
+@import 'glider.min.css';
