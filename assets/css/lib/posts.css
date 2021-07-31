@@ -4,18 +4,18 @@
 
 /* Post items on the index page [/partials/post-list-item.hbs] */
 .q-post-list-item-wrapper {
-  transition: background-color var(--duration-quickest),
-    box-shadow var(--duration-quickest);
-  margin: var(--gap-lg) 0;
-  border: 1px solid var(--grey-color);
-  border-radius: var(--gap-xs);
+  transition: background-color var(--duration-quickest);
+  padding: var(--gap-xl) 0;
+  border-bottom: 1px solid var(--grey-color);
+}
+
+.q-post-list-item-wrapper:last-of-type {
+  border: none;
 }
 
 .q-post-list-item-wrapper:hover {
-  transition: background-color var(--duration-quickest),
-    box-shadow var(--duration-quickest);
+  transition: background-color var(--duration-quickest);
   background-color: var(--background-color-secondary);
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 6px;
 }
 
 .q-post-list-item-inner {
