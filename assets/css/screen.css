@@ -14,10 +14,9 @@
 /* Styles to adjust the width based on screen size*/
 
 /* Inner element styles */
-.q-header-inner,
 .q-index-content,
 .q-post-article,
-.q-post-read-more,
+.q-post-cardlist-wrapper,
 .q-tag-content,
 .q-tag-header-wrapper,
 .q-error-content-inner {
@@ -46,9 +45,9 @@
 /* Media queries */
 @media (min-width: 800px) {
   .q-navbar-inner,
-  .q-header-inner,
+
   .q-post-article,
-  .q-post-read-more,
+  .q-post-cardlist-wrapper,
   .q-tag-content,
   .q-footer-inner,
   .q-tag-header-wrapper,
@@ -59,10 +58,10 @@
 
 @media (min-width: 1000px) {
   .q-navbar-inner,
-  .q-header-inner,
+
   .q-index-content,
   .q-post-article,
-  .q-post-read-more,
+  .q-post-cardlist-wrapper,
   .q-tag-content,
   .q-footer-inner,
   .q-tag-header-wrapper,
@@ -71,7 +70,7 @@
     width: var(--content-width-screen-lg);
   }
 
-  .q-post-read-more,
+  .q-post-cardlist-wrapper,
   .q-tag-content {
     width: var(--content-width-screen-md);
   }
@@ -108,7 +107,7 @@
 
 @media (min-width: 1200px) {
   .q-navbar-inner,
-  .q-header-inner,
+
   .q-index-content,
   .q-post-article,
   .q-footer-inner,
@@ -120,7 +119,7 @@
 
 @media (min-width: 1400px) {
   .q-navbar-inner,
-  .q-header-inner,
+
   .q-index-content,
   .q-post-article,
   .q-footer-inner,
@@ -129,7 +128,7 @@
     width: var(--content-width-screen-xxl);
   }
 
-  .q-post-read-more,
+  .q-post-cardlist-wrapper,
   .q-tag-content {
     width: var(--content-width-screen-md);
   }
