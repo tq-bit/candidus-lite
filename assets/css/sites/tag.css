@@ -12,18 +12,18 @@
 
 .q-tag-post-list{
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr;
   grid-gap: var(--gap-md);
 }
 
 @media (min-width: 1200px) {
   .q-tag-post-list{
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 1400px) {
   .q-tag-post-list{
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
