@@ -1,8 +1,4 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
-
-<!-- TODO: Continue here -->
-
 {{#tag}}
 <header class="q-tag-header">
 
@@ -24,7 +20,6 @@
     <div class="q-tag-post-list">
         {{#foreach posts}}
 
-        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
         {{> "post-card-item"}}
 
         {{/foreach}}
