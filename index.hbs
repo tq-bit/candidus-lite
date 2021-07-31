@@ -14,7 +14,7 @@
 {{#get "posts" filter="featured:true"}}
   {{#if posts}}
   {{/if}}
-  <div class="q-post-cardlist-wrapper ">
+  <div class="q-post-cardlist-wrapper">
     <div class="glider-contain">
       <div id="q-glider" class="glider">
           {{#foreach posts}}
@@ -22,10 +22,10 @@
           {{/foreach}}
       </div>
     </div>
-  </div>
   {{#if posts}}
     <hr>
   {{/if}}
+  </div>
 {{/get}}
 
 <main class='q-index-content'>

@@ -47,14 +47,14 @@ function hbs(done) {
 
 function css(done) {
     pump([
-        src('assets/css/screen.css', {sourcemaps: true}),
+        src('assets/css/main.css', {sourcemaps: true}),
         postcss([
             easyimport,
             colorFunction(),
             autoprefixer(),
             cssnano()
         ]),
-        concat('screen.css'),
+        concat('main.css'),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
