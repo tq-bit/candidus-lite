@@ -53,6 +53,7 @@ figcaption {
   color: var(--text-color-primary);
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  font-style: italic;
 }
 
 img {
