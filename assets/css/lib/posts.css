@@ -211,6 +211,22 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   line-height: var(--gap-xl);
 }
 
+.q-post-code-clip-icon {
+  position: absolute;
+  top: var(--gap-sm);
+  right: var(--gap-lg);
+  height: var(--el-size-xxs);
+  width: var(--el-size-xxs);
+}
+
+.q-post-code-clip-icon path {
+  fill: var(--grey-color)
+}
+
+.q-post-code-clip-icon:hover {
+  cursor: pointer;
+}
+
 /* Media queries */
 @media (min-width: 800px) {
   /* Queries for [/partials/post-list-item.hbs]  */
