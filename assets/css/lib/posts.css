@@ -143,32 +143,12 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 }
 
 /* Post read more section */
-.q-post-card-wrapper {
-  position: relative;
+.q-post-card {
+  margin: var(--gap-sm);
 }
 
-.q-post-card-wrapper::before {
-  transition: opacity var(--duration-quickest);
-  opacity: 0;
-  position: absolute;
-  background: linear-gradient(
-    to bottom right,
-    var(--accent-color-primary),
-    var(--accent-color-secondary)
-  );
-  content: '';
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  top: calc(var(--gap-xxs) * -1);
-  right: calc(var(--gap-xxs) * -1);
-  padding: var(--gap-xxs);
-  border-radius: var(--gap-xs);
-}
-
-.q-post-card-wrapper:hover::before {
-  transition: opacity var(--duration-quickest);
-  opacity: 1;
+.q-post-card-inner:hover h4 {
+  color: var(--accent-color-primary);
 }
 
 .q-post-card-inner {
