@@ -113,7 +113,7 @@ const animateHideImageZoom = (duration) => {
     targets: '#q-image-zoom-wrapper',
     height: '0%',
     width: '0%',
-    top: '50%',
+    top: '105%',
     left: '50%',
     opacity: 0,
     easing: 'easeInOutSine',

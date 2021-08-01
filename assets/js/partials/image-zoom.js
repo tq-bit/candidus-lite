@@ -20,7 +20,7 @@ const toggleImageZoom = (domPostImage) => {
   if (isHidden) {
     animateShowImageZoom(animationDuration);
   } else {
-    animateHideImageZoom(animationDuration);
+    animateHideImageZoom(0);
   }
 }
 

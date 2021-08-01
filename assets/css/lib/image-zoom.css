@@ -14,7 +14,7 @@
 .q-image-zoom {
   background-color: var(--background-color-primary);
   border-radius: var(--gap-xs);
-  width: 80vw;
+  width: 90vw;
   height: fit-content;
   max-height: 80vh;
   display: flex;
@@ -34,6 +34,7 @@
 
 .q-image-zoom-body {
   overflow-y: auto;
+  margin: auto;
 }
 
 .q-image-zoom-img {
