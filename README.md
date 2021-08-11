@@ -15,3 +15,9 @@ Candidus translates to *clean* or *bright*. Compared to Google's Material design
 I did not create a dedicated demo page yet, but actively use it on my personal blog:
 
 https://blog.q-bit.me/
+
+## Releases
+
+| Version | Link to zip file                                 | 
+| ------- | ------------------------------------------------ |
+| 0.1.5   | https://github.com/tq-bit/candidus-lite/releases |
