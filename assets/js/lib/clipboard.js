@@ -7,14 +7,15 @@ const copyCodeToClipboard = function(sectionNode) {
 const renderCodeCopyElement = function(selector) {
   const codeSections = document.querySelectorAll(selector);
 
-  codeSections.forEach(function(section)  {
+  codeSections.forEach(function(section, index)  {
     section.parentElement.style.position = 'relative'
     const codeClip = document.createElement('span')
     const codeClipWrapper = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     const codeClipPart = document.createElementNS('http://www.w3.org/2000/svg', 'path');
 
     // Set the necessary attributes
-    codeClip.classList.add('q-post-code-clip-icon')
+    codeClip.classList.add('q-post-code-clip-icon');
+    codeClip.setAttribute('tabindex', `${index}`);
 
     codeClipWrapper.setAttribute('viewBox', '0 0 24 24');
     codeClipWrapper.setAttribute('fill', 'none');
