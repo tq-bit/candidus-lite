@@ -72,7 +72,7 @@ setInterval(() => {
     // ./posts.hbs
     if (domPostContentArea && domPostReadingProgressBar) {
       monitorPostNavbar(domPostReadingProgressBar, scrollerObserver.checkInterval);
-      monitorShowReadMorePostCards(domPostReadingProgressBar, 1000)
+      monitorShowReadMorePostCards(domPostReadingProgressBar)
     }
   }
 }, scrollerObserver.checkInterval)
@@ -86,13 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const glider = new Glider(domGliderElement, gliderConfig)
     animateGliderAuto(glider, 5000)
   }
-  animateSlideInPosts();
+  animateSlideInItemsStagger(1000, '.q-post-list-item-wrapper')
 
   // ./post.hbs
   // Execute post related functions
   if (domPostContentArea && domPostReadingProgressBar) {
     monitorReadingProgress(domPostContentArea, domPostReadingProgressBar);
-    animateHidePostCards()
     // Add event listeners to fullscreen images
     domPostImages.forEach(domPostImage => {
       domPostImage.addEventListener('click', () => {
@@ -120,4 +119,4 @@ window.addEventListener('keydown', (event) => {
 
 // Everything that should be handled right away
 initUserTheme();
-animateHidePosts();
+animateSlideOutItems(1000, '.q-post-list-item-wrapper', '.q-post-card');

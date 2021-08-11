@@ -6,50 +6,28 @@
  * 4) Slide in post cards when user reaches end of page
  * 5) Slide featured posts on the main page
  */
-const animateHidePosts = () => {
+
+const animateSlideOutItems = (duration, ...targets) => {
   // @ts-ignore
   anime({
-    targets: '.q-post-list-item-wrapper',
+    targets,
     translateY: '25px',
     opacity: 0,
-    duration: 0,
-  });
+    duration
+  })
 }
 
-const animateSlideInPosts = () => {
-  // @ts-ignore
-  anime({
-    targets: '.q-post-list-item-wrapper',
-    translateY: 0,
+const animateSlideInItemsStagger = (duration, ...targets) => {
     // @ts-ignore
-    delay: anime.stagger(50, { start: 250 }), // increase delay by 100ms for each elements.
-    opacity: 1,
-    duration: 1000,
-  });
+    anime({
+      targets,
+      translateY: 0,
+      // @ts-ignore
+      delay: anime.stagger(50, { start: 250 }), // increase delay by 100ms for each elements.
+      opacity: 1,
+      duration: duration,
+    });
 }
-
-const animateHidePostCards = () => {
-  // @ts-ignore
-  anime({
-    targets: '.q-post-card',
-    translateY: '25px',
-    opacity: 0,
-    duration: 0,
-  });
-}
-
-const animateSlideInPostCards = (duration) => {
-  // @ts-ignore
-  anime({
-    targets: '.q-post-card',
-    translateY: 0,
-    // @ts-ignore
-    delay: anime.stagger(50, { start: 250 }), // increase delay by 100ms for each elements.
-    opacity: 1,
-    duration: duration,
-  });
-}
-
 /**
  * Sidebar animations
  * 1) hide sidebar

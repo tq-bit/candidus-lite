@@ -57,11 +57,14 @@ const monitorPostNavbar = (domPostReadingProgressBar, duration) => {
 }
 
 // 5)
-const monitorShowReadMorePostCards = (domPostReadingProgressBar, duration) => {
+const monitorShowReadMorePostCards = (domPostReadingProgressBar) => {
   const readingProgress = domPostReadingProgressBar.value
+  if(readingProgress < 0.98) {
+    animateSlideOutItems(500, '.q-post-card-wrapper')
+  }
 
   if (readingProgress >= 0.98) {
-    animateSlideInPostCards(duration);
+    animateSlideInItemsStagger(500, '.q-post-card-wrapper')
   }
 }
 
