@@ -207,11 +207,6 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 }
 
 .q-post-code-clip-icon {
-  background-color: #2d2d2d;;
-  border: 1px solid transparent;
-  padding: var(--gap-xs);
-  transition: all var(--duration-quick);
-  border-radius: var(--gap-xs);
   position: absolute;
   top: var(--gap-sm);
   right: var(--gap-lg);
@@ -225,12 +220,6 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 
 .q-post-code-clip-icon:hover {
   cursor: pointer;
-}
-
-.q-post-code-clip-icon:focus {
-  border: 1px solid #2d2d2d;
-  transition: all var(--duration-quick);
-  background-color: var(--grey-color);
 }
 
 /* Media queries */
