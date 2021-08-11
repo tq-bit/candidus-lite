@@ -15,7 +15,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+table,
+thead {
   font-family: 'Open Sans', serif;
   color: var(--text-color-primary);
 }
@@ -25,17 +27,58 @@ h1 {
 }
 
 h2 {
-  font-size: var(--text-size-xl)
+  font-size: var(--text-size-xl);
 }
 
 h3 {
-  font-size: var(--text-size-lg)
+  font-size: var(--text-size-lg);
 }
 
-p {
+table {
+  width: 100%;
+  text-align: center;
+  margin: var(--gap-md) 0;
+  border-collapse: collapse;
+}
+
+th {
+  padding: var(--gap-md);
+  border-bottom: 2px solid var(--grey-color);
+}
+
+td {
+  padding: var(--gap-sm);
+  border-bottom: 1px solid var(--grey-color);
+}
+
+p,
+ul {
   font-size: var(--text-size-md);
   color: var(--text-color-secondary);
   line-height: var(--gap-xxl);
+  margin: var(--gap-xl) 0;
+}
+
+ul {
+  list-style: circle;
+  padding-left: 20px;
+}
+
+span,
+li,
+time {
+  font-family: 'Lora', sans-serif;
+  color: var(--text-color-secondary);
+  font-size: var(--text-size-md);
+  line-height: var(--gap-xl);
+  margin-top: var(--gap-sm);
+  margin-bottom: var(--gap-sm);
+}
+
+a {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--accent-color-primary);
+  text-decoration: none;
 }
 
 blockquote {
@@ -62,35 +105,12 @@ img {
   margin: auto;
 }
 
-span,
-li,
-time {
-  font-family: 'Lora', sans-serif;
-  color: var(--text-color-secondary);
-  font-size: var(--text-size-md);
-  line-height: var(--gap-xl);
-  margin-top: var(--gap-sm);
-  margin-bottom: var(--gap-sm);
-}
-
-a {
-  font-family: 'Open Sans', sans-serif;
-  color: var(--accent-color-primary);
-  text-decoration: none;
-}
-
 path {
   fill: var(--text-color-secondary);
 }
 
 path:hover {
   fill: var(--accent-color-secondary);
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 hr {

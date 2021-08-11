@@ -99,11 +99,6 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   position: relative;
 }
 
-.q-post-article-content > ul {
-  list-style: circle;
-  padding-left: 20px;
-}
-
 .q-post-article-header-image {
   width: 100%;
   height: auto;
@@ -220,7 +215,7 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 }
 
 .q-post-code-clip-icon path {
-  fill: var(--grey-color)
+  fill: #2d2d2d;
 }
 
 .q-post-code-clip-icon:hover {

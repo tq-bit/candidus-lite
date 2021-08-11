@@ -81,7 +81,6 @@ setInterval(() => {
 document.addEventListener('DOMContentLoaded', () => {
 
   // Event binding for site specific dom elements
-
   // ./index.hbs
   if (domGliderElement) {
     const glider = new Glider(domGliderElement, gliderConfig)
