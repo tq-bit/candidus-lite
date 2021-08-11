@@ -60,7 +60,7 @@ const monitorPostNavbar = (domPostReadingProgressBar, duration) => {
 const monitorShowReadMorePostCards = (domPostReadingProgressBar) => {
   const readingProgress = domPostReadingProgressBar.value
   if(readingProgress < 0.98) {
-    animateSlideOutItems(500, '.q-post-card-wrapper')
+    animateSlideOutItems(500, 'bottom', '.q-post-card-wrapper')
   }
 
   if (readingProgress >= 0.98) {

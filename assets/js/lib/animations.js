@@ -7,26 +7,38 @@
  * 5) Slide featured posts on the main page
  */
 
-const animateSlideOutItems = (duration, ...targets) => {
+/**
+ *
+ * @param {Number} duration Miliseconds the animation is meant to run
+ * @param {String} movement One 'top' or 'bottom'
+ * @param  {...String} targets The CSS selectors to be animated
+ */
+const animateSlideOutItems = (duration, movement, ...targets) => {
+  const translateY = movement === 'top' ? '-100%' : '25px'
   // @ts-ignore
   anime({
     targets,
-    translateY: '25px',
+    translateY,
     opacity: 0,
     duration
   })
 }
 
+/**
+ *
+ * @param {Number} duration Miliseconds the animation is meant to run
+ * @param  {...String} targets The CSS selectors to be animated
+ */
 const animateSlideInItemsStagger = (duration, ...targets) => {
+  // @ts-ignore
+  anime({
+    targets,
+    translateY: 0,
     // @ts-ignore
-    anime({
-      targets,
-      translateY: 0,
-      // @ts-ignore
-      delay: anime.stagger(50, { start: 250 }), // increase delay by 100ms for each elements.
-      opacity: 1,
-      duration: duration,
-    });
+    delay: anime.stagger(50, { start: 250 }), // increase delay by 100ms for each elements.
+    opacity: 1,
+    duration: duration,
+  });
 }
 /**
  * Sidebar animations

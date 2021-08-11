@@ -119,4 +119,4 @@ window.addEventListener('keydown', (event) => {
 
 // Everything that should be handled right away
 initUserTheme();
-animateSlideOutItems(1000, '.q-post-list-item-wrapper', '.q-post-card');
+animateSlideOutItems(1000, 'bottom', '.q-post-list-item-wrapper', '.q-post-card');
