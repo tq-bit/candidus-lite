@@ -1,5 +1,14 @@
 <nav id='q-sidebar' class='q-sidebar'>
   <section class='q-sidebar-inner'>
+    <div class="q-navbar-brand-mobile">
+      <a href="{{@site.url}}">
+          {{#if @site.logo}}
+          <img width="60px" height="60px" loading="lazy" class="q-navbar-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+          {{else}}
+          {{@site.title}}
+          {{/if}}
+      </a>
+  </div>
     <div class='q-navbar-navigation-mobile'>
       {{navigation}}
     </div>

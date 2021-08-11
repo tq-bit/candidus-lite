@@ -46,8 +46,9 @@
   color: var(--text-color-secondary);
 }
 
-.q-navbar-navigation > ul > li > a:hover {
-  color: var(--accent-color-primary);
+.q-navbar-navigation > ul > li > a:hover,
+li.nav-current > a {
+  color: var(--accent-color-primary) !important;
 }
 
 /* Styles for the sidebar toggle */
@@ -83,7 +84,6 @@
 }
 
 @media (min-width: 1000px) {
-
   /* Show navbar for bigger devices */
   .q-navbar-navigation {
     display: block;

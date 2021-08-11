@@ -14,7 +14,8 @@ const renderCodeCopyElement = function(selector) {
     const codeClipPart = document.createElementNS('http://www.w3.org/2000/svg', 'path');
 
     // Set the necessary attributes
-    codeClip.classList.add('q-post-code-clip-icon')
+    codeClip.classList.add('q-post-code-clip-icon');
+    codeClip.setAttribute('tabindex', '0');
 
     codeClipWrapper.setAttribute('viewBox', '0 0 24 24');
     codeClipWrapper.setAttribute('fill', 'none');
