@@ -65,7 +65,8 @@ const hidePostCardExcerpts = (domPostExcerptItems) => {
 // 5)
 document.querySelectorAll('.q-post-article h2').forEach(element => {
   element.addEventListener('click', () => {
-    const coord = element.getBoundingClientRect().top + window.scrollY - 50;
+    const { height } = document.querySelector('#q-post-navbar').getClientRects()[0];
+    const coord = element.getBoundingClientRect().top + window.scrollY - height;
     window.scroll({ top: coord })
   })
 })
