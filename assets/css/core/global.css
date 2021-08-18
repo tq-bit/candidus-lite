@@ -28,8 +28,6 @@ h1 {
 
 h2 {
   font-size: var(--text-size-xl);
-  padding: var(--gap-md) 0;
-  border-bottom: 0.125rem solid var(--grey-color);
 }
 
 h3 {

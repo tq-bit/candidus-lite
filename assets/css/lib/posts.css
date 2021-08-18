@@ -99,6 +99,24 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   position: relative;
 }
 
+.q-post-article h2 {
+  padding: var(--gap-md) 0;
+  border-bottom: 0.125rem solid var(--grey-color);
+  cursor: pointer;
+}
+
+.q-post-article h2:after {
+  content: " #";
+  opacity: 0;
+  color: var(--accent-color-primary);
+  transition: all var(--duration-quickest);
+}
+
+.q-post-article h2:hover:after {
+  opacity: 1;
+  transition: all var(--duration-quickest);
+}
+
 .q-post-article-header-image {
   width: 100%;
   height: auto;
