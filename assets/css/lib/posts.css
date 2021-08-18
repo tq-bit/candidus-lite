@@ -107,8 +107,13 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   object-fit: cover;
 }
 
+.q-post-article-header-wrapper {
+  background-color: var(--background-color-secondary);
+  margin-bottom: var(--gap-max);
+  padding: var(--gap-xl) 0 ;
+}
+
 .q-post-article-meta {
-  margin-top: var(--gap-xl);
   font-family: 'Open Sans', sans-serif;
   text-align: center;
 }

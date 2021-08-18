@@ -4,10 +4,10 @@
  * margin may be overwritten, the width must remain
  * the same across all files that come after screen.css.
  */
-
 /* Inner element styles */
 .q-index-content,
 .q-navbar-inner,
+.q-post-article-header-inner,
 .q-post-article,
 .q-post-cardlist-wrapper,
 .q-tag-content,
@@ -25,6 +25,7 @@
 @media (min-width: 800px) {
   .q-index-content,
   .q-navbar-inner,
+  .q-post-article-header-inner,
   .q-post-article,
   .q-post-cardlist-wrapper,
   .q-tag-content,
@@ -38,6 +39,7 @@
 @media (min-width: 1000px) {
   .q-navbar-inner,
   .q-index-content,
+  .q-post-article-header-inner,
   .q-post-article,
   .q-post-cardlist-wrapper,
   .q-tag-content,
@@ -56,6 +58,7 @@
   .q-navbar-inner,
   .q-index-content,
   .q-post-cardlist-wrapper,
+  .q-post-article-header-inner,
   .q-post-article,
   .q-footer-inner,
   .q-tag-header-wrapper,
@@ -68,6 +71,7 @@
   .q-navbar-inner,
   .q-index-content,
   .q-post-cardlist-wrapper,
+  .q-post-article-header-inner,
   .q-post-article,
   .q-footer-inner,
   .q-tag-header-wrapper,
