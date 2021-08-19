@@ -5,7 +5,7 @@
  * the same across all files that come after screen.css.
  */
 /* Inner element styles */
-.q-index-content,
+.q-index-content-wrapper,
 .q-navbar-inner,
 .q-post-article-header-inner,
 .q-post-article,
@@ -20,10 +20,9 @@
 
 /* Inner navbar styles */
 
-
 /* Media queries */
 @media (min-width: 800px) {
-  .q-index-content,
+  .q-index-content-wrapper,
   .q-navbar-inner,
   .q-post-article-header-inner,
   .q-post-article,
@@ -38,7 +37,7 @@
 
 @media (min-width: 1000px) {
   .q-navbar-inner,
-  .q-index-content,
+  .q-index-content-wrapper,
   .q-post-article-header-inner,
   .q-post-article,
   .q-post-cardlist-wrapper,
@@ -56,7 +55,7 @@
 
 @media (min-width: 1200px) {
   .q-navbar-inner,
-  .q-index-content,
+  .q-index-content-wrapper,
   .q-post-cardlist-wrapper,
   .q-post-article-header-inner,
   .q-post-article,
@@ -69,14 +68,17 @@
 
 @media (min-width: 1400px) {
   .q-navbar-inner,
-  .q-index-content,
-  .q-post-cardlist-wrapper,
   .q-post-article-header-inner,
   .q-post-article,
   .q-footer-inner,
   .q-tag-header-wrapper,
   .q-error-content-inner {
     width: var(--content-width-screen-xxl);
+  }
+
+  .q-index-content-wrapper,
+  .q-post-cardlist-wrapper {
+    width: var(--content-width-screen-lg);
   }
 
   .q-tag-content {

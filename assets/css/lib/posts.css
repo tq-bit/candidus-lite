@@ -5,7 +5,7 @@
 /* Post items on the index page [/partials/post-list-item.hbs] */
 .q-post-list-item-wrapper {
   transition: background-color var(--duration-quickest);
-  padding: var(--gap-xl) 0;
+  padding: var(--gap-md) 0;
   border-bottom: 1px solid var(--grey-color);
 }
 
