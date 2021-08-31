@@ -3,7 +3,7 @@
 }
 
 .q-error-message-code {
-  font-family: 'Lora', sans-serif;;
+  font-family: 'PT Serif', serif;
 }
 
 .q-error-message-description {
@@ -15,7 +15,7 @@
   width: fit-content;
   display: block;
   margin: var(--gap-sm) auto;
-  color: var(--accent-color-secondary)
+  color: var(--accent-color-secondary);
 }
 
 .q-error-button {

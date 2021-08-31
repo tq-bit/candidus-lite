@@ -129,10 +129,6 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   padding: var(--gap-xl) 0;
 }
 
-.q-post-article-meta {
-  font-family: 'Open Sans', sans-serif;
-}
-
 .q-post-article-meta-publishdate,
 .q-post-article-meta-readingtime {
   font-size: var(--text-size-sm);
