@@ -5,7 +5,6 @@
 /* Post items on the index page [/partials/post-list-item.hbs] */
 .q-post-list-item-wrapper {
   transition: background-color var(--duration-quickest);
-  padding: var(--gap-md) 0;
   border-bottom: 1px solid var(--grey-color);
 }
 
@@ -20,7 +19,7 @@
 
 .q-post-list-item-inner {
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 1fr;
   transition: background-color var(--duration-quick);
   grid-gap: var(--gap-md);
   padding: var(--gap-lg);
@@ -33,7 +32,8 @@
   flex-wrap: wrap;
 }
 
-.q-post-list-item-tag {
+.q-post-list-item-tag,
+.q-post-list-item-readingtime {
   display: none;
 }
 
@@ -41,8 +41,6 @@
   font-family: 'Open Sans', sans-serif;
   color: var(--text-color-primary);
   font-size: var(--text-size-md);
-  text-align: center;
-  justify-content: center;
 }
 
 .q-post-list-item-readingtime {
@@ -106,7 +104,7 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 }
 
 .q-post-article h2:after {
-  content: " #";
+  content: ' #';
   opacity: 0;
   color: var(--accent-color-primary);
   transition: all var(--duration-quickest);
@@ -128,12 +126,11 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 .q-post-article-header-wrapper {
   background-color: var(--background-color-secondary);
   margin-bottom: var(--gap-max);
-  padding: var(--gap-xl) 0 ;
+  padding: var(--gap-xl) 0;
 }
 
 .q-post-article-meta {
   font-family: 'Open Sans', sans-serif;
-  text-align: center;
 }
 
 .q-post-article-meta-publishdate,
@@ -145,19 +142,16 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 .q-post-article-tags {
   margin: var(--gap-lg) 0;
   color: var(--text-color-primary);
-  font-family: 'Open Sans', sans-serif;
   font-size: var(--text-size-sm);
-  text-align: center;
 }
 
 .q-post-article-title {
-  text-align: center;
-  font-size: var(--text-size-xxl);
+  font-size: var(--text-size-xl);
 }
 
 .q-post-article-excerpt {
+  font-family: 'Open Sans', sans-serif;
   color: var(--text-color-primary);
-  text-align: center;
 }
 
 /* Post read more section */
@@ -246,12 +240,7 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 }
 
 /* Media queries */
-@media (min-width: 800px) {
-  /* Queries for [/partials/post-list-item.hbs]  */
-  .q-post-list-item-inner {
-    grid-template-columns: 80% 20%;
-  }
-}
+
 /*
  * Media queries for the post items on the index page
  * 1) Adjust the grid format to desktop size
@@ -268,7 +257,8 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   .q-post-list-item-inner {
     grid-template-columns: 15% 70% 15%;
   }
-  .q-post-list-item-tag {
+  .q-post-list-item-tag,
+  .q-post-list-item-readingtime {
     display: flex;
     align-items: center;
     justify-content: center;

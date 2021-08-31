@@ -14,14 +14,14 @@
     <div class="q-post-article-header-inner">
         <section class="q-post-article-meta">
             <time class="q-post-article-meta-publishdate" datetime="{{date format=" YYYY-MM-DD"}}">{{date}}</time>
-            <span class="q-post-article-meta-readingtime"><span class="bull"> | </span> {{reading_time}}</span>
+            <span class="q-post-article-meta-readingtime"><span class="bull"> &blacksquare; </span> {{reading_time}}</span>
         </section>
         <h1 class="q-post-article-title">{{title}}</h1>
         {{#if custom_excerpt}}
         <p class="q-post-article-excerpt">{{custom_excerpt}}</p>
         {{/if}}
         <section class="q-post-article-tags">
-            Published under {{tags}}
+            {{tags separator=" &blacksquare; " prefix="Published under "}}
         </section>
     </div>
 </header>
