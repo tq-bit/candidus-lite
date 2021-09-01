@@ -29,6 +29,10 @@ const gliderConfig = {
   draggable: true,
   dragVelocity: 0.2,
   scrollLock: true,
+  arrows: {
+    prev: '.q-glider-prev',
+    next: '.q-glider-next'
+  },
   scrollLockDelay: 100,
   scrollPropagate: true,
   responsive: [
@@ -42,7 +46,6 @@ const gliderConfig = {
       breakpoint: 1400,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 2,
       }
     }
   ]

@@ -263,13 +263,32 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   }
 
   .q-post-list-item-tag-inner {
+    position: relative;
+    background-color: var(--background-color-primary);
     padding: var(--gap-xs) var(--gap-md);
-    border-radius: var(--gap-max);
-    border: 1px solid var(--accent-color-primary);
-    color: var(--accent-color-primary);
+    color: var(--text-color-primary);
     font-family: 'Open Sans', sans-serif;
     font-size: var(--text-size-xxs);
+    border-radius: var(--gap-xxl);
     text-align: center;
+  }
+
+  .q-post-list-item-tag-inner::before {
+    opacity: 1;
+    position: absolute;
+    background: linear-gradient(
+      to bottom right,
+      var(--accent-color-primary),
+      var(--accent-color-secondary)
+    );
+    content: '';
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: calc(var(--gap-xxs) * -1);
+    right: calc(var(--gap-xxs) * -1);
+    padding: var(--gap-xxs);
+    border-radius: var(--gap-xxl);
   }
 
   .q-post-list-item-title {

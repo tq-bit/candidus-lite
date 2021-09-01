@@ -16,13 +16,21 @@
 {{#if posts}}
 {{/if}}
 <div class="q-post-cardlist-wrapper">
+  <header class="q-index-content-header">
     <h2 class="q-index-sub-title">Featured articles</h2>
-    <div class="glider-contain">
-      <div id="q-glider" class="glider">
-          {{#foreach posts}}
-            {{> "post-card-item"}}
-          {{/foreach}}
-      </div>
+    <div>
+      <button aria-label="Previous" class="q-glider-prev">«</button>
+      <button aria-label="Next" class="q-glider-next">»</button>
+
+    </div>
+  </header>
+  <div class="glider-contain">
+    <div id="q-glider" class="glider">
+      {{#foreach posts}}
+      {{> "post-card-item"}}
+      {{/foreach}}
+    </div>
+    <div role="tablist" class="dots"></div>
     </div>
   {{#if posts}}
   {{/if}}
