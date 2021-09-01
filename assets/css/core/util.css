@@ -18,6 +18,11 @@
   text-align: left;
 }
 
+.q-icon > * {
+  height: var(--el-size-xxs);
+  width: var(--el-size-xxs);
+}
+
 /* Margin rules
  * Includes:
  * - sm

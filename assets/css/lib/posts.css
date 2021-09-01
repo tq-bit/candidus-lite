@@ -220,16 +220,6 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   font-size: var(--text-size-md);
 }
 
-.q-post-card-item-tag-inner {
-  padding: var(--gap-xs) var(--gap-md);
-  border-radius: var(--gap-max);
-  border: 1px solid var(--accent-color-primary);
-  color: var(--accent-color-primary);
-  font-family: 'Open Sans', sans-serif;
-  font-size: var(--text-size-xs);
-  text-align: center;
-}
-
 .q-post-card-body-excerpt {
   font-size: var(--text-size-sm);
   line-height: var(--gap-xl);
