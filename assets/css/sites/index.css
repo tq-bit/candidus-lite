@@ -40,6 +40,7 @@
 
 .q-glider-prev,
 .q-glider-next {
+  transition: opacity var(--duration-quick);
   font-size: var(--text-size-md);
   padding: var(--gap-sm) var(--gap-md);
   color: var(--text-color-primary);
@@ -49,6 +50,11 @@
   cursor: pointer;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 15%);
   margin: 0;
+}
+
+.q-glider-prev.disabled,
+.q-glider-next.disabled {
+  opacity: var(--opacity-disabled);
 }
 
 .q-glider-prev {
