@@ -130,8 +130,23 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   padding: var(--gap-xl) 0;
 }
 
-.q-post-article-meta-publishdate,
-.q-post-article-meta-readingtime {
+
+.q-post-article-meta {
+  display: flex;
+  align-items: center;
+}
+
+.q-post-author-avatar {
+  margin-right: var(--gap-lg)
+}
+
+.q-post-author-image {
+  height: var(--el-size-xs);
+  width: var(--el-size-xs);
+  border-radius: var(--gap-max);
+}
+
+.q-post-article-info {
   font-size: var(--text-size-sm);
   color: var(--text-color-primary);
 }

@@ -15,12 +15,12 @@
 {{#get "posts" filter="featured:true"}}
 {{#if posts}}
 {{/if}}
-<div class="q-post-cardlist-wrapper">
+<section class="q-post-cardlist-wrapper">
   <header class="q-index-content-header">
     <h2 class="q-index-sub-title">Featured articles</h2>
     <div>
-      <button aria-label="Previous" class="q-glider-prev">«</button>
-      <button aria-label="Next" class="q-glider-next">»</button>
+      <button aria-label="Previous" class="q-glider-prev">&lsaquo;</button>
+      <button aria-label="Next" class="q-glider-next">&rsaquo;</button>
 
     </div>
   </header>
@@ -34,14 +34,14 @@
     </div>
   {{#if posts}}
   {{/if}}
-  </div>
+  </section>
 {{/get}}
 
-<main class='q-index-content-wrapper'>
+<section class='q-index-content-wrapper'>
     <header class="q-index-content-header">
       <h2 class="q-index-sub-title">Latest publications</h2>
     </header>
-    <section class="q-index-content-inner">
+    <div class="q-index-content-inner">
         <div class="q-post-list">
           {{#foreach posts}}
             {{> "post-list-item"}}
@@ -49,5 +49,5 @@
         </div>
         <!-- Show pagination if pagination exceeds posts_per_page config  -->
         {{ pagination }}
-    </section>
-</main>
+    </div>
+</section>

@@ -13,8 +13,23 @@
 <header class="q-post-article-header-wrapper">
     <div class="q-post-article-header-inner">
         <section class="q-post-article-meta">
-            <time class="q-post-article-meta-publishdate" datetime="{{date format=" YYYY-MM-DD"}}">{{date}}</time>
-            <span class="q-post-article-meta-readingtime"><span class="bull"> &blacksquare; </span> {{reading_time}}</span>
+            <div class="q-post-article-author">
+
+            </div>
+            {{#primary_author}}
+                {{#if profile_image}}
+                <a href="{{url}}" class="q-post-author-avatar">
+                    <img class="q-post-author-image" src="{{img_url profile_image}}" alt="{{name}}" />
+                </a>
+                {{else}}
+                <a href="{{url}}" class="q-author-avatar q-author-image">{{> "icons/avatar"}}</a>
+                {{/if}}
+            {{/primary_author}}
+            <div class="q-post-article-info">
+
+                <time class="q-post-article-meta-publishdate" datetime="{{date format=" YYYY-MM-DD"}}">{{date}}</time>
+                <span class="q-post-article-meta-readingtime"><span class="bull"> &blacksquare; </span>{{reading_time}}</s>
+            </div>
         </section>
         <h1 class="q-post-article-title">{{title}}</h1>
         {{#if custom_excerpt}}
