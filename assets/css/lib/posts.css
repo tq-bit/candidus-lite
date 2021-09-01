@@ -68,8 +68,12 @@
 
 .q-post-navbar-inner {
   padding: var(--gap-md) var(--gap-lg);
+  color: var(--text-color-primary);
   background-color: var(--background-color-primary);
   opacity: 0.98;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 progress.q-post-reading-progress-bar {
