@@ -11,10 +11,12 @@
 </div>
 
 <!-- Secion only shown if there are featured posts -->
+
 {{#get "posts" filter="featured:true"}}
-  {{#if posts}}
-  {{/if}}
-  <div class="q-post-cardlist-wrapper">
+{{#if posts}}
+{{/if}}
+<div class="q-post-cardlist-wrapper">
+    <h2 class="q-index-sub-title">Featured articles</h2>
     <div class="glider-contain">
       <div id="q-glider" class="glider">
           {{#foreach posts}}
@@ -23,13 +25,15 @@
       </div>
     </div>
   {{#if posts}}
-    <hr>
   {{/if}}
   </div>
 {{/get}}
 
 <main class='q-index-content-wrapper'>
-    <div class="q-index-content-inner">
+    <header class="q-index-content-header">
+      <h2 class="q-index-sub-title">Latest publications</h2>
+    </header>
+    <section class="q-index-content-inner">
         <div class="q-post-list">
           {{#foreach posts}}
             {{> "post-list-item"}}
@@ -37,5 +41,5 @@
         </div>
         <!-- Show pagination if pagination exceeds posts_per_page config  -->
         {{ pagination }}
-    </div>
+    </section>
 </main>

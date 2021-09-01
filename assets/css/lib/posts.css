@@ -28,8 +28,9 @@
 .q-post-list-item-readingtime,
 .q-post-list-item-title {
   display: flex;
+  flex-grow: 1;
+  overflow: hidden;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .q-post-list-item-tag,
@@ -44,8 +45,8 @@
 }
 
 .q-post-list-item-readingtime {
-  text-align: left;
-  color: var(--accent-color-primary);
+  color: var(--text-color-primary);
+  opacity: 0.8;
   font-size: var(--text-size-sm);
 }
 
@@ -191,7 +192,7 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 .q-post-cardlist-wrapper,
 .q-post-cardlist-inner {
   height: fit-content;
-  margin: var(--gap-md) auto;
+  margin: var(--gap-xxl) auto;
 }
 
 .q-post-cardlist-inner {
@@ -251,7 +252,7 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   }
   /* Queries for [/partials/post-list-item.hbs]  */
   .q-post-list-item-inner {
-    grid-template-columns: 15% 70% 15%;
+    grid-template-columns: 20% 60% 20%;
   }
   .q-post-list-item-tag,
   .q-post-list-item-readingtime {
@@ -278,6 +279,10 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 }
 
 @media (min-width: 1400px) {
+  .q-post-list-item-inner {
+    grid-template-columns: 15% 70% 15%;
+  }
+
   .q-post-cardlist-inner {
     grid-template-columns: 1fr 1fr 1fr;
   }
