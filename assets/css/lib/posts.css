@@ -130,14 +130,13 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   padding: var(--gap-xl) 0;
 }
 
-
 .q-post-article-meta {
   display: flex;
   align-items: center;
 }
 
 .q-post-author-avatar {
-  margin-right: var(--gap-lg)
+  margin-right: var(--gap-lg);
 }
 
 .q-post-author-image {
@@ -171,15 +170,20 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   margin: var(--gap-sm);
 }
 
-.q-post-card-inner:hover h4 {
-  color: var(--accent-color-primary);
-}
-
 .q-post-card-inner {
   background: var(--background-color-secondary);
-  border: 1.5px solid transparent;
   border-radius: var(--gap-xs);
   height: calc(100% - (var(--gap-xxs) * 1.5));
+}
+
+.q-post-card-inner-shaded {
+  background-position: center;
+  background-size: cover;
+  box-shadow: var(--shadow-layer-medium);
+}
+
+.q-post-card-inner-shaded * {
+  color: var(--white-color);
 }
 
 .q-post-card-header-image {
@@ -217,6 +221,8 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 }
 
 .q-post-card-title {
+  margin: 0;
+  padding-top: var(--gap-lg);
   font-size: var(--text-size-md);
 }
 

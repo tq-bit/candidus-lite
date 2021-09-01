@@ -3,23 +3,26 @@ which templates loop over to generate a list of posts. --}}
 
 <article class="q-post-card-wrapper {{post_class}}">
     <div class="q-post-card-inner">
-        <a href="{{url}}">
-            <header class="q-post-card-header">
-                {{#if feature_image}}
-                <div class="q-post-card-header-image">
-                    <img loading="lazy" src="{{img_url feature_image}}" alt="Caption image for article {{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" class="q-post-card-image">
-                </div>
-                {{/if}}
-                <h4 class="q-post-card-title">
-                    {{title}}
-                </h4>
-            </header>
-            <section class=q-post-card-body>
-                <p class=q-post-card-body-excerpt>{{excerpt}}</p>
-            </section>
-            <footer class="q-post-card-footer">
+        <div {{#if feature_image}} style="background-image: url('{{img_url feature_image}}')" class="q-post-card-inner-shaded" {{/if}} >
+            <a href="{{url}}">
+                <header class="q-post-card-header">
+                    <!-- {{#if feature_image}}
+                    <div class="q-post-card-header-image">
+                        <img loading="lazy" src="{{img_url feature_image}}" alt="Caption image for article {{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" class="q-post-card-image">
+                    </div>
+                    {{/if}} -->
+                    <h4 class="q-post-card-title">
+                        {{title}}
+                    </h4>
+                </header>
+                <section class=q-post-card-body>
+                    <p class=q-post-card-body-excerpt>{{excerpt}}</p>
+                </section>
+                <footer class="q-post-card-footer">
 
-            </footer>
-        </a>
+                </footer>
+            </a>
+        </di>
+
     </div>
 </article>
