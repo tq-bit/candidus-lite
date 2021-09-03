@@ -3,34 +3,40 @@
   font-style: normal;
   font-weight: 400;
   src: url('./fonts/Open_Sans/OpenSans-Regular.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: italic;
   font-weight: 400;
   src: url('./fonts/Open_Sans/OpenSans-Italic.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Inconsolata';
   font-style: normal;
   font-weight: 400;
   src: url('./fonts/Inconsolata/static/Inconsolata/Inconsolata-Regular.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Inconsolata';
   font-style: italic;
   font-weight: 400;
   src: url('./fonts/Inconsolata/static/Inconsolata/Inconsolata-Light.ttf');
+  font-display: swap;
 }
 @font-face {
-  font-family: 'PT Sans';
+  font-family: 'PT Serif';
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/PT_Sans/PTSans-Regular.ttf');
+  src: url('./fonts/PT_Serif/PTSerif-Regular.ttf');
+  font-display: swap;
 }
 @font-face {
-  font-family: 'PT Sans';
+  font-family: 'PT Serif';
   font-style: italic;
   font-weight: 400;
-  src: url('./fonts/PT_Sans/PTSans-Italic.ttf');
+  src: url('./fonts/PT_Serif/PTSerif-Italic.ttf');
+  font-display: swap;
 }
