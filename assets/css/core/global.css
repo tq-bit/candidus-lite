@@ -72,8 +72,7 @@ time {
   color: var(--text-color-secondary);
   font-size: var(--text-size-md);
   line-height: var(--gap-xl);
-  margin-top: var(--gap-sm);
-  margin-bottom: var(--gap-sm);
+  margin: var(--gap-sm) 0;
 }
 
 a {

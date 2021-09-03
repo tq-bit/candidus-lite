@@ -76,9 +76,9 @@
 
   /* Custom variables */
   --shadow-layer: inset 9999px 9999px rgba(0,0,0, 0.15);
-  --shadow-layer-medium: inset 9999px 9999px rgba(0,0,0, 0.45);
+  --shadow-layer-medium: inset 9999px 9999px rgba(0,0,0, 0.55);
   --shadow-layer-dark: inset 9999px 9999px rgba(0,0,0, 0.85);
-  --opacity-disabled: 0.45;
+  --opacity-disabled: 0.55;
   --opacity-cloudy: 0.85;
   --opacity-enabled: 1;
 }

@@ -51,9 +51,6 @@
 }
 
 /* Styles for the psot card [/partials/post-card-item] */
-.q-post-card-footer {
-  display: flex;
-}
 
 /* Styles for the post - site [/post.hbs] */
 
@@ -177,13 +174,15 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 .q-post-card-inner {
   background: var(--background-color-secondary);
   border-radius: var(--gap-xs);
-  height: calc(100% - (var(--gap-xxs) * 1.5));
+  height: 100%;
 }
 
 .q-post-card-inner-shaded {
+  border-radius: var(--gap-xs);
   background-position: center;
   background-size: cover;
   box-shadow: var(--shadow-layer-medium);
+  height: 100%;
 }
 
 .q-post-card-inner-shaded * {
@@ -203,11 +202,11 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   width: 100%;
   height: 100%;
   border-radius: 0 3px 3px 0;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: fill;
+  object-fit: fill;
 }
 
-.q-post-card-title,
+.q-post-card-header,
 .q-post-card-body {
   padding: 0 var(--gap-lg);
 }
