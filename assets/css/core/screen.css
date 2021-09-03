@@ -63,22 +63,19 @@
   .q-post-cardlist-wrapper,
   .q-post-article-header-inner,
   .q-post-article,
-  .q-footer-inner,
   .q-tag-header-wrapper,
   .q-error-content-inner {
     width: var(--content-width-screen-xl);
   }
 
   .q-author-profile-wrapper {
-    width: var(--content-width-screen-lg)
+    width: var(--content-width-screen-lg);
   }
 }
 
 @media (min-width: 1400px) {
-  .q-navbar-inner,
   .q-post-article-header-inner,
   .q-post-article,
-  .q-footer-inner,
   .q-tag-header-wrapper,
   .q-error-content-inner {
     width: var(--content-width-screen-xxl);
@@ -86,6 +83,8 @@
 
   .q-index-content-wrapper,
   .q-post-cardlist-wrapper,
+  .q-navbar-inner,
+  .q-footer-inner,
   .q-author-profile-wrapper {
     width: var(--content-width-screen-lg);
   }
