@@ -9,11 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Open+Sans&family=Inconsolata&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Open+Sans&family=Inconsolata&display=swap" onload="this.onload=null;this.rel='stylesheet'"> -->
 
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/main.css"}}" />
+    <link rel="preload" as="font" href="{{asset "built/fonts.css"}}" onload="this.onload=null;this.rel='stylesheet'">
+
 
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}

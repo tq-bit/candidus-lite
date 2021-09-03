@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/Open_Sans/OpenSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./fonts/Open_Sans/OpenSans-Italic.ttf');
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/Inconsolata/static/Inconsolata/Inconsolata-Regular.ttf');
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./fonts/Inconsolata/static/Inconsolata/Inconsolata-Light.ttf');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/PT_Sans/PTSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./fonts/PT_Sans/PTSans-Italic.ttf');
+}
