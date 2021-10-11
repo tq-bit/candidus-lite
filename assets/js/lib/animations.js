@@ -55,12 +55,12 @@ const animateHideSidebar = (duration) => {
     duration
   })
   // @ts-ignore
-  setTimeout(() => domSidebar.classList.add('hidden'), duration)
+  setTimeout(() => domSidebar?.classList.add('hidden'), duration)
 }
 
 const animateShowSidebar = (duration) => {
   // @ts-ignore
-  domSidebar.classList.remove('hidden')
+  domSidebar?.classList.remove('hidden')
   // @ts-ignore
   anime({
     targets: '#q-sidebar',
@@ -110,12 +110,12 @@ const animateHideImageZoom = (duration) => {
     duration
   })
   // @ts-ignore
-  setTimeout(() => domImageZoom.classList.add('hidden'), duration)
+  setTimeout(() => domImageZoom?.classList.add('hidden'), duration)
 }
 
 const animateShowImageZoom = (duration) => {
   // @ts-ignore
-  domImageZoom.classList.remove('hidden')
+  domImageZoom?.classList.remove('hidden')
   // @ts-ignore
   anime({
     targets: '#q-image-zoom-wrapper',
