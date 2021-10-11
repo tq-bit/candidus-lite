@@ -107,12 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-
   // ./partials/post-card-item.hbs
   // Hide a part of the excerpt
   if (domPostCardItemExcerpts) {
     hidePostCardExcerpts(domPostCardItemExcerpts);
   }
+
+  // Reframe iframes, if available
+  reframe('iframe');
 });
 
 // Everything that should be handled right away
