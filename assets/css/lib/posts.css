@@ -27,6 +27,7 @@
 
 .q-post-list-item-readingtime,
 .q-post-list-item-title {
+  font-weight: 500;
   display: flex;
   flex-grow: 1;
   overflow: hidden;
