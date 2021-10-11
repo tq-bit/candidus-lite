@@ -109,7 +109,7 @@ path {
   fill: var(--text-color-secondary);
 }
 
-path:hover {
+a path:hover {
   fill: var(--accent-color-secondary);
 }
 
