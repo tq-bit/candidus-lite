@@ -25,4 +25,6 @@ const toggleImageZoom = (domPostImage) => {
 }
 
 // Initially hide the sidebar
-animateHideImageZoom(0);
+if(domImageZoom) {
+  animateHideImageZoom(0);
+}
