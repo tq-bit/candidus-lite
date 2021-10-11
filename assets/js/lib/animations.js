@@ -14,15 +14,15 @@
  * @param  {...String} targets The CSS selectors to be animated
  */
 const animateSlideOutItems = (duration, movement, ...targets) => {
-  const translateY = movement === 'top' ? '-100%' : '25px'
+  const translateY = movement === 'top' ? '-100%' : '25px';
   // @ts-ignore
   anime({
     targets,
     translateY,
     opacity: 0,
-    duration
-  })
-}
+    duration,
+  });
+};
 
 /**
  *
@@ -39,7 +39,7 @@ const animateSlideInItemsStagger = (duration, ...targets) => {
     opacity: 1,
     duration: duration,
   });
-}
+};
 /**
  * Sidebar animations
  * 1) hide sidebar
@@ -52,24 +52,24 @@ const animateHideSidebar = (duration) => {
     translateX: '-100%',
     opacity: 0,
     easing: 'easeInOutSine',
-    duration
-  })
+    duration,
+  });
   // @ts-ignore
-  setTimeout(() => domSidebar.classList.add('hidden'), duration)
-}
+  setTimeout(() => domSidebar.classList.add('hidden'), duration);
+};
 
 const animateShowSidebar = (duration) => {
   // @ts-ignore
-  domSidebar.classList.remove('hidden')
+  domSidebar.classList.remove('hidden');
   // @ts-ignore
   anime({
     targets: '#q-sidebar',
     translateX: '0',
     opacity: 0.98,
     easing: 'easeInOutSine',
-    duration
-  })
-}
+    duration,
+  });
+};
 
 /**
  * Post navbar animations
@@ -83,9 +83,9 @@ const showPostNavbar = (duration) => {
     targets: '#q-post-navbar',
     translateY: '0',
     easing: 'easeInOutSine',
-    duration
-  })
-}
+    duration,
+  });
+};
 
 const hidePostNavbar = (duration) => {
   // @ts-ignore
@@ -93,41 +93,45 @@ const hidePostNavbar = (duration) => {
     targets: '#q-post-navbar',
     translateY: '-120px',
     easing: 'easeInOutSine',
-    duration
-  })
-}
+    duration,
+  });
+};
 
 const animateHideImageZoom = (duration) => {
-  // @ts-ignore
-  anime({
-    targets: '#q-image-zoom-wrapper',
-    height: '0%',
-    width: '0%',
-    top: '105%',
-    left: '50%',
-    opacity: 0,
-    easing: 'easeInOutSine',
-    duration
-  })
-  // @ts-ignore
-  setTimeout(() => domImageZoom.classList.add('hidden'), duration)
-}
+  if (domImageZoom) {
+    // @ts-ignore
+    anime({
+      targets: '#q-image-zoom-wrapper',
+      height: '0%',
+      width: '0%',
+      top: '105%',
+      left: '50%',
+      opacity: 0,
+      easing: 'easeInOutSine',
+      duration,
+    });
+    // @ts-ignore
+    setTimeout(() => domImageZoom.classList.add('hidden'), duration);
+  }
+};
 
 const animateShowImageZoom = (duration) => {
-  // @ts-ignore
-  domImageZoom.classList.remove('hidden')
-  // @ts-ignore
-  anime({
-    targets: '#q-image-zoom-wrapper',
-    height: '100%',
-    width: '100%',
-    top: '0',
-    left: '0',
-    opacity: 1,
-    easing: 'easeInOutSine',
-    duration
-  })
-}
+  if (domImageZoom) {
+    // @ts-ignore
+    domImageZoom.classList.remove('hidden');
+    // @ts-ignore
+    anime({
+      targets: '#q-image-zoom-wrapper',
+      height: '100%',
+      width: '100%',
+      top: '0',
+      left: '0',
+      opacity: 1,
+      easing: 'easeInOutSine',
+      duration,
+    });
+  }
+};
 
 // Slide in posts when page loads
 // Create the Glider for the featured posts
@@ -137,15 +141,12 @@ function animateGliderAuto(glider, miliseconds) {
   let nextIndex = 1;
 
   function slide() {
-    slideTimeout = setTimeout(
-      function () {
-        if (nextIndex >= slidesCount) {
-          nextIndex = 0;
-        }
-        glider.scrollItem(nextIndex++);
-      },
-      miliseconds
-    );
+    slideTimeout = setTimeout(function () {
+      if (nextIndex >= slidesCount) {
+        nextIndex = 0;
+      }
+      glider.scrollItem(nextIndex++);
+    }, miliseconds);
   }
 
   glider.ele.addEventListener('glider-animated', function () {
