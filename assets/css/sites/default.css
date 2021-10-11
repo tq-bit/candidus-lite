@@ -1,7 +1,12 @@
 /* Outer element styles */
+
 .q-body,
 .q-header {
   background-color: var(--background-color-primary);
+}
+
+.q-main-inner {
+  min-height: 76vh;
 }
 
 .q-footer {
