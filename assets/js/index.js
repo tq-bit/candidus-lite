@@ -5,11 +5,6 @@ const domThemeButton = document.querySelectorAll('.q-theme-button');
 const domNavbarToggleButton = document.querySelector('#q-sidebar-toggle');
 const domNavbarCloseButton = document.querySelector('#q-navbar-button-close');
 
-// DOM elements from ./index.hbs
-// DOM element for the glider
-// @ts-ignore
-const domGliderElement = document.querySelector('.glider');
-
 // DOM elements specifically in ./posts.hbs
 const domPostContentArea =
   document.querySelector('.q-post-article-content') || null;
@@ -85,38 +80,68 @@ const registerSearchPlugin = () => {
   }
 };
 
+const registerGliderPlugin = () => {
+  const domGliderElement = document.querySelector('.glider');
+
+  if (domGliderElement) {
+    const gliderConfig = {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      draggable: true,
+      dragVelocity: 0.2,
+      scrollLock: true,
+      arrows: {
+        prev: '.q-glider-prev',
+        next: '.q-glider-next',
+      },
+      scrollLockDelay: 100,
+      scrollPropagate: true,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 1400,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+      ],
+    };
+    const glider = new Glider(domGliderElement, gliderConfig);
+    animateGliderAuto(glider, 5000);
+  }
+};
+
+const registerScrollingObserver = () => {
+  let scrollerObserver = {
+    isScrolling: false,
+    checkInterval: 250,
+  };
+  document.addEventListener('scroll', () => {
+    scrollerObserver.isScrolling = true;
+  });
+  setInterval(() => {
+    if (scrollerObserver.isScrolling) {
+      scrollerObserver.isScrolling = false;
+
+      // Attach the scroll events
+      // ./posts.hbs
+      if (domPostContentArea && domPostReadingProgressBar) {
+        monitorPostNavbar(
+          domPostReadingProgressBar,
+          scrollerObserver.checkInterval
+        );
+        monitorShowReadMorePostCards(domPostReadingProgressBar);
+      }
+    }
+  }, scrollerObserver.checkInterval);
+};
+
 // Define global variables
-const gliderConfig = {
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  draggable: true,
-  dragVelocity: 0.2,
-  scrollLock: true,
-  arrows: {
-    prev: '.q-glider-prev',
-    next: '.q-glider-next',
-  },
-  scrollLockDelay: 100,
-  scrollPropagate: true,
-  responsive: [
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 2,
-      },
-    },
-    {
-      breakpoint: 1400,
-      settings: {
-        slidesToShow: 3,
-      },
-    },
-  ],
-};
-let scrollerObserver = {
-  isScrolling: false,
-  checkInterval: 250,
-};
 
 // Event binding for all default elements
 domThemeButton.forEach((themeButton) => {
@@ -126,34 +151,12 @@ domNavbarToggleButton.addEventListener('click', () => toggleSidebar());
 domNavbarCloseButton.addEventListener('click', () => toggleSidebar());
 
 // Creates a custom scroll check event
-document.addEventListener('scroll', () => {
-  scrollerObserver.isScrolling = true;
-});
-
-setInterval(() => {
-  if (scrollerObserver.isScrolling) {
-    scrollerObserver.isScrolling = false;
-
-    // Attach the scroll events
-    // ./posts.hbs
-    if (domPostContentArea && domPostReadingProgressBar) {
-      monitorPostNavbar(
-        domPostReadingProgressBar,
-        scrollerObserver.checkInterval
-      );
-      monitorShowReadMorePostCards(domPostReadingProgressBar);
-    }
-  }
-}, scrollerObserver.checkInterval);
 
 // Events to be fired on DomContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
   // Event binding for site specific dom elements
   // ./index.hbs
-  if (domGliderElement) {
-    const glider = new Glider(domGliderElement, gliderConfig);
-    animateGliderAuto(glider, 5000);
-  }
+
   animateSlideInItemsStagger(1000, '.q-post-list-item-wrapper');
 
   // ./post.hbs
@@ -180,6 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Reframe iframes, if available
   reframe('iframe');
+  registerScrollingObserver();
+  registerGliderPlugin();
   registerSearchPlugin();
 });
 
