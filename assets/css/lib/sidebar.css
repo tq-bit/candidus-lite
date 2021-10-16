@@ -14,8 +14,8 @@ ul.nav {
   top: 0;
   left: 0;
   width: 100vw;
-  background-color: var(--background-color-secondary);
-  opacity: 0.98;
+  background-color: var(--background-color-primary);
+  opacity: 0.99;
   height: 100%;
   z-index: 20;
 }

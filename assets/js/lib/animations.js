@@ -49,7 +49,7 @@ const animateHideSidebar = (duration) => {
   // @ts-ignore
   anime({
     targets: '#q-sidebar',
-    translateX: '-100%',
+    translateX: '100%',
     opacity: 0,
     easing: 'easeInOutSine',
     duration,
@@ -65,7 +65,7 @@ const animateShowSidebar = (duration) => {
   anime({
     targets: '#q-sidebar',
     translateX: '0',
-    opacity: 0.98,
+    opacity: 0.99,
     easing: 'easeInOutSine',
     duration,
   });
