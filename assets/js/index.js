@@ -1,7 +1,6 @@
 // Query all necessary DOM elements
 // DOM elements from ./default.hbs
 const domSiteLogo = document.querySelector('img.q-navbar-logo');
-const domThemeButton = document.querySelectorAll('.q-theme-button');
 const domNavbarToggleButton = document.querySelector('#q-sidebar-toggle');
 const domNavbarCloseButton = document.querySelector('#q-navbar-button-close');
 
@@ -141,12 +140,19 @@ const registerScrollingObserver = () => {
   }, scrollerObserver.checkInterval);
 };
 
+const registerThemeButtons = () => {
+  const domThemeButton = document.querySelectorAll('.q-theme-button');
+  const { initUserTheme, toggleUserTheme } = useTheme();
+  domThemeButton.forEach((themeButton) => {
+    themeButton.addEventListener('click', () => toggleUserTheme());
+  });
+  initUserTheme();
+};
+
 // Define global variables
 
 // Event binding for all default elements
-domThemeButton.forEach((themeButton) => {
-  themeButton.addEventListener('click', () => toggleUserTheme());
-});
+
 domNavbarToggleButton.addEventListener('click', () => toggleSidebar());
 domNavbarCloseButton.addEventListener('click', () => toggleSidebar());
 
@@ -189,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Everything that should be handled right away
-initUserTheme();
+registerThemeButtons();
 animateSlideOutItems(
   1000,
   'bottom',

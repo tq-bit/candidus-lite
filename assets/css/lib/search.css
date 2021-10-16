@@ -16,7 +16,7 @@
 }
 
 .q-search-inner {
-  background-color: var(--background-color-secondary);
+  background-color: var(--background-color-tartiary);
   border-radius: var(--gap-sm);
   margin-top: var(--gap-xxl);
   padding: var(--gap-md) var(--gap-lg);
@@ -67,7 +67,7 @@
 }
 
 .q-search-item:hover {
-  background-color: var(--background-color-tartiary);
+  background-color: var(--background-color-secondary);
 }
 
 .q-search-placeholder {
