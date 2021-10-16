@@ -3,7 +3,7 @@
     <header class="q-search-bar">
       <span class="q-search-logo">{{> "icons/search"}}</span>
       <label class="hidden" for="search">Search</label>
-      <input id="q-search-input" name="search" class='q-search-input' type='text' placeholder='Press "ctrl + k" to search' />
+      <input id="q-search-input" name="search" class='q-search-input' type='text' placeholder='Press "ctrl + k" to search' aria-label="Search" aria-describedby="q-search-list"/>
       <button id="q-search-delete" type="button" class="q-search-button">{{> "icons/close"}}</button>
     </header>
     <main class='q-search-list-wrapper'>

@@ -28,8 +28,10 @@ const domImageZoomCloseButton = document.querySelector('#q-image-zoom-close');
 
 const registerSearchPlugin = () => {
   try {
-    const { initLocalIndex, search, renderQueryResults, toggleSearch } =
-      useLunrSearch(Q_GHOST_API_ROOT, Q_GHOST_API_KEY);
+    const root = Q_GHOST_API_ROOT;
+    const key = Q_GHOST_API_KEY;
+    const { initLocalIndex, search, toggleSearch, showSearch, hideSearch } =
+      useLunrSearch(root, key);
     // DOM Elements for the ./partials/search.hbs
     const domSearchButton = document.querySelector('#q-search-button');
     const domSearchWrapper = document.querySelector('#q-search-wrapper');
@@ -56,6 +58,17 @@ const registerSearchPlugin = () => {
     });
     domSearchDeleteButton.addEventListener('click', () => {
       domSearchInput.value = '';
+    });
+
+    window.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape') {
+        hideSearch(domSearchWrapper);
+      }
+
+      if (ev.ctrlKey && ev.key.toLowerCase() === 'k') {
+        ev.preventDefault();
+        showSearch(domSearchWrapper);
+      }
     });
 
     // Build up the search index

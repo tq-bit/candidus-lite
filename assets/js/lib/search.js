@@ -1,27 +1,6 @@
-/**
- * Functions related to the searchbar and matching lunr configuration
- * Note: To work, lunr requires a global variable named API_KEY which
- * grants access to ghost's content api
- *
- * Add this script to your
- * <script>
- * const Q_GHOST_API_ROOT = 'https://blog.q-bit.me';
- * const Q_GHOST_API_KEY = '6e0e24ecc7e23a8fac7d9bfd71';
- * </script>
- */
-
-// TODO: [x] Fetch posts from the content api
-// TODO: [x]Build an index and store it in localstorage
-// TODO: [x]Make this index refresh itself every 8 hours
-// TODO: [x]Build the actual search functionality
-// TODO: [x]Use the search result to render the results inside 'q-search-list'
-// TODO: [ ]Make the input field accessible and autofocused
-// TODO: [ ]Make the delete button accessible
-// TODO: [ ]Add open and close functionality to the search interface (also, close when button esc is clicked)
-// TODO: [ ]Add proper error handling when plugin is registered
-
 const useLunrSearch = (rootUrl = null, key = null) => {
   const resultList = document.getElementById('q-search-list');
+  const searchInput = document.getElementById('q-search-input');
   const placeholderItem = document.createElement('p');
   const path = '/ghost/api/v2/content/posts/';
   const indexName = 'q-search-index';
@@ -54,10 +33,19 @@ const useLunrSearch = (rootUrl = null, key = null) => {
     const animationDuration = 750;
 
     if (!isHidden) {
-      domSearchWrapper.classList.add('hidden');
+      hideSearch(domSearchWrapper);
     } else {
-      domSearchWrapper.classList.remove('hidden');
+      showSearch(domSearchWrapper);
     }
+  };
+
+  const showSearch = (domSearchWrapper) => {
+    domSearchWrapper.classList.remove('hidden');
+    searchInput.focus();
+  };
+
+  const hideSearch = (domSearchWrapper) => {
+    domSearchWrapper.classList.add('hidden');
   };
 
   const search = (ev) => {
@@ -93,10 +81,10 @@ const useLunrSearch = (rootUrl = null, key = null) => {
         const searchLink = document.createElement('a');
 
         searchItem.classList.add('q-search-item');
+        searchItem.innerText = '🔖 ' + blueprint.title;
         searchLink.href = blueprint.url;
-        searchLink.innerText = blueprint.title;
-        searchItem.append(searchLink);
-        resultList.append(searchItem);
+        searchLink.append(searchItem);
+        resultList.append(searchLink);
       });
     }
   };
@@ -167,5 +155,12 @@ const useLunrSearch = (rootUrl = null, key = null) => {
     return posts;
   };
 
-  return { initLocalIndex, search, renderQueryResults, toggleSearch };
+  return {
+    initLocalIndex,
+    search,
+    renderQueryResults,
+    toggleSearch,
+    showSearch,
+    hideSearch,
+  };
 };
