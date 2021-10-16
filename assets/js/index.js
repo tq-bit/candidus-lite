@@ -2,25 +2,75 @@
 // DOM elements from ./default.hbs
 const domSiteLogo = document.querySelector('img.q-navbar-logo');
 const domThemeButton = document.querySelectorAll('.q-theme-button');
-const domNavbarToggleButton = document.querySelector('#q-sidebar-toggle')
+const domNavbarToggleButton = document.querySelector('#q-sidebar-toggle');
 const domNavbarCloseButton = document.querySelector('#q-navbar-button-close');
 
 // DOM elements from ./index.hbs
 // DOM element for the glider
 // @ts-ignore
-const domGliderElement = document.querySelector('.glider')
+const domGliderElement = document.querySelector('.glider');
 
 // DOM elements specifically in ./posts.hbs
-const domPostContentArea = document.querySelector('.q-post-article-content') || null;
-const domPostReadingProgressBar = document.querySelector('#q-reading-progress') || null;
+const domPostContentArea =
+  document.querySelector('.q-post-article-content') || null;
+const domPostReadingProgressBar =
+  document.querySelector('#q-reading-progress') || null;
 const domPostNavbar = document.querySelector('#q-post-navbar') || null;
 const domPostImages = document.querySelectorAll('.kg-width-full');
 
 // DOM elements specifically in ./partials/post-card-item.hbs
-const domPostCardItemExcerpts = document.querySelectorAll('.q-post-card-body-excerpt')
+const domPostCardItemExcerpts = document.querySelectorAll(
+  '.q-post-card-body-excerpt'
+);
 
 // DOM Elements specifically in ./partials/image-zoom.hbs
 const domImageZoomCloseButton = document.querySelector('#q-image-zoom-close');
+
+const registerSearchPlugin = () => {
+  try {
+    const { initLocalIndex, search, renderQueryResults, toggleSearch } =
+      useLunrSearch(Q_GHOST_API_ROOT, Q_GHOST_API_KEY);
+    // DOM Elements for the ./partials/search.hbs
+    const domSearchButton = document.querySelector('#q-search-button');
+    const domSearchWrapper = document.querySelector('#q-search-wrapper');
+    const domSearchInput = document.querySelector('#q-search-input');
+    const domSearchDeleteButton = document.querySelector('#q-search-delete');
+
+    domSearchButton.classList.remove('hidden');
+
+    domSearchButton.addEventListener('click', (ev) => {
+      toggleSearch(domSearchWrapper);
+    });
+
+    domSearchWrapper.addEventListener('click', (ev) => {
+      const hasClickedWrapper = ev.target === domSearchWrapper;
+      if (hasClickedWrapper) {
+        toggleSearch(domSearchWrapper);
+      }
+    });
+
+    domSearchInput.addEventListener('keyup', (ev) => {
+      let handler = null;
+      clearTimeout(handler);
+      handler = setTimeout(() => search(ev), 500);
+    });
+    domSearchDeleteButton.addEventListener('click', () => {
+      domSearchInput.value = '';
+    });
+
+    // Build up the search index
+    initLocalIndex();
+    console.log('Search plugin registered');
+  } catch (error) {
+    console.groupCollapsed('Search plugin disabled');
+    console.warn('In order to use the search plugin, register it:');
+    console.log('<script>');
+    console.log('const Q_GHOST_API_ROOT = "YOUR_ROOT_URL";');
+    console.log('const Q_GHOST_API_KEY = "YOUR_CONTENT_API_KEY";');
+    console.log('</script>');
+    console.groupEnd();
+  }
+};
 
 // Define global variables
 const gliderConfig = {
@@ -31,7 +81,7 @@ const gliderConfig = {
   scrollLock: true,
   arrows: {
     prev: '.q-glider-prev',
-    next: '.q-glider-next'
+    next: '.q-glider-next',
   },
   scrollLockDelay: 100,
   scrollPropagate: true,
@@ -40,32 +90,32 @@ const gliderConfig = {
       breakpoint: 800,
       settings: {
         slidesToShow: 2,
-      }
+      },
     },
     {
       breakpoint: 1400,
       settings: {
         slidesToShow: 3,
-      }
-    }
-  ]
-}
+      },
+    },
+  ],
+};
 let scrollerObserver = {
   isScrolling: false,
   checkInterval: 250,
-}
+};
 
 // Event binding for all default elements
-domThemeButton.forEach(themeButton => {
-  themeButton.addEventListener('click', () => toggleUserTheme())
-})
+domThemeButton.forEach((themeButton) => {
+  themeButton.addEventListener('click', () => toggleUserTheme());
+});
 domNavbarToggleButton.addEventListener('click', () => toggleSidebar());
 domNavbarCloseButton.addEventListener('click', () => toggleSidebar());
 
 // Creates a custom scroll check event
 document.addEventListener('scroll', () => {
   scrollerObserver.isScrolling = true;
-})
+});
 
 setInterval(() => {
   if (scrollerObserver.isScrolling) {
@@ -74,37 +124,39 @@ setInterval(() => {
     // Attach the scroll events
     // ./posts.hbs
     if (domPostContentArea && domPostReadingProgressBar) {
-      monitorPostNavbar(domPostReadingProgressBar, scrollerObserver.checkInterval);
-      monitorShowReadMorePostCards(domPostReadingProgressBar)
+      monitorPostNavbar(
+        domPostReadingProgressBar,
+        scrollerObserver.checkInterval
+      );
+      monitorShowReadMorePostCards(domPostReadingProgressBar);
     }
   }
-}, scrollerObserver.checkInterval)
+}, scrollerObserver.checkInterval);
 
 // Events to be fired on DomContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
-
   // Event binding for site specific dom elements
   // ./index.hbs
   if (domGliderElement) {
-    const glider = new Glider(domGliderElement, gliderConfig)
-    animateGliderAuto(glider, 5000)
+    const glider = new Glider(domGliderElement, gliderConfig);
+    animateGliderAuto(glider, 5000);
   }
-  animateSlideInItemsStagger(1000, '.q-post-list-item-wrapper')
+  animateSlideInItemsStagger(1000, '.q-post-list-item-wrapper');
 
   // ./post.hbs
   // Execute post related functions
   if (domPostContentArea && domPostReadingProgressBar) {
     monitorReadingProgress(domPostContentArea, domPostReadingProgressBar);
     // Add event listeners to fullscreen images
-    domPostImages.forEach(domPostImage => {
+    domPostImages.forEach((domPostImage) => {
       domPostImage.addEventListener('click', () => {
         toggleImageZoom(domPostImage);
-      })
+      });
     });
 
     domImageZoomCloseButton.addEventListener('click', () => {
-      toggleImageZoom()
-    })
+      toggleImageZoom();
+    });
   }
 
   // ./partials/post-card-item.hbs
@@ -115,8 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Reframe iframes, if available
   reframe('iframe');
+  registerSearchPlugin();
 });
 
 // Everything that should be handled right away
 initUserTheme();
-animateSlideOutItems(1000, 'bottom', '.q-post-list-item-wrapper', '.q-post-card');
+animateSlideOutItems(
+  1000,
+  'bottom',
+  '.q-post-list-item-wrapper',
+  '.q-post-card'
+);
