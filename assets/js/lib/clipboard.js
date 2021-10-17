@@ -1,41 +1,47 @@
+const useClipboard = () => {
+  const copy = (section) => {
+    navigator.clipboard.writeText(section.innerText);
+  };
 
+  const appendCopyIcons = (domCodeSections) => {
+    domCodeSections.forEach(function (section) {
+      section.parentElement.style.position = 'relative';
+      const copyIcon = renderCopyIcon();
 
-const copyCodeToClipboard = function(sectionNode) {
-  navigator.clipboard.writeText(sectionNode.innerText);
-}
+      // Add the event listeners
+      copyIcon.addEventListener('click', () => copy(section));
 
-const renderCodeCopyElement = function(selector) {
-  const codeSections = document.querySelectorAll(selector);
+      section.parentElement.appendChild(copyIcon);
+    });
+  };
 
-  codeSections.forEach(function(section)  {
-    section.parentElement.style.position = 'relative'
-    const codeClip = document.createElement('span')
-    const codeClipWrapper = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    const codeClipPart = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  const renderCopyIcon = () => {
+    const svgPath =
+      'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2';
+    const svgNsUrl = 'http://www.w3.org/2000/svg';
+    const copyIcon = document.createElement('span');
+    const iconSvg = document.createElementNS(svgNsUrl, 'svg');
+    const iconPath = document.createElementNS(svgNsUrl, 'path');
 
     // Set the necessary attributes
-    codeClip.classList.add('q-post-code-clip-icon');
-    codeClip.setAttribute('tabindex', '0');
+    copyIcon.classList.add('q-post-code-clip-icon');
+    copyIcon.setAttribute('tabindex', '0');
 
-    codeClipWrapper.setAttribute('viewBox', '0 0 24 24');
-    codeClipWrapper.setAttribute('fill', 'none');
-    codeClipWrapper.setAttribute('stroke', '#fff');
+    iconSvg.setAttribute('viewBox', '0 0 24 24');
+    iconSvg.setAttribute('fill', 'none');
+    iconSvg.setAttribute('stroke', '#fff');
 
     // Style the svg paths
-    codeClipPart.setAttribute('stroke-linecap', 'round')
-    codeClipPart.setAttribute('stroke-linejoin', 'round')
-    codeClipPart.setAttribute('d', 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2')
+    iconPath.setAttribute('stroke-linecap', 'round');
+    iconPath.setAttribute('stroke-linejoin', 'round');
+    iconPath.setAttribute('d', svgPath);
 
-    // Add the event listener
-    codeClip.addEventListener('click', function(ev) {
-      copyCodeToClipboard(section)
-    })
+    iconSvg.appendChild(iconPath);
+    copyIcon.appendChild(iconSvg);
+    return copyIcon;
+  };
 
-    // Append the elements together
-    codeClipWrapper.appendChild(codeClipPart)
-    codeClip.appendChild(codeClipWrapper)
-    section.parentElement.appendChild(codeClip)
-  })
-}
+  const renderCopyAlert = () => {};
 
-renderCodeCopyElement('pre code');
+  return { appendCopyIcons };
+};

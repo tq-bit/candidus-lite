@@ -115,6 +115,12 @@ const registerGliderPlugin = () => {
   }
 };
 
+const registerClipboardPlugin = () => {
+  const { appendCopyIcons } = useClipboard();
+  const domCodeSections = document.querySelectorAll('pre code');
+  return appendCopyIcons(domCodeSections);
+};
+
 const registerScrollingObserver = () => {
   let scrollerObserver = {
     isScrolling: false,
@@ -192,6 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
   registerScrollingObserver();
   registerGliderPlugin();
   registerSearchPlugin();
+  registerClipboardPlugin();
 });
 
 // Everything that should be handled right away
