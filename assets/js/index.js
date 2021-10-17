@@ -147,6 +147,7 @@ const registerSidebar = () => {
   const { toggleSidebar, hideSidebar } = useSidebar(domSidebar);
   domNavbarToggleButton.addEventListener('click', () => toggleSidebar());
   domNavbarCloseButton.addEventListener('click', () => hideSidebar());
+  hideSidebar();
 };
 
 const registerImageZoom = () => {

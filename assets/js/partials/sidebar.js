@@ -1,3 +1,5 @@
+// TODO: Replace the hard coded targets with target ids
+
 const useSidebar = (domSidebar) => {
   const animationSpeed = 750;
 
@@ -13,7 +15,7 @@ const useSidebar = (domSidebar) => {
   const hideSidebar = () => {
     // @ts-ignore
     anime({
-      targets: '#q-sidebar',
+      targets: '#' + domSidebar.id,
       translateX: '100%',
       opacity: 0,
       easing: 'easeInOutSine',
@@ -28,7 +30,7 @@ const useSidebar = (domSidebar) => {
     domSidebar.classList.remove('hidden');
     // @ts-ignore
     anime({
-      targets: '#q-sidebar',
+      targets: '#' + domSidebar.id,
       translateX: '0',
       opacity: 0.99,
       easing: 'easeInOutSine',
@@ -37,5 +39,3 @@ const useSidebar = (domSidebar) => {
   };
   return { toggleSidebar, showSidebar, hideSidebar };
 };
-
-const toggleSidebar = () => {};
