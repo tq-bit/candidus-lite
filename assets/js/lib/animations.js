@@ -41,32 +41,6 @@ const animateSlideInItemsStagger = (duration, ...targets) => {
   });
 };
 
-
-/**
- * Post navbar animations
- * 1) hide post navbar
- * 2) show post navbar
- */
-const showPostNavbar = (duration) => {
-  // @ts-ignore
-  anime({
-    targets: '#q-post-navbar',
-    translateY: '0',
-    easing: 'easeInOutSine',
-    duration,
-  });
-};
-
-const hidePostNavbar = (duration) => {
-  // @ts-ignore
-  anime({
-    targets: '#q-post-navbar',
-    translateY: '-120px',
-    easing: 'easeInOutSine',
-    duration,
-  });
-};
-
 const animateHideImageZoom = (duration) => {
   if (domImageZoom) {
     // @ts-ignore

@@ -5,9 +5,6 @@ const domSiteLogo = document.querySelector('img.q-navbar-logo');
 // DOM elements specifically in ./posts.hbs
 const domPostContentArea =
   document.querySelector('.q-post-article-content') || null;
-const domPostReadingProgressBar =
-  document.querySelector('#q-reading-progress') || null;
-const domPostNavbar = document.querySelector('#q-post-navbar') || null;
 const domPostImages = document.querySelectorAll('.kg-width-full');
 
 // DOM elements specifically in ./partials/post-card-item.hbs
@@ -119,29 +116,18 @@ const registerClipboardPlugin = () => {
   return appendCopyIcons(domCodeSections);
 };
 
-const registerScrollingObserver = () => {
-  let scrollerObserver = {
-    isScrolling: false,
-    checkInterval: 250,
-  };
-  document.addEventListener('scroll', () => {
-    scrollerObserver.isScrolling = true;
-  });
-  setInterval(() => {
-    if (scrollerObserver.isScrolling) {
-      scrollerObserver.isScrolling = false;
-
-      // Attach the scroll events
-      // ./posts.hbs
-      if (domPostContentArea && domPostReadingProgressBar) {
-        monitorPostNavbar(
-          domPostReadingProgressBar,
-          scrollerObserver.checkInterval
-        );
-        monitorShowReadMorePostCards(domPostReadingProgressBar);
-      }
-    }
-  }, scrollerObserver.checkInterval);
+const registerPostProgressbar = () => {
+  const progressNav = document.getElementById('q-post-navbar') || null;
+  const progressBar = document.getElementById('q-reading-progress');
+  const { monitorProgressBar, monitorProgressNav } = usePostProgressBar(
+    domPostContentArea,
+    progressNav,
+    progressBar
+  );
+  if (progressNav && progressBar) {
+    monitorProgressBar();
+    monitorProgressNav();
+  }
 };
 
 const registerThemeButtons = () => {
@@ -164,9 +150,29 @@ const registerSidebar = () => {
   hideSidebar();
 };
 
-// Define global variables
-
-// Event binding for all default elements
+/**
+ * @desc This is a utility function that wraps around the standard
+ * 'scroll' event listener. It ensures the registered functions
+ * fire only after a certain delay and not on every captured
+ * scroll event.
+ * @param {Function[]} fn
+ * @returns {void}
+ */
+const registerScrollingObserver = (...fn) => {
+  let scrollerObserverConfig = {
+    isScrolling: false,
+    checkInterval: 250,
+  };
+  document.addEventListener('scroll', () => {
+    scrollerObserverConfig.isScrolling = true;
+  });
+  setInterval(() => {
+    if (scrollerObserverConfig.isScrolling) {
+      scrollerObserverConfig.isScrolling = false;
+      fn.forEach((entry) => entry());
+    }
+  }, scrollerObserverConfig.checkInterval);
+};
 
 // Creates a custom scroll check event
 
@@ -179,19 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ./post.hbs
   // Execute post related functions
-  if (domPostContentArea && domPostReadingProgressBar) {
-    monitorReadingProgress(domPostContentArea, domPostReadingProgressBar);
-    // Add event listeners to fullscreen images
-    domPostImages.forEach((domPostImage) => {
-      domPostImage.addEventListener('click', () => {
-        toggleImageZoom(domPostImage);
-      });
-    });
 
-    domImageZoomCloseButton.addEventListener('click', () => {
-      toggleImageZoom();
-    });
-  }
+  // domImageZoomCloseButton.addEventListener('click', () => {
+  //   toggleImageZoom();
+  // });
 
   // ./partials/post-card-item.hbs
   // Hide a part of the excerpt
@@ -201,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Reframe iframes, if available
   reframe('iframe');
-  registerScrollingObserver();
+  registerScrollingObserver(registerPostProgressbar);
   registerGliderPlugin();
   registerSearchPlugin();
   registerClipboardPlugin();
