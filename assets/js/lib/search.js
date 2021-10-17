@@ -1,10 +1,12 @@
 const useLunrSearch = (rootUrl = null, key = null) => {
-  const resultList = document.getElementById('q-search-list');
-  const searchInput = document.getElementById('q-search-input');
+  const resultListItem = document.getElementById('q-search-list');
+  const searchInputItem = document.getElementById('q-search-input');
   const placeholderItem = document.createElement('p');
-  const path = '/ghost/api/v2/content/posts/';
-  const indexName = 'q-search-index';
+  const apiPath = '/ghost/api/v2/content/posts/';
+  const workerPath = '/assets/built/workers/indexworker.js';
+  const localIndexName = 'q-search-index';
   const refreshInterval = 1000 * 60 * 60 * 8; // 8 hours
+  const animationDuration = 750;
 
   const initLocalIndex = async () => {
     const localIndex = getIndex();
@@ -21,7 +23,7 @@ const useLunrSearch = (rootUrl = null, key = null) => {
     }
 
     async function updateLocalIndex() {
-      const indexWorker = new Worker('/assets/built/workers/indexworker.js');
+      const indexWorker = new Worker(workerPath);
 
       const posts = await fetchPosts();
       indexWorker.postMessage(posts);
@@ -36,7 +38,6 @@ const useLunrSearch = (rootUrl = null, key = null) => {
 
   const toggleSearch = (domSearchWrapper) => {
     const isHidden = domSearchWrapper.classList.contains('hidden');
-    const animationDuration = 750;
 
     if (!isHidden) {
       hideSearch(domSearchWrapper);
@@ -46,12 +47,33 @@ const useLunrSearch = (rootUrl = null, key = null) => {
   };
 
   const showSearch = (domSearchWrapper) => {
-    domSearchWrapper.classList.remove('hidden');
-    searchInput.focus();
+    const isHidden = domSearchWrapper.classList.contains('hidden');
+    if (isHidden) {
+      domSearchWrapper.classList.remove('hidden');
+      // @ts-ignore
+      anime({
+        targets: '#' + domSearchWrapper.id,
+        opacity: 1,
+        duration: animationDuration,
+      });
+      searchInputItem.focus();
+    }
   };
 
   const hideSearch = (domSearchWrapper) => {
-    domSearchWrapper.classList.add('hidden');
+    const isHidden = domSearchWrapper.classList.contains('hidden');
+    if (!isHidden) {
+      // @ts-ignore
+      anime({
+        targets: '#' + domSearchWrapper.id,
+        opacity: 0,
+        duration: animationDuration,
+      });
+      setTimeout(
+        () => domSearchWrapper.classList.add('hidden'),
+        animationDuration
+      );
+    }
   };
 
   const search = (ev) => {
@@ -64,8 +86,8 @@ const useLunrSearch = (rootUrl = null, key = null) => {
   };
 
   const renderQueryResults = (value, blueprints) => {
-    while (resultList.firstChild) {
-      resultList.removeChild(resultList.firstChild);
+    while (resultListItem.firstChild) {
+      resultListItem.removeChild(resultListItem.firstChild);
     }
     if (value === '') {
       return renderPlaceholder('😺 Your search results will show up here');
@@ -78,7 +100,7 @@ const useLunrSearch = (rootUrl = null, key = null) => {
     function renderPlaceholder(text) {
       placeholderItem.innerText = text;
       placeholderItem.classList.add('q-search-placeholder');
-      resultList.append(placeholderItem);
+      resultListItem.append(placeholderItem);
     }
 
     function renderList() {
@@ -90,7 +112,7 @@ const useLunrSearch = (rootUrl = null, key = null) => {
         searchItem.innerText = '🔖 ' + blueprint.title;
         searchLink.href = blueprint.url;
         searchLink.append(searchItem);
-        resultList.append(searchLink);
+        resultListItem.append(searchLink);
       });
     }
   };
@@ -101,10 +123,11 @@ const useLunrSearch = (rootUrl = null, key = null) => {
   };
 
   const getIndex = () => {
-    const payload = JSON.parse(localStorage.getItem(indexName));
+    const payload = JSON.parse(localStorage.getItem(localIndexName));
     if (payload) {
       return {
         timestamp: payload.timestamp,
+        // @ts-ignore
         lunrIndex: lunr.Index.load(payload.lunrIndex),
       };
     }
@@ -116,7 +139,7 @@ const useLunrSearch = (rootUrl = null, key = null) => {
       timestamp,
       lunrIndex,
     };
-    localStorage.setItem(indexName, JSON.stringify(payload));
+    localStorage.setItem(localIndexName, JSON.stringify(payload));
     return timestamp;
   };
 
@@ -128,7 +151,7 @@ const useLunrSearch = (rootUrl = null, key = null) => {
       throw new Error('No content api key found: Q_GHOST_API_KEY is undefined');
     }
 
-    const url = rootUrl + path + '?limit=' + limit + '&key=' + key;
+    const url = rootUrl + apiPath + '?limit=' + limit + '&key=' + key;
     const response = await fetch(url);
     const { meta, posts } = await response.json();
     return posts;
