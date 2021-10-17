@@ -20,11 +20,18 @@ const useLunrSearch = (rootUrl = null, key = null) => {
       return updateLocalIndex();
     }
 
+    // TODO: Implement worker here
     async function updateLocalIndex() {
+      const indexWorker = new Worker('/assets/built/workers/indexworker.js');
+
       const posts = await fetchPosts();
-      const lunrIndex = buildIndex(posts);
-      const timestamp = saveIndex(lunrIndex);
-      return timestamp;
+      indexWorker.postMessage(posts);
+      indexWorker.onmessage = (ev) => {
+        const { data: serializedIndex } = ev;
+        const timestamp = saveIndex(serializedIndex);
+        return timestamp;
+      };
+      // const lunrIndex = buildIndex(posts);
     }
   };
 
@@ -94,39 +101,12 @@ const useLunrSearch = (rootUrl = null, key = null) => {
     return results.map((entry) => JSON.parse(entry.ref));
   };
 
-  const buildIndex = (posts) => {
-    const documents = posts.map((post) => {
-      const blueprint = JSON.stringify({
-        title: post.title,
-        url: post.url,
-      });
-      return {
-        blueprint,
-        title: post.title,
-        excerpt: post.excerpt,
-        html: post.html,
-      };
-    });
-
-    const lunrIndex = lunr(function () {
-      this.ref('blueprint');
-      this.field('title');
-      this.field('excerpt');
-      this.field('html');
-      documents.forEach(function (doc) {
-        this.add(doc);
-      }, this);
-    });
-    console.log(lunrIndex);
-    return lunrIndex;
-  };
-
   const getIndex = () => {
     const payload = JSON.parse(localStorage.getItem(indexName));
     if (payload) {
       return {
         timestamp: payload.timestamp,
-        lunrIndex: lunr.Index.load(payload.lunrIndex),
+        lunrIndex: lunr.Index.load(JSON.parse(payload.lunrIndex)),
       };
     }
   };

@@ -93,6 +93,25 @@ function js(done) {
   );
 }
 
+function indexworker(done) {
+  pump(
+    [
+      src(
+        ['assets/js/modules/lunr.min.js', 'assets/js/workers/indexworker.js'],
+        {
+          sourcemaps: true,
+        }
+      ),
+      concat('indexworker.js'),
+      babel(),
+      uglify(),
+      dest('assets/built/workers', { sourcemaps: '.' }),
+      livereload(),
+    ],
+    handleError(done)
+  );
+}
+
 function zipper(done) {
   const filename = require('./package.json').name + '.zip';
 
@@ -119,8 +138,15 @@ const cssWatcher = () => watch('assets/css/**', css);
 const fontsWatcher = () => watch('assets/css/**', fonts);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const jsWatcher = () => watch(['assets/js/**/*.js'], js);
-const watcher = parallel(cssWatcher, fontsWatcher, hbsWatcher, jsWatcher);
-const build = series(css, js, fonts);
+const workerWatcher = () => watch(['assets/js/workers/*.js'], indexworker);
+const watcher = parallel(
+  cssWatcher,
+  fontsWatcher,
+  hbsWatcher,
+  jsWatcher,
+  workerWatcher
+);
+const build = series(css, js, indexworker, fonts);
 
 exports.build = build;
 exports.zip = series(build, zipper);
