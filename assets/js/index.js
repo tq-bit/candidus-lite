@@ -1,8 +1,6 @@
 // Query all necessary DOM elements
 // DOM elements from ./default.hbs
 const domSiteLogo = document.querySelector('img.q-navbar-logo');
-const domNavbarToggleButton = document.querySelector('#q-sidebar-toggle');
-const domNavbarCloseButton = document.querySelector('#q-navbar-button-close');
 
 // DOM elements specifically in ./posts.hbs
 const domPostContentArea =
@@ -155,12 +153,20 @@ const registerThemeButtons = () => {
   initUserTheme();
 };
 
+const registerSidebar = () => {
+  const domSidebar = document.getElementById('q-sidebar');
+  const domNavbarToggleButton = document.getElementById('q-sidebar-toggle');
+  const domNavbarCloseButton = document.getElementById('q-navbar-button-close');
+
+  const { toggleSidebar, hideSidebar } = useSidebar(domSidebar);
+  domNavbarToggleButton.addEventListener('click', () => toggleSidebar());
+  domNavbarCloseButton.addEventListener('click', () => hideSidebar());
+  hideSidebar();
+};
+
 // Define global variables
 
 // Event binding for all default elements
-
-domNavbarToggleButton.addEventListener('click', () => toggleSidebar());
-domNavbarCloseButton.addEventListener('click', () => toggleSidebar());
 
 // Creates a custom scroll check event
 
@@ -203,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Everything that should be handled right away
 registerThemeButtons();
+registerSidebar();
 animateSlideOutItems(
   1000,
   'bottom',

@@ -40,43 +40,13 @@ const animateSlideInItemsStagger = (duration, ...targets) => {
     duration: duration,
   });
 };
-/**
- * Sidebar animations
- * 1) hide sidebar
- * 2) animateShowSidebar
- */
-const animateHideSidebar = (duration) => {
-  // @ts-ignore
-  anime({
-    targets: '#q-sidebar',
-    translateX: '100%',
-    opacity: 0,
-    easing: 'easeInOutSine',
-    duration,
-  });
-  // @ts-ignore
-  setTimeout(() => domSidebar.classList.add('hidden'), duration);
-};
 
-const animateShowSidebar = (duration) => {
-  // @ts-ignore
-  domSidebar.classList.remove('hidden');
-  // @ts-ignore
-  anime({
-    targets: '#q-sidebar',
-    translateX: '0',
-    opacity: 0.99,
-    easing: 'easeInOutSine',
-    duration,
-  });
-};
 
 /**
  * Post navbar animations
  * 1) hide post navbar
  * 2) show post navbar
  */
-
 const showPostNavbar = (duration) => {
   // @ts-ignore
   anime({
