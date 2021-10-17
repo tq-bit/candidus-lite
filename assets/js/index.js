@@ -22,15 +22,17 @@ const registerSearchPlugin = () => {
     const { initLocalIndex, search, toggleSearch, showSearch, hideSearch } =
       useLunrSearch(root, key);
     // DOM Elements for the ./partials/search.hbs
-    const domSearchButton = document.getElementById('q-search-button');
+    const domSearchButtons = document.querySelectorAll('.q-search-logo');
     const domSearchWrapper = document.getElementById('q-search-wrapper');
     const domSearchInput = document.getElementById('q-search-input');
     const domSearchDeleteButton = document.getElementById('q-search-delete');
 
-    domSearchButton.classList.remove('hidden');
+    domSearchButtons.forEach((button) => {
+      button.classList.remove('hidden');
 
-    domSearchButton.addEventListener('click', (ev) => {
-      toggleSearch(domSearchWrapper);
+      button.addEventListener('click', (ev) => {
+        toggleSearch(domSearchWrapper);
+      });
     });
 
     domSearchWrapper.addEventListener('click', (ev) => {
@@ -60,7 +62,6 @@ const registerSearchPlugin = () => {
       }
     });
 
-    // Build up the search index
     initLocalIndex();
     hideSearch(domSearchWrapper);
     console.log('Search plugin registered');
