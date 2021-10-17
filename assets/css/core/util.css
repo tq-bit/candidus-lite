@@ -2,7 +2,7 @@
 
 /* Display rules */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Text rules */

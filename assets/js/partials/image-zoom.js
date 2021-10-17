@@ -1,30 +1,59 @@
-const domImageZoom = document.querySelector('#q-image-zoom-wrapper');
-const domImageZoomBody = document.querySelector('#q-image-zoom-body');
+const useImageZoom = (imageWrapper, imageBody) => {
+  const animationSpeed = 500;
 
-const toggleImageZoom = (domPostImage) => {
-  const isHidden = domImageZoom.classList.contains('hidden');
-  const animationDuration = 500;
+  const toggleImageZoom = (clickedImage) => {
+    const isHidden = imageWrapper.classList.contains('hidden');
 
-  // Remove image if already present
-  const existingImage = domImageZoomBody.querySelector('img');
-  if (existingImage) {
-    domImageZoomBody.removeChild(existingImage);
-  }
+    console.log('Toggling. isHidde = ', isHidden);
 
-  // Add the new element, if one is passed
-  if (domPostImage) {
-    const imageElement = domPostImage.querySelector('img').cloneNode();
-    domImageZoomBody.appendChild(imageElement);
-  }
+    if (isHidden) {
+      showImageZoom(clickedImage);
+    } else {
+      hideImageZoom();
+    }
+  };
 
-  if (isHidden) {
-    animateShowImageZoom(animationDuration);
-  } else {
-    animateHideImageZoom(0);
-  }
-}
+  const showImageZoom = (clickedImage) => {
+    if (clickedImage) {
+      const imageElement = clickedImage.cloneNode();
+      imageBody.appendChild(imageElement);
+    }
+    imageWrapper.classList.remove('hidden');
+    // @ts-ignore
+    anime({
+      targets: '#q-image-zoom-wrapper',
+      height: '100%',
+      width: '100%',
+      top: '0',
+      left: '0',
+      opacity: 1,
+      easing: 'easeInOutSine',
+      duration: animationSpeed,
+    });
+  };
 
-// Initially hide the sidebar
-if(domImageZoom) {
-  animateHideImageZoom(0);
-}
+  const hideImageZoom = () => {
+    const presentImage = imageBody.querySelector('img');
+
+    // @ts-ignore
+    anime({
+      targets: '#q-image-zoom-wrapper',
+      height: '0%',
+      width: '0%',
+      top: '105%',
+      left: '50%',
+      opacity: 0,
+      easing: 'easeInOutSine',
+      duration: animationSpeed,
+    });
+    // @ts-ignore
+    setTimeout(() => {
+      imageWrapper.classList.add('hidden');
+      if (presentImage) {
+        imageBody.removeChild(presentImage);
+      }
+    }, animationSpeed);
+  };
+
+  return { toggleImageZoom, showImageZoom, hideImageZoom };
+};

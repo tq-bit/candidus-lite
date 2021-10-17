@@ -147,7 +147,31 @@ const registerSidebar = () => {
   const { toggleSidebar, hideSidebar } = useSidebar(domSidebar);
   domNavbarToggleButton.addEventListener('click', () => toggleSidebar());
   domNavbarCloseButton.addEventListener('click', () => hideSidebar());
-  hideSidebar();
+};
+
+const registerImageZoom = () => {
+  const imageWrapper = document.getElementById('q-image-zoom-wrapper');
+  const imageBody = document.getElementById('q-image-zoom-body');
+  const imageCloseButton = document.getElementById('q-image-zoom-close');
+  if (imageWrapper && imageBody) {
+    const { toggleImageZoom, hideImageZoom } = useImageZoom(
+      imageWrapper,
+      imageBody
+    );
+
+    window.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape') {
+        hideImageZoom();
+      }
+    });
+    document.querySelectorAll('img.kg-image').forEach((image) => {
+      return image.addEventListener('click', (ev) => {
+        return toggleImageZoom(ev.target);
+      });
+    });
+    imageCloseButton.addEventListener('click', () => hideImageZoom());
+    hideImageZoom();
+  }
 };
 
 /**
@@ -183,13 +207,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animateSlideInItemsStagger(1000, '.q-post-list-item-wrapper');
 
-  // ./post.hbs
-  // Execute post related functions
-
-  // domImageZoomCloseButton.addEventListener('click', () => {
-  //   toggleImageZoom();
-  // });
-
   // ./partials/post-card-item.hbs
   // Hide a part of the excerpt
   if (domPostCardItemExcerpts) {
@@ -198,10 +215,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Reframe iframes, if available
   reframe('iframe');
-  registerScrollingObserver(registerPostProgressbar);
   registerGliderPlugin();
   registerSearchPlugin();
   registerClipboardPlugin();
+  registerImageZoom();
+
+  // Register functions to the scroll observer
+  const onScrollCollection = [registerPostProgressbar];
+
+  registerScrollingObserver(...onScrollCollection);
 });
 
 // Everything that should be handled right away

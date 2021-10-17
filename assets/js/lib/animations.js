@@ -1,13 +1,4 @@
 /**
- * Post animations
- * 1) Hide posts on page load
- * 2) Slide in posts on load
- * 3) Hide post cards on page load
- * 4) Slide in post cards when user reaches end of page
- * 5) Slide featured posts on the main page
- */
-
-/**
  *
  * @param {Number} duration Miliseconds the animation is meant to run
  * @param {String} movement One 'top' or 'bottom'
@@ -39,42 +30,6 @@ const animateSlideInItemsStagger = (duration, ...targets) => {
     opacity: 1,
     duration: duration,
   });
-};
-
-const animateHideImageZoom = (duration) => {
-  if (domImageZoom) {
-    // @ts-ignore
-    anime({
-      targets: '#q-image-zoom-wrapper',
-      height: '0%',
-      width: '0%',
-      top: '105%',
-      left: '50%',
-      opacity: 0,
-      easing: 'easeInOutSine',
-      duration,
-    });
-    // @ts-ignore
-    setTimeout(() => domImageZoom.classList.add('hidden'), duration);
-  }
-};
-
-const animateShowImageZoom = (duration) => {
-  if (domImageZoom) {
-    // @ts-ignore
-    domImageZoom.classList.remove('hidden');
-    // @ts-ignore
-    anime({
-      targets: '#q-image-zoom-wrapper',
-      height: '100%',
-      width: '100%',
-      top: '0',
-      left: '0',
-      opacity: 1,
-      easing: 'easeInOutSine',
-      duration,
-    });
-  }
 };
 
 // Slide in posts when page loads
