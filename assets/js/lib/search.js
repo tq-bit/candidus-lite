@@ -20,7 +20,6 @@ const useLunrSearch = (rootUrl = null, key = null) => {
       return updateLocalIndex();
     }
 
-    // TODO: Implement worker here
     async function updateLocalIndex() {
       const indexWorker = new Worker('/assets/built/workers/indexworker.js');
 
@@ -28,10 +27,10 @@ const useLunrSearch = (rootUrl = null, key = null) => {
       indexWorker.postMessage(posts);
       indexWorker.onmessage = (ev) => {
         const { data: serializedIndex } = ev;
-        const timestamp = saveIndex(serializedIndex);
+        const lunrIndex = JSON.parse(serializedIndex);
+        const timestamp = saveIndex(lunrIndex);
         return timestamp;
       };
-      // const lunrIndex = buildIndex(posts);
     }
   };
 
@@ -106,7 +105,7 @@ const useLunrSearch = (rootUrl = null, key = null) => {
     if (payload) {
       return {
         timestamp: payload.timestamp,
-        lunrIndex: lunr.Index.load(JSON.parse(payload.lunrIndex)),
+        lunrIndex: lunr.Index.load(payload.lunrIndex),
       };
     }
   };

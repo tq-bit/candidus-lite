@@ -2,7 +2,7 @@
     "name": "candidus-lite",
     "description": "An approachable and minimalistic blogging theme for Ghost",
     "demo": "https://blog.q-bit.me",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "engines": {
         "ghost": ">=4.0.0",
         "ghost-api": "v4"
