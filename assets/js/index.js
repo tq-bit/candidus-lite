@@ -112,10 +112,12 @@ const registerGliderPlugin = () => {
   }
 };
 
-const registerClipboardPlugin = () => {
-  const { appendCopyIcons } = useClipboard();
+const registerCodeToolbarPlugin = () => {
   const domCodeSections = document.querySelectorAll('pre code');
-  return appendCopyIcons(domCodeSections);
+  const { appendCopyIcons } = useCodeToolbar();
+  domCodeSections.forEach(section => {
+    appendCopyIcons(section);
+  })
 };
 
 const registerPostProgressbar = () => {
@@ -220,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
   reframe('iframe');
   registerGliderPlugin();
   registerSearchPlugin();
-  registerClipboardPlugin();
+  registerCodeToolbarPlugin();
   registerImageZoom();
 
   // Register functions to the scroll observer
