@@ -26,9 +26,8 @@
   <header class="q-index-content-header">
     <h2 class="q-index-sub-title">Featured articles</h2>
     <div>
-      <button aria-label="Previous" class="q-glider-prev">&lsaquo;</button>
-      <button aria-label="Next" class="q-glider-next">&rsaquo;</button>
-
+      <button aria-label="Previous" class="q-button--secondary q-glider-prev">&lsaquo;</button>
+      <button aria-label="Next" class="q-button--secondary q-glider-next">&rsaquo;</button>
     </div>
   </header>
   <div class="glider-contain">
@@ -47,6 +46,9 @@
 <section class='q-index-content-wrapper'>
     <header class="q-index-content-header">
       <h2 class="q-index-sub-title">Latest publications</h2>
+      <div>
+        {{ pagination }}
+      </div>
     </header>
     <div class="q-index-content-inner">
         <div class="q-post-list">
@@ -55,6 +57,6 @@
           {{/foreach}}
         </div>
         <!-- Show pagination if pagination exceeds posts_per_page config  -->
-        {{ pagination }}
+
     </div>
 </section>

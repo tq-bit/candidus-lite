@@ -1,15 +1,20 @@
-<nav class='q-pagination-container' role='navigation'>
-  <div class='q-pagination-column q-text-left'>
+<nav class='q-pagination' role='navigation'>
+  <div class='q-text-left'>
     {{#if prev}}
-      <a class='q-pagination-button' href='{{page_url prev}}'>⮜</a>
+      <a  href='{{page_url prev}}'>
+        <button class='q-button--secondary'>&lsaquo;</button>
+      </a>
+    {{else}}
+      <button class='q-button--secondary disabled'>&lsaquo;</button>
     {{/if}}
   </div>
-  <div class='q-pagination-column q-text-center'>
-    <span class='q-pagination-page-number'>Page {{page}} of {{pages}}</span>
-  </div>
-  <div class='q-pagination-column q-text-right'>
+  <div class='q-text-right'>
     {{#if next}}
-      <a class='q-pagination-button' href='{{page_url next}}'>➤</a>
+      <a href='{{page_url next}}'>
+        <button class="q-button--secondary">&rsaquo;</button>
+      </a>
+    {{else}}
+      <button class="q-button--secondary disabled">&rsaquo;</button>
     {{/if}}
   </div>
 </nav>
