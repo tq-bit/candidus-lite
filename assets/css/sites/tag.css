@@ -5,7 +5,7 @@
   object-fit: cover;
 }
 
-.q-tag-header-inner {
+.q-tag-header-wrapper {
   width: 100%;
   text-align: center;
 }

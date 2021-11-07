@@ -97,7 +97,7 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 }
 
 /* Styles for the post content */
-.q-post-article-inner {
+.q-post-article {
   position: relative;
 }
 
@@ -213,7 +213,7 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
   padding: 0 var(--gap-lg);
 }
 
-.q-post-cardlist-inner,
+.q-post-cardlist-wrapper,
 .q-post-cardlist-inner {
   height: fit-content;
   margin: var(--gap-xxl) auto;

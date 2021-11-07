@@ -5,16 +5,16 @@
  * the same across all files that come after screen.css.
  */
 /* Inner element styles */
-.q-index-content-inner,
+.q-index-content-wrapper,
 .q-navbar-inner,
 .q-footer-inner,
 .q-post-article-header-inner,
-.q-post-article-inner,
-.q-post-cardlist-inner,
-.q-tag-inner,
-.q-tag-header-inner,
+.q-post-article,
+.q-post-cardlist-wrapper,
+.q-tag-content,
+.q-tag-header-wrapper,
 .q-error-content-inner,
-.q-author-profile-inner,
+.q-author-profile-wrapper,
 .q-search-inner {
   width: var(--content-width-screen-xs);
   display: block;
@@ -25,15 +25,15 @@
 
 /* Media queries */
 @media (min-width: 800px) {
-  .q-index-content-inner,
+  .q-index-content-wrapper,
   .q-navbar-inner,
   .q-footer-inner,
   .q-post-article-header-inner,
-  .q-post-article-inner,
-  .q-post-cardlist-inner,
-  .q-tag-inner,
+  .q-post-article,
+  .q-post-cardlist-wrapper,
+  .q-tag-content,
   .q-footer-inner,
-  .q-tag-header-inner,
+  .q-tag-header-wrapper,
   .q-error-content-inner,
   .q-search-inner,
   .q-search-input {
@@ -43,21 +43,21 @@
 
 @media (min-width: 1000px) {
   .q-navbar-inner,
-  .q-index-content-inner,
+  .q-index-content-wrapper,
   .q-post-article-header-inner,
-  .q-post-article-inner,
-  .q-post-cardlist-inner,
-  .q-tag-inner,
+  .q-post-article,
+  .q-post-cardlist-wrapper,
+  .q-tag-content,
   .q-footer-inner,
-  .q-tag-header-inner,
+  .q-tag-header-wrapper,
   .q-error-content-inner,
   .q-search-inner,
   .q-search-input {
     width: var(--content-width-screen-lg);
   }
 
-  .q-tag-inner,
-  .q-author-profile-inner,
+  .q-tag-content,
+  .q-author-profile-wrapper,
   .q-search-inner,
   .q-search-input {
     width: var(--content-width-screen-md);
@@ -66,41 +66,41 @@
 
 @media (min-width: 1200px) {
   .q-navbar-inner,
-  .q-index-content-inner,
-  .q-post-cardlist-inner,
+  .q-index-content-wrapper,
+  .q-post-cardlist-wrapper,
   .q-post-article-header-inner,
-  .q-post-article-inner,
-  .q-tag-header-inner,
+  .q-post-article,
+  .q-tag-header-wrapper,
   .q-error-content-inner,
   .q-search-inner,
   .q-search-input {
     width: var(--content-width-screen-xl);
   }
 
-  .q-author-profile-inner {
+  .q-author-profile-wrapper {
     width: var(--content-width-screen-lg);
   }
 }
 
 @media (min-width: 1400px) {
   .q-post-article-header-inner,
-  .q-post-article-inner,
-  .q-tag-header-inner,
+  .q-post-article,
+  .q-tag-header-wrapper,
   .q-error-content-inner,
   .q-search-inner,
   .q-search-input {
     width: var(--content-width-screen-xxl);
   }
 
-  .q-index-content-inner,
-  .q-post-cardlist-inner,
+  .q-index-content-wrapper,
+  .q-post-cardlist-wrapper,
   .q-navbar-inner,
   .q-footer-inner,
-  .q-author-profile-inner {
+  .q-author-profile-wrapper {
     width: var(--content-width-screen-lg);
   }
 
-  .q-tag-inner {
+  .q-tag-content {
     width: var(--content-width-screen-md);
   }
 }

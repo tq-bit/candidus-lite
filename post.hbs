@@ -47,7 +47,7 @@
         </section>
     </div>
 </header>
-<article class="q-post-article-inner">
+<article class="q-post-article">
     <section class="q-post-article-content">
         {{content}}
     </section>
@@ -56,7 +56,7 @@
 
     <hr />
 
-    <aside class="q-post-cardlist-inner">
+    <aside class="q-post-cardlist-wrapper">
         <h3>Continue reading ...</h3>
         <div class="q-post-cardlist-inner">
             {{#get "posts" filter="id:-{{comment_id}}" include="authors" limit="3" as |more_posts|}}
