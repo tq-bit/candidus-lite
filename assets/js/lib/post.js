@@ -74,7 +74,7 @@ const hidePostCardExcerpts = (domPostExcerptItems) => {
 };
 
 // 5)
-document.querySelectorAll('.q-post-article h2').forEach((element) => {
+document.querySelectorAll('.q-post-article-inner h2').forEach((element) => {
   element.addEventListener('click', () => {
     const postNavbar = document.querySelector('#q-post-navbar');
     let coord = 0;
