@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-
-    {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
     <title>{{meta_title}}</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,9 +14,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset "built/main.css"}}" />
     <link rel="preload" as="font" href="{{asset "built/fonts.css"}}" onload="this.onload=null;this.rel='stylesheet'">
 
-
-    {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
-    it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
 </head>
 
@@ -84,6 +79,8 @@
             {{ghost_foot}}
         </div>
     </footer>
+    <script src="{{asset "built/modules.js"}}"></script>
+    <script src="{{asset "built/lib.js"}}"></script>
     <script src="{{asset "built/main.js"}}"></script>
 </body>
 

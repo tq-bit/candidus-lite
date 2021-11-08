@@ -70,19 +70,40 @@ function fonts(done) {
   );
 }
 
-function js(done) {
+function buildJsModules(done) {
   pump(
     [
-      src(
-        [
-          // pull in lib files first so our own code can depend on it
-          'assets/js/modules/*.js',
-          'assets/js/lib/*.js',
-          'assets/js/partials/*.js',
-          'assets/js/*.js',
-        ],
-        { sourcemaps: true }
-      ),
+      src(['assets/js/modules/*.js'], { sourcemaps: true }),
+      concat('modules.js'),
+      babel(),
+      uglify(),
+      dest('assets/built/', { sourcemaps: '.' }),
+      livereload(),
+    ],
+    handleError(done)
+  );
+}
+
+function buildJsLib(done) {
+  pump(
+    [
+      src(['assets/js/lib/*.js'], { sourcemaps: true }),
+      concat('lib.js'),
+      babel(),
+      uglify(),
+      dest('assets/built/', { sourcemaps: '.' }),
+      livereload(),
+    ],
+    handleError(done)
+  );
+}
+
+function buildJsCore(done) {
+  pump(
+    [
+      src(['assets/js/partials/*.js', 'assets/js/index.js'], {
+        sourcemaps: true,
+      }),
       concat('main.js'),
       babel(),
       uglify(),
@@ -98,9 +119,7 @@ function indexworker(done) {
     [
       src(
         ['assets/js/modules/lunr.min.js', 'assets/js/workers/indexworker.js'],
-        {
-          sourcemaps: true,
-        }
+        { sourcemaps: true }
       ),
       concat('indexworker.js'),
       babel(),
@@ -137,16 +156,27 @@ function zipper(done) {
 const cssWatcher = () => watch('assets/css/**', css);
 const fontsWatcher = () => watch('assets/css/**', fonts);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
-const jsWatcher = () => watch(['assets/js/**/*.js'], js);
-const workerWatcher = () => watch(['assets/js/workers/*.js'], indexworker);
+const jsModuleWatcher = () => watch(['assets/js/modules/*.js'], buildJsModules);
+const jsLibWatcher = () => watch(['assets/js/lib/*.js'], buildJsLib);
+const jsPartialWatcher = () => watch(['assets/js/partials/*.js'], buildJsCore);
+const jsWorkerWatcher = () => watch(['assets/js/workers/*.js'], indexworker);
 const watcher = parallel(
   cssWatcher,
   fontsWatcher,
   hbsWatcher,
-  jsWatcher,
-  workerWatcher
+  jsModuleWatcher,
+  jsLibWatcher,
+  jsPartialWatcher,
+  jsWorkerWatcher
 );
-const build = series(css, js, indexworker, fonts);
+const build = series(
+  css,
+  buildJsModules,
+  buildJsLib,
+  buildJsCore,
+  indexworker,
+  fonts
+);
 
 exports.build = build;
 exports.zip = series(build, zipper);
