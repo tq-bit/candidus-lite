@@ -24,14 +24,17 @@ const useCodeToolbar = () => {
   };
 
   const renderToolbarBadge = (content) => {
+    const isStringContent = typeof content === 'string';
+    const isDomContent = typeof content === 'object';
     const badgeItem = document.createElement('span');
     badgeItem.classList.add('q-post-article-code-badge');
 
-    if (typeof content === 'string') {
-      badgeItem.innerText =
+    if (isStringContent) {
+      const uppercaseText =
         content.charAt(0).toUpperCase() + content.substring(1);
+      badgeItem.innerText = uppercaseText;
     }
-    if (typeof content === 'object') {
+    if (isDomContent) {
       badgeItem.appendChild(content);
     }
     return badgeItem;
