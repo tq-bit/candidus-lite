@@ -148,6 +148,10 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .q-navbar-logo {
+    margin-right: var(--gap-xl);
+  }
+
   /* Show Social navigation icons for bigger devices */
   .q-navbar-social {
     display: flex;
