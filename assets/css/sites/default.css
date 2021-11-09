@@ -27,10 +27,8 @@
 
 .q-navbar-inner > * {
   font-weight: 600;
-  padding: var(--gap-xl) 0;
+  padding: var(--gap-lg) 0;
 }
-
-
 
 /* Hide navbar content for small devices */
 .q-navbar-navigation,
@@ -57,7 +55,7 @@
   color: var(--text-color-secondary);
 }
 
-.q-navbar-navigation > ul > li > a{
+.q-navbar-navigation > ul > li > a {
   position: relative;
 }
 
@@ -67,10 +65,14 @@
 .q-navbar-navigation > ul > li.nav-current a::before {
   content: '';
   height: 2px;
+  width: 0;
   position: absolute;
   bottom: calc(var(--gap-xs) * -1);
-  background-color: var(--accent-color-secondary);
-  width: 0;
+  background: linear-gradient(
+    to right,
+    var(--accent-color-primary),
+    var(--accent-color-secondary)
+  );
 }
 
 .q-navbar-navigation > ul > li > a::after {
@@ -130,6 +132,7 @@
 @media (min-width: 1000px) {
   /* Show navbar for bigger devices */
   .q-navbar-navigation {
+    width: 100%;
     display: block;
   }
 
