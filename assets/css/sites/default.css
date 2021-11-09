@@ -30,6 +30,8 @@
   padding: var(--gap-xl) 0;
 }
 
+
+
 /* Hide navbar content for small devices */
 .q-navbar-navigation,
 .q-navbar-social {
@@ -55,9 +57,36 @@
   color: var(--text-color-secondary);
 }
 
-.q-navbar-navigation > ul > li > a:hover,
-li.nav-current > a {
-  color: var(--accent-color-primary) !important;
+.q-navbar-navigation > ul > li > a{
+  position: relative;
+}
+
+/* Navigation bar items animation */
+.q-navbar-navigation > ul > li > a::before,
+.q-navbar-navigation > ul > li > a::after,
+.q-navbar-navigation > ul > li.nav-current a::before {
+  content: '';
+  height: 2px;
+  position: absolute;
+  bottom: calc(var(--gap-xs) * -1);
+  background-color: var(--accent-color-secondary);
+  width: 0;
+}
+
+.q-navbar-navigation > ul > li > a::after {
+  right: 0;
+  transition: all var(--duration-quickest);
+}
+
+.q-navbar-navigation > ul > li > a:hover::before {
+  width: 100%;
+  transition: all var(--duration-quickest);
+}
+
+.q-navbar-navigation > ul > li > a:hover::after,
+.q-navbar-navigation > ul > li.nav-current a::before {
+  width: 100% !important;
+  left: 0;
 }
 
 /* Styles for the sidebar toggle */
