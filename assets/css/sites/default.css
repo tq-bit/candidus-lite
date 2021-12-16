@@ -17,6 +17,7 @@
 /* Outer navbar styles */
 .q-navbar {
   background-color: var(--background-color-primary);
+  height: 5.25rem;
 }
 
 .q-navbar-inner {

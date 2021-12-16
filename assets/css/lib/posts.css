@@ -247,7 +247,8 @@ progress.q-post-reading-progress-bar[value]::-webkit-progress-value {
 
 .q-post-cardlist-wrapper,
 .q-post-cardlist-inner {
-  height: fit-content;
+  min-height: 15rem;
+  max-height: fit-content;
   margin: var(--gap-xxl) auto;
 }
 
