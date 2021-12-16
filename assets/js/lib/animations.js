@@ -2,7 +2,7 @@
  *
  * @param {Number} duration Miliseconds the animation is meant to run
  * @param {String} movement One 'top' or 'bottom'
- * @param  {...String} targets The CSS selectors to be animated
+ * @param  {String[]} targets The CSS selectors to be animated
  */
 const animateSlideOutItems = (duration, movement, ...targets) => {
   const translateY = movement === 'top' ? '-100%' : '25px';
@@ -18,9 +18,13 @@ const animateSlideOutItems = (duration, movement, ...targets) => {
 /**
  *
  * @param {Number} duration Miliseconds the animation is meant to run
- * @param  {...String} targets The CSS selectors to be animated
+ * @param  {String[]} targets The CSS selectors to be animated
  */
 const animateSlideInItemsStagger = (duration, ...targets) => {
+  targets.forEach((selector) => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((element) => (element.style.display = 'block'));
+  });
   // @ts-ignore
   anime({
     targets,

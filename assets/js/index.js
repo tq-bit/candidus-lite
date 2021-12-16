@@ -210,6 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event binding for site specific dom elements
   // ./index.hbs
 
+  animateSlideInItemsStagger(1000, '.q-post-card-wrapper',)
   animateSlideInItemsStagger(1000, '.q-post-list-item-wrapper');
 
   // ./partials/post-card-item.hbs
@@ -235,8 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
 registerThemeButtons();
 registerSidebar();
 animateSlideOutItems(
-  1000,
+  0,
   'bottom',
+  '.q-post-card-wrapper',
   '.q-post-list-item-wrapper',
   '.q-post-card'
 );
