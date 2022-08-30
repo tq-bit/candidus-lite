@@ -1,13 +1,13 @@
 * {
-  box-sizing: content-box;
-  text-rendering: optimizeSpeed;
-  scroll-behavior: smooth;
+	box-sizing: content-box;
+	text-rendering: optimizeSpeed;
+	scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'PT Serif', serif;
+	margin: 0;
+	padding: 0;
+	font-family: 'PT Serif', serif;
 }
 
 h1,
@@ -18,119 +18,119 @@ h5,
 h6,
 table,
 thead {
-  font-family: 'Open Sans', serif;
-  color: var(--text-color-primary);
+	font-family: 'Open Sans', serif;
+	color: var(--text-color-primary);
 }
 
 h1 {
-  font-size: var(--text-size-xxl);
+	font-size: var(--text-size-xxl);
 }
 
 h2 {
-  font-size: var(--text-size-xl);
+	font-size: var(--text-size-xl);
 }
 
 h3 {
-  font-size: var(--text-size-lg);
+	font-size: var(--text-size-lg);
 }
 
 table {
-  width: 100%;
-  text-align: center;
-  margin: var(--gap-md) 0;
-  border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	margin: var(--gap-md) 0;
+	border-collapse: collapse;
 }
 
 th {
-  padding: var(--gap-md);
-  border-bottom: 2px solid var(--grey-color);
+	padding: var(--gap-md);
+	border-bottom: 2px solid var(--grey-color);
 }
 
 td {
-  padding: var(--gap-sm);
-  border-bottom: 1px solid var(--grey-color);
+	padding: var(--gap-sm);
+	border-bottom: 1px solid var(--grey-color);
 }
 
 p,
 ul {
-  font-size: var(--text-size-md);
-  font-weight: 400;
-  color: var(--text-color-secondary);
-  line-height: var(--gap-xxl);
-  margin: var(--gap-xl) 0;
+	font-size: var(--text-size-md);
+	font-weight: 400;
+	color: var(--text-color-secondary);
+	line-height: var(--gap-xxl);
+	margin: var(--gap-xl) 0;
 }
 
 ul {
-  list-style: circle;
-  padding-left: 20px;
+	list-style: circle;
+	padding-left: 20px;
 }
 
 span,
 li,
 time {
-  font-family: 'PT Serif', sans-serif;
-  color: var(--text-color-secondary);
-  font-size: var(--text-size-md);
-  line-height: var(--gap-xl);
-  margin: var(--gap-sm) 0;
+	font-family: 'PT Serif', sans-serif;
+	color: var(--text-color-secondary);
+	font-size: var(--text-size-md);
+	line-height: var(--gap-xl);
+	margin: var(--gap-sm) 0;
 }
 
 a {
-  font-family: 'Open Sans', sans-serif;
-  color: var(--accent-color-primary);
-  text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+	color: var(--accent-color-primary);
+	text-decoration: none;
 }
 
 blockquote {
-  background: var(--background-color-secondary);
-  border-left: 3px solid var(--accent-color-primary);
-  padding: var(--gap-md) var(--gap-lg);
-  font-size: var(--text-size-md);
-  border-radius: var(--gap-xs);
-  margin: var(--gap-xl) 0 var(--gap-xl) var(--gap-md);
-  font-family: 'Open Sans', sans-serif;
-  color: var(--text-color-secondary);
+	background: var(--background-color-secondary);
+	border-left: 3px solid var(--accent-color-primary);
+	padding: var(--gap-md) var(--gap-lg);
+	font-size: var(--text-size-md);
+	border-radius: var(--gap-xs);
+	margin: var(--gap-xl) 0 var(--gap-xl) var(--gap-md);
+	font-family: 'Open Sans', sans-serif;
+	color: var(--text-color-secondary);
 }
 
 figcaption {
-  color: var(--text-color-primary);
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-style: italic;
+	color: var(--text-color-primary);
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
 }
 
 img {
-  max-width: 100% !important;
-  height: auto;
-  margin: auto;
+	max-width: 100% !important;
+	height: auto;
+	margin: auto;
 }
 
 path {
-  fill: var(--text-color-secondary);
+	fill: var(--text-color-secondary);
 }
 
 a path:hover {
-  fill: var(--accent-color-secondary);
+	fill: var(--accent-color-secondary);
 }
 
 hr {
-  border: 0.5px solid var(--grey-color);
-  margin: auto;
-  margin: var(--gap-xxl) auto;
-  width: 80%;
+	border: 0.5px solid var(--grey-color);
+	margin: auto;
+	margin: var(--gap-xxl) auto;
+	width: 80%;
 }
 
 code {
-  padding: var(--gap-xs);
-  border-radius: var(--gap-xs);
-  background-color: var(--background-color-secondary);
-  font-family: 'Inconsolata', monospace !important;
+	padding: var(--gap-xs);
+	border-radius: var(--gap-xs);
+	background-color: var(--background-color-secondary);
+	font-family: 'Inconsolata', monospace !important;
 }
 
 /* Overwrite global tags with properties from third party modules, e.g. for prism */
 code[class*='language-'],
 pre[class*='language-'],
 span.token {
-  font-size: var(--text-size-md) !important;
-  font-family: 'Inconsolata', monospace !important;
+	font-size: var(--text-size-md) !important;
+	font-family: 'Inconsolata', monospace !important;
 }
